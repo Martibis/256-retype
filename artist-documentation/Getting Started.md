@@ -4,13 +4,13 @@ order: 95
 
 # Getting Started
 
-### Logging in and creating an artist account
+### Logging in and Creating an Artist Account
 To log in and create an artist account on 256ART, follow these steps:
 1. Visit the 256ART website and navigate to the Artist Portal.
 2. You will be prompted to sign a message with your Ethereum wallet.
 3. Once logged in, you will be able to update your artist details and create new projects.
 
-### Updating artist details (profile picture, artist name, bio, etc.)
+### Updating Artist Details (Profile Picture, Artist Name, Bio, etc.)
 After logging in you can update various details about yourself as an artist. These details help provide a comprehensive overview of who you are as an artist to collectors.
 - **Profile picture**: Upload an image that represents you as an artist. This image will be visible to others who view your profile.
 = **Full artist name**: Provide your full artist name, which will be displayed on your profile and alongside your work.

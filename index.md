@@ -3,7 +3,7 @@ order: 1000
 icon: code
 ---
 
-# Welcome to the 256ART docs
+# Welcome to the 256ART Docs
 
 This documentations consists of two sections:
 - **[Artist Documentation](./artist-documentation)**: if you want to understand the benefits of releasing on 256ART and how to release, this is the place for you.

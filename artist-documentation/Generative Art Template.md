@@ -9,14 +9,14 @@ When creating a generative art project that you want to release on 256ART it’s
 ### GitHub Repository
 https://github.com/Martibis/256ART-generative-art-template 
 
-### Using the template project
+### Using the Template Project
 Clone or download the [256ART Generative Art Template repository](https://github.com/Martibis/256ART-generative-art-template) to begin. This template provides a starting point for creating generative art that can be released fully in-chain via 256ART. The main files you will be working with are:
 - `artwork.js` or `artwork-p5.js`: Contains the code for generating your generative art.
 - `traits.json`: Defines the traits that should be stored on-chain.
 
 Follow the instructions in the [readme.md](https://github.com/Martibis/256ART-generative-art-template/blob/main/README.md) file to get started.
 
-### Customizing the template
+### Customizing the Template
 Modify the `artwork.js` / `artwork-p5.js` file to implement your desired artwork. Make sure the output is dimension agnostic, meaning it scales seamlessly to any dimension. Define a default dimension and create a multiplier to scale coordinates or sizes relative to the canvas dimensions.
 
 Modify the `traits.json` file for the traits for your generative artwork. Keep in mind that `traits.json` is only for the traits you would like to store on the Ethereum blockchain. These traits cannot depend on the values of other traits.
@@ -28,7 +28,7 @@ function draw() {
   // Add code for creating generative art using the color trait...
 }
 ```
-### Available libraries
+### Available Libraries
 Only use libraries available on EthFS, as the libraries need to be available on chain. To use one of the available libraries during development, add a CDN to the library in the index.html file. We recommend using as few libraries as possible (getting large libraries from chain can significantly slow down getting your art from chain). Some of the libraries available on EthFS at the time of writing are:
 - p5js v1.5.0
 - Tone.js (version unknown)
