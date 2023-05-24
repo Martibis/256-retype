@@ -9,24 +9,24 @@
     <meta name="generator" content="Retype 2.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>Releasing Your Project</title>
-    <meta name="title" content="Releasing Your Project">
-    <meta name="description" content="Releasing your project is the final step before going live with your project." />
+    <title>The Gallery Page</title>
+    <meta name="title" content="The Gallery Page">
+    <meta name="description" content="The Gallery Page is your personal space within 256ART, displaying all the artworks you've collected." />
 
     <!-- Canonical -->
-    <link rel="canonical" href="/artist-documentation/releasing-your-project/" />
+    <link rel="canonical" href="/learn-more/the-gallery-page/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/artist-documentation/releasing-your-project/">
-    <meta property="og:title" content="Releasing Your Project">
-    <meta property="og:description" content="Releasing your project is the final step before going live with your project.">
+    <meta property="og:url" content="/learn-more/the-gallery-page/">
+    <meta property="og:title" content="The Gallery Page">
+    <meta property="og:description" content="The Gallery Page is your personal space within 256ART, displaying all the artworks you've collected.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/artist-documentation/releasing-your-project/">
-    <meta property="twitter:title" content="Releasing Your Project">
-    <meta property="twitter:description" content="Releasing your project is the final step before going live with your project.">
+    <meta property="twitter:url" content="/learn-more/the-gallery-page/">
+    <meta property="twitter:title" content="The Gallery Page">
+    <meta property="twitter:description" content="The Gallery Page is your personal space within 256ART, displaying all the artworks you've collected.">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -166,76 +166,47 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="releasing-your-project" class="break-words">
+<doc-anchor-target id="the-gallery-page" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#releasing-your-project">#</doc-anchor-trigger>
-        <span>Releasing Your Project</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-gallery-page">#</doc-anchor-trigger>
+        <span>The Gallery Page</span>
     </h1>
 </doc-anchor-target>
-<p>Releasing your project is the final step before going live with your project. It involves deploying your smart contracts and setting up the details for your project launch.</p>
-<doc-anchor-target id="project-verification-and-acceptance-of-terms">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#project-verification-and-acceptance-of-terms">#</doc-anchor-trigger>
-        <span>Project Verification and Acceptance of Terms</span>
-    </h3>
+<doc-anchor-target id="overview-of-the-gallery-page">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#overview-of-the-gallery-page">#</doc-anchor-trigger>
+        <span>Overview of the Gallery Page</span>
+    </h2>
 </doc-anchor-target>
-<p>In the release step, you will see a brief overview of your project. To proceed, two checkboxes need to be marked in order to release:</p>
-<ul>
-<li>Information Verification: Review the project information displayed and ensure it&#x27;s accurate. If everything is as it should be, check this box to confirm that your project information is correct.</li>
-<li>Terms of Service Acceptance: Read and understand our terms of service. If you agree to them, check this box to accept.</li>
-</ul>
-<doc-anchor-target id="deploying-your-smart-contracts">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#deploying-your-smart-contracts">#</doc-anchor-trigger>
-        <span>Deploying Your Smart Contracts</span>
-    </h3>
+<p>The Gallery Page is your personal space within 256ART, displaying all the artworks you&#x27;ve collected. It allows you to interact with your collection in various ways, including viewing your art live from chain, accessing high-resolution images, and re-rendering images if needed.</p>
+<doc-anchor-target id="accessing-your-gallery-page">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#accessing-your-gallery-page">#</doc-anchor-trigger>
+        <span>Accessing Your Gallery Page</span>
+    </h2>
 </doc-anchor-target>
-<p>The next step is to deploy your smart contracts. Depending on the size of your ArtScript, there could be one or more smart contracts for it:</p>
-<ul>
-<li><strong>Art Info Contract</strong>: This contract holds crucial information about your project, such as your name, the license of your work, and a brief description of your project.</li>
-<li><strong>ArtScript Contract(s)</strong>: These contracts contain your ArtScript. To significantly reduce the cost of deployment, we gzip and base64 encode your ArtScript before deploying it on the blockchain. During the live view from the chain, we gunzip the ArtScript and inject it into the HTML page. Due to a size limit of 24KB of bytecode per smart contract, your ArtScript may be split across multiple contracts.</li>
-<li><strong>Royalty Splitter Contract</strong>: This contract ensures that you receive your fair share from secondary sales royalties.</li>
-</ul>
-<doc-anchor-target id="selecting-your-release-dates">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#selecting-your-release-dates">#</doc-anchor-trigger>
-        <span>Selecting Your Release Dates</span>
-    </h3>
+<p>To access your Gallery Page, you&#x27;ll need to sign in with your wallet. After successfully signing in, you&#x27;ll be able to view and manage all the 256ART pieces you&#x27;ve collected.</p>
+<doc-anchor-target id="live-view">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#live-view">#</doc-anchor-trigger>
+        <span>Live View</span>
+    </h2>
 </doc-anchor-target>
-<p>With these smart contracts successfully deployed, the next step is setting up your release dates.</p>
-<ul>
-<li><strong>Release Date</strong>: This is the date your project will be publicly available for minting.</li>
-<li><strong>Allow List Date</strong>: If you&#x27;ve created an allow list of addresses that can mint your project before the general public, you&#x27;ll need to specify the date this list will take effect. Remember, the allow list mint closes as soon as the public mint begins.</li>
-<li><strong>End Date</strong>: If your project is an open edition, you can also set an end date.</li>
-</ul>
-<p>Once you&#x27;ve confirmed these dates, you can click on &#x27;Release Project&#x27;. If all goes as planned, your final ERC721 contract will be deployed, marking the official launch of your project. You will then be redirected to your project page. Keep in mind we only show projects that are within a week of release to prevent spam.</p>
-<doc-anchor-target id="post-release">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#post-release">#</doc-anchor-trigger>
-        <span>Post-Release</span>
-    </h3>
+<p>This feature allows you to see your artwork as it exists live on the Ethereum blockchain. To do this, click on a piece in your gallery to open the modal and select the &quot;Live View&quot; option. This will pull the artwork directly from the Ethereum chain. This ensures you are seeing the most accurate and up-to-date representation of your artwork, as it&#x27;s pulled directly from the chain.</p>
+<doc-anchor-target id="high-resolution-image">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#high-resolution-image">#</doc-anchor-trigger>
+        <span>High Resolution Image</span>
+    </h2>
 </doc-anchor-target>
-<p>After releasing your project, there are several post-release functions that you can perform. These include:</p>
-<ul>
-<li><strong>Withdrawing funds from the main contract</strong>: After your work is minted and sold, the funds are stored in the main contract. You can withdraw these funds.</li>
-<li><strong>Withdrawing funds from the royalty splitter contract</strong>: If secondary sales happen and royalties are paid, these royalties are send to the royalty splitter contract. You can withdraw these funds.</li>
-<li><strong>Updating the max supply</strong>: In the event that a series doesn&#x27;t mint out, you can adjust the max supply to a lower value (though it can&#x27;t be less than the current token supply).</li>
-<li><strong>Updating ArtScripts and libraries</strong>: Over time, certain functionalities may no longer be supported by libraries, browsers, etc. In these cases, you&#x27;ll be able to update your ArtScripts and libraries to maintain compatibility.</li>
-</ul>
-<p>Currently, all of these actions are performed directly through the smart contracts themselves. We&#x27;re working on integrating this functionality into our front-end to make it more accessible. For the time being, we&#x27;ll provide guidance on withdrawing funds from contracts.</p>
-<p><strong>Note</strong>: If you&#x27;re unfamiliar with interacting with smart contracts or have any questions, please contact a member of the 256ART team via our Discord channel.</p>
-<p><strong>Withdrawing Funds</strong></p>
-<p>To withdraw funds from the main contract or the royalty splitter contract, you will need to interact directly with the smart contract on Etherscan. Here&#x27;s a step-by-step guide:</p>
-<ol>
-<li>Navigate to your contract on Etherscan.</li>
-<li>Connect your wallet (the one set as the owner of the contract) to Etherscan.</li>
-<li>Go to the &#x27;Write Contract&#x27; tab.</li>
-<li>Click on the &#x27;Connect to Web3&#x27; button.</li>
-<li>Once connected, find the &#x27;withdraw&#x27; function in the list of functions.</li>
-<li>Click &#x27;Write&#x27;. This will trigger a transaction request in your wallet.</li>
-<li>Confirm the transaction to withdraw the funds to your wallet.</li>
-</ol>
-<p>Please reach out to our team via Discord if you need any assistance with this process. We&#x27;re here to help!</p>
+<p>Your Gallery Page allows you to view and download high-resolution image previews of your collected artworks. To do this, click on a piece in your gallery to open the modal and select the &quot;High Res Image&quot; option.</p>
+<doc-anchor-target id="triggering-a-re-render-of-your-artworks">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#triggering-a-re-render-of-your-artworks">#</doc-anchor-trigger>
+        <span>Triggering a Re-render of Your Artworks</span>
+    </h2>
+</doc-anchor-target>
+<p>In case there are issues with the rendering of your high resolution image, you can trigger a re-render from your Gallery Page. To do this, click on the piece you want to rerender for, and in the modal and select the &#x27;Rerender&#x27; option. Please keep in mind it can take up to fifteen minutes for you request to be processed.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -245,23 +216,16 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../artist-documentation/testing-your-project/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../learn-more/collecting-art-on-256art/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Testing Your Project</span>
+                                                <span class="block mt-1">Collecting Art on 256​ART</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../learn-more/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Learn More</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -302,6 +266,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Releasing Your Project", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "The Gallery Page", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>

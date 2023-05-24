@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.738171615561">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.738201806007">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
@@ -30,11 +30,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.738171615561" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.738201806007" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.738171615561" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.738201806007" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.738171615561" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.738201806007" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -175,49 +175,49 @@
 <doc-anchor-target id="project-name">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#project-name">#</doc-anchor-trigger>
-        <span>Project name*</span>
+        <span>Project Name*</span>
     </h3>
 </doc-anchor-target>
 <p>The name of your project, it should be unique and descriptive.</p>
 <doc-anchor-target id="short-description-for-the-project">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#short-description-for-the-project">#</doc-anchor-trigger>
-        <span>Short description for the project*</span>
+        <span>Short Description for the Project*</span>
     </h3>
 </doc-anchor-target>
 <p>A short description of your project. This description is stored on-chain, so it is recommended to keep it brief to reduce costs. The maximum character limit for this field is 1500 characters.</p>
 <doc-anchor-target id="reserve-price">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#reserve-price">#</doc-anchor-trigger>
-        <span>Reserve price*</span>
+        <span>Reserve Price*</span>
     </h3>
 </doc-anchor-target>
 <p>The reserve price or minimum price for your project. In the case of open-edition and fixed-price sales mechanisms, the price is the same as the reserve price. For Dutch Auction, the reserve price is used in the <code v-pre>currentPrice()</code> function in the smart contract to calculate the current price of the project during the auction, ensuring that you don’t have to worry about halftime or other complexities. The starting mint price is roughly 25 times higher than the reserve price and lowers every 7.5 minutes (divided by roughly 1.5x each time) over a one hour duration.</p>
 <doc-anchor-target id="sales-mechanism">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#sales-mechanism">#</doc-anchor-trigger>
-        <span>Sales mechanism*</span>
+        <span>Sales Mechanism*</span>
     </h3>
 </doc-anchor-target>
 <p>The sales mechanism for your project. There are three options: Fair Dutch Auction, Fixed Price, and Open Edition.</p>
 <doc-anchor-target id="seeding-mechanism">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#seeding-mechanism">#</doc-anchor-trigger>
-        <span>Seeding mechanism*</span>
+        <span>Seeding Mechanism*</span>
     </h3>
 </doc-anchor-target>
 <p>The seeding mechanism for your project. There are two options: Random at Time of Mint and Collector Chooses Seed.</p>
 <doc-anchor-target id="collection-size">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#collection-size">#</doc-anchor-trigger>
-        <span>Collection size*</span>
+        <span>Collection Size*</span>
     </h3>
 </doc-anchor-target>
 <p>The total number of NFTs in the collection. Only applicable when the sales mechanism is not Open Edition.</p>
 <doc-anchor-target id="allow-list-addresses">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#allow-list-addresses">#</doc-anchor-trigger>
-        <span>Allow list addresses</span>
+        <span>Allow List Addresses</span>
     </h3>
 </doc-anchor-target>
 <p>The addresses you wish to add to your allow list. Allow-listed addresses will be able to mint before the public mint opens at the reserve price. There is a limit of one mint per wallet.</p>
@@ -227,18 +227,18 @@
         <span>Artwork.js*</span>
     </h3>
 </doc-anchor-target>
-<p>The JavaScript code that generates the artwork. <a href="/artist-documentation/generative-art-template">Generative Art Template</a>  for more info.</p>
+<p>The JavaScript code that generates the artwork <a href="/artist-documentation/generative-art-template">Generative Art Template</a>.</p>
 <doc-anchor-target id="traitsjson">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#traitsjson">#</doc-anchor-trigger>
         <span>Traits.json*</span>
     </h3>
 </doc-anchor-target>
-<p>The Traits.json file that contains the metadata for your artwork. This should be formatted in valid JSON format and should not exceed 20kb in size. <a href="/artist-documentation/generative-art-template">Generative Art Template</a> for more info.</p>
+<p>The Traits.json file that contains the metadata for your artwork. This should be formatted in valid JSON format and should not exceed 20kb in size <a href="/artist-documentation/generative-art-template">Generative Art Template</a>.</p>
 <doc-anchor-target id="project-libraries">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#project-libraries">#</doc-anchor-trigger>
-        <span>Project libraries*</span>
+        <span>Project Libraries*</span>
     </h3>
 </doc-anchor-target>
 <p>The external libraries used in your project. Multiple libraries can be selected from the provided list, but we recommend using as few as possible (getting large libraries from chain can significantly slow down getting your art from chain).</p>
@@ -259,7 +259,7 @@
 <doc-anchor-target id="secondary-royalty-percentage">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#secondary-royalty-percentage">#</doc-anchor-trigger>
-        <span>Secondary royalty percentage*</span>
+        <span>Secondary Royalty Percentage*</span>
     </h3>
 </doc-anchor-target>
 <p>The secondary royalty percentage that you will receive from secondary sales of your work. Please note that some marketplaces might not honor this, we recommend only linking to marketplaces that do.</p>
@@ -273,7 +273,7 @@
 <doc-anchor-target id="detailed-story-behind-your-project">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#detailed-story-behind-your-project">#</doc-anchor-trigger>
-        <span>Detailed story behind your project</span>
+        <span>Detailed Story Behind Your Project</span>
     </h3>
 </doc-anchor-target>
 <p>The detailed story behind your project. This is an opportunity for you to provide more context about your artwork, its inspiration, and any other relevant information that would help potential collectors and viewers understand and appreciate the project more deeply.</p>
