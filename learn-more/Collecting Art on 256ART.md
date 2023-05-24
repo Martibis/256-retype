@@ -4,7 +4,7 @@ order: 90
 
 # Collecting Art on 256ART
 
-## How to Purchase Art
+### How to Purchase Art
 
 Purchasing art on 256ART involves interacting with a smart contract, via the "Mint" button. Here's the general process:
 
@@ -16,7 +16,7 @@ Purchasing art on 256ART involves interacting with a smart contract, via the "Mi
 
 Once the transaction is confirmed, congratulations! You've just purchased your artwork(s).
 
-## How to Get the Art Live from Chain
+### How to Get the Art Live from Chain
 
 If you're interested in viewing the live version of your artwork directly from the Ethereum blockchain, you can do so using Etherscan:
 
