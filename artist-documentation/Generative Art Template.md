@@ -45,6 +45,38 @@ class Random {
 ```
 Shoutout to [Piter Pasma](https://twitter.com/piterpasma) for providing feedback on the PRNG.
 
+### Dimension Agnostic Coding
+
+Your artwork should scale seamlessly to any dimension, regardless of the viewer's browser size or resolution. We will also render a still image of the output at 2048x2048. Here's an example of how to achieve dimension agnostic coding:
+
+```javascript
+let c = document.createElement("canvas"); // Create canvas
+function setup() {
+
+    let dp = window.devicePixelRatio; // Get device pixel ratio; not needed in p5js
+    let ih = window.innerHeight * dp; // Get window innerHeight
+    let iw = window.innerWidth * dp; // Get window innerWidth
+
+    // Scale correctly
+    if (ih / iw < aspectRatio) {
+        c.height = ih;
+        c.width = ih / aspectRatio;
+    } else {
+        c.width = iw;
+        c.height = iw * aspectRatio;
+    }
+
+    document.body.appendChild(c); // Add canvas to body
+}
+
+function draw(){
+    let w = c.width; // Width of canvas
+    let h = c.height; // Height of canvas
+    
+    let strokeWidth = w * 0.001; // Scale using the canvas width
+}
+```
+
 ### GitHub Repository
 https://github.com/Martibis/256ART-generative-art-template 
 
