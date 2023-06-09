@@ -24,4 +24,4 @@ If you're interested in viewing the live version of your artwork directly from t
 2. Access the `getTokenHtml` function.
 3. Enter your `tokenId`.
 4. The output will be the base64 encoded live HTML of your artwork as it exists on-chain.
-5. Copy paste the result in the address bar of your browser (all modern browsers are supported, except for Firefox (but they're working on support too)).
+5. Copy paste the result in the address bar of your browser (all modern browsers).

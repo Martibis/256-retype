@@ -17,7 +17,7 @@ Multiple JavaScript libraries are also available on-chain (most notably p5js and
 256ART is an open platform, allowing any artist to release their work. We want to empower artists to freely create and share their work on the Ethereum blockchain, with as few hurdles as possible.
 ### Cost Efficient On-Chain Storage
 We utilize gzip compression on your art script before putting it on-chain, significantly reducing the size and the cost of storing it on-chain. On average it's three times cheaper to store on-chain compared to a none gzipped version. 
-When rendering your art from chain the DecompressionStream web API is used to gunzip your art script after which it's injected it into the HTML. This is currently supported by all modern browsers except for Firefox (and they have it on their roadmap).
+When rendering your art from chain the DecompressionStream web API is used to gunzip your art script after which it's injected it into the HTML. This is currently supported by all modern browsers.
 ### Fully Automated Testing
 We offer fully automated, one-button-click, testing. Eliminating the hassle of deploying to an Ethereum testnet and dealing with the associated complexities / nuisances. Behind the scenes we spin up an Ethereum node on our back-end and run all of the tests (deploying, minting, building your art, etc.) on that node, so it emulates near exactly how it would be on the Ethereum mainnet.  
 ### Low fees
