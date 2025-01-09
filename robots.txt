@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://github.io/256-retype/sitemap.xml.gz
+Sitemap: https://martibis.github.io/256-retype/sitemap.xml.gz
