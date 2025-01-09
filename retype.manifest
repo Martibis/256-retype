@@ -1,0 +1,99 @@
+{
+  "version": "3.6.0",
+  "created": "2025-01-09T23:20:12Z",
+  "files": [
+    {
+      "path": ".nojekyll"
+    },
+    {
+      "path": "404.html"
+    },
+    {
+      "path": "artist-documentation\\generative-art-template\\index.html"
+    },
+    {
+      "path": "artist-documentation\\getting-started\\index.html"
+    },
+    {
+      "path": "artist-documentation\\index.html"
+    },
+    {
+      "path": "artist-documentation\\project-details-form\\index.html"
+    },
+    {
+      "path": "artist-documentation\\releasing-your-project\\index.html"
+    },
+    {
+      "path": "artist-documentation\\testing-your-project\\index.html"
+    },
+    {
+      "path": "artist-documentation\\why-choose-256art\\index.html"
+    },
+    {
+      "path": "CNAME"
+    },
+    {
+      "path": "favicon.ico"
+    },
+    {
+      "path": "index.html"
+    },
+    {
+      "path": "learn-more\\collecting-art-on-256art\\index.html"
+    },
+    {
+      "path": "learn-more\\index.html"
+    },
+    {
+      "path": "learn-more\\the-gallery-page\\index.html"
+    },
+    {
+      "path": "learn-more\\understanding-and-navigating-256art\\index.html"
+    },
+    {
+      "path": "resources\\css\\retype.css"
+    },
+    {
+      "path": "resources\\fonts\\Inter-italic-latin-var.woff2"
+    },
+    {
+      "path": "resources\\fonts\\Inter-roman-latin-var.woff2"
+    },
+    {
+      "path": "resources\\js\\config.js"
+    },
+    {
+      "path": "resources\\js\\lunr.js"
+    },
+    {
+      "path": "resources\\js\\prism.js"
+    },
+    {
+      "path": "resources\\js\\retype.js"
+    },
+    {
+      "path": "resources\\js\\search.json"
+    },
+    {
+      "path": "resources\\lunr.js.LICENSE.txt"
+    },
+    {
+      "path": "resources\\mermaid.js.LICENSE.txt"
+    },
+    {
+      "path": "resources\\prism.js.LICENSE.txt"
+    },
+    {
+      "path": "resources\\retype.js.LICENSE.txt"
+    },
+    {
+      "path": "resources\\retype.LICENSE.txt"
+    },
+    {
+      "path": "robots.txt"
+    },
+    {
+      "path": "sitemap.xml.gz"
+    }
+  ]
+}
