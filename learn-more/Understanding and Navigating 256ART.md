@@ -14,6 +14,9 @@ With 256ART both the metadata and live view of your art are entirely built and s
 
 On front-ends and marketplaces, if a centralized URL, served through the tokenURI goes down, the NFT would no longer be accessible through standardized functions. This problem is non-existent with 256ART's fully in-chain approach.
 
+### What Chains are Supported?
+We currently support Ethereum and Base.
+
 ### Benefits of an Open Platform
 256ART is an open platform, welcoming and empowering artists from all walks of life to create and sell their generative art. This openness benefits artists and collectors alike. 
 

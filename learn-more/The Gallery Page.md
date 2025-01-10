@@ -14,7 +14,7 @@ To access your Gallery Page, you'll need to sign in with your wallet. After succ
 
 ### Live View
 
-This feature allows you to see your artwork as it exists live on the Ethereum blockchain. To do this, click on a piece in your gallery to open the modal and select the "Live View" option. This will pull the artwork directly from the Ethereum chain. This ensures you are seeing the most accurate and up-to-date representation of your artwork, as it's pulled directly from the chain.
+This feature allows you to see your artwork as it exists live on the blockchain. To do this, click on a piece in your gallery to open the modal and select the "Live View" option. This will pull the artwork directly from the chain. This ensures you are seeing the most accurate and up-to-date representation of your artwork, as it's pulled directly from the chain.
 
 
 ### High Resolution Image

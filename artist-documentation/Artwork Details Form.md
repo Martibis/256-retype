@@ -49,7 +49,7 @@ Set a special price for allow-listed addresses. Allow-listed participants can mi
 Define the maximum number of NFTs each allow-listed address can mint. This helps control the distribution and ensures fairness among allow-listed participants.
 
 ### Allow List Addresses
-Provide the Ethereum addresses you wish to add to your allow list. Allow-listed addresses will mint at the **allowlist price** before the public sale begins at the reserve price. You can add addresses manually or upload a CSV file containing multiple addresses.
+Provide the addresses you wish to add to your allow list. Allow-listed addresses will mint at the **allowlist price** before the public sale begins at the reserve price. You can add addresses manually or upload a CSV file containing multiple addresses.
 
 ### Artwork Libraries*
 List any external libraries used in your artwork. While multiple libraries can be selected from the provided list, it's recommended to use as few as possible. Large libraries can significantly slow down the retrieval of your art from the blockchain.

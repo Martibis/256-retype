@@ -16,7 +16,9 @@ On front-ends and marketplaces, if a centralized URL, served through the tokenUR
 ### Cost Efficient On-Chain Storage
 We utilize gzip compression on your art script before putting it on-chain, significantly reducing the size and the cost of storing it on-chain. On average it's three times cheaper to store on-chain compared to a none gzipped version.
 ### Fully Automated Testing
-We offer fully automated, one-button-click, testing. Eliminating the hassle of deploying to an testnets and dealing with the associated complexities / nuisances. Behind the scenes we spin up a Sepolia node on our back-end and run all of the tests (deploying, minting, building your art, etc.) on that node, so it emulates near exactly how it would be on the mainnet.  
+We offer fully automated, one-button-click, testing. Eliminating the hassle of deploying to an testnets and dealing with the associated complexities / nuisances. Behind the scenes we spin up a Sepolia node on our back-end and run all of the tests (deploying, minting, building your art, etc.) on that node, so it emulates near exactly how it would be on the mainnet.
+### Multi Chain
+We allow fully in-chain releases on Ethereum, Base and the Sepolia testnet.
 ### Low fees
 10% on primary sales and 10% of the royalty percentage you choose on secondary sales.
 ### Two Seeding Mechanisms

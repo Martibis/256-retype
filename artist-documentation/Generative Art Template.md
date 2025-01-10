@@ -4,7 +4,7 @@ order: 90
 
 # Generative Art Template
 
-When creating a generative artwork that you want to release on 256ART it’s recommended to use the below template as a starting point. With 256ART we simplify the development process compared to other platforms by requiring only one artwork.js file (for rendering your art) and a simple traits.json file for defining traits. Our template also emulates everything exactly the same ways as it would be if deployed live on the Ethereum mainnet.
+When creating a generative artwork that you want to release on 256ART it’s recommended to use the below template as a starting point. With 256ART we simplify the development process compared to other platforms by requiring only one artwork.js file (for rendering your art) and a simple traits.json file for defining traits. Our template also emulates everything exactly the same ways as it would be if deployed live on the Ethereum or Base mainnet.
 
 ### Random class
 
@@ -90,7 +90,7 @@ Follow the instructions in the [readme.md](https://github.com/Martibis/256ART-ge
 ### Customizing the Template
 Modify the `artwork.js` / `artwork-p5.js` file to implement your desired artwork. Make sure the output is dimension agnostic, meaning it scales seamlessly to any dimension. Define a default dimension and create a multiplier to scale coordinates or sizes relative to the canvas dimensions.
 
-Modify the `traits.json` file for the traits for your generative artwork. Keep in mind that `traits.json` is only for the traits you would like to store on the Ethereum blockchain. These traits cannot depend on the values of other traits.
+Modify the `traits.json` file for the traits for your generative artwork. Keep in mind that `traits.json` is only for the traits you would like to store on the blockchain. These traits cannot depend on the values of other traits.
 
 Access the traits defined in `traits.json` from `artwork.js` / `artwork-p5.js`  using the inputData object. For example, if you defined a trait for "Paint Color" in traits.json, you could access this trait value in your code like this:
 ```javascript
