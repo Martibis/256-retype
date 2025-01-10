@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789781933771">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789824436219">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.789781933771" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.789824436219" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.789781933771" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.789824436219" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.789781933771" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.789824436219" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -182,9 +182,9 @@
         <span>What Does &quot;Fully In-Chain&quot; Mean?</span>
     </h3>
 </doc-anchor-target>
-<p>One of the unique features of 256ART is the fully in-chain nature of the generative art released on the platform. Traditionally, in the world of generative art, the art script is (often) stored on-chain. This means that you can technically recreate the artwork from that script if you have the developer skills to do so. However, other elements, such as the metadata, live HTML, and static image, are usually linked to a centralized or IPFS URL.</p>
-<p>With 256ART, both the metadata and live HTML are entirely built and stored fully in-chain. This approach provides the best perseverance of your art as the artwork and the details related to it are permanently stored on the blockchain, ensuring they will always be accessible and immune to any potential data loss issues associated with centralized storage.</p>
-<p>On front-ends and marketplaces, if a centralized URL goes down, an NFT relying on this URL would no longer be visible. This problem is non-existent with 256ART&#x27;s fully in-chain approach.</p>
+<p>Traditionally, in the world of generative art, the art script is (often) stored on-chain, but not offered through ERC721 standardized functions. The tokenURI which holds the traits, artwork, preview of the art etc. are usually hosted on a centralized server.</p>
+<p>With 256ART both the metadata and live view of your art are entirely built and stored fully in-chain. This approach provides the best perseverance of your art as the artwork and the details related to it are permanently stored on the blockchain, ensuring they will always be accessible and immune to any potential data loss issues associated with centralized storage.</p>
+<p>On front-ends and marketplaces, if a centralized URL, served through the tokenURI goes down, the NFT would no longer be accessible through standardized functions. This problem is non-existent with 256ART&#x27;s fully in-chain approach.</p>
 <doc-anchor-target id="benefits-of-an-open-platform">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#benefits-of-an-open-platform">#</doc-anchor-trigger>
@@ -203,7 +203,7 @@
 <ul>
 <li><p><strong>OG</strong>: This tag is applied to the first eight series released on 256ART, before the platform transitioned to an open format. These OG artworks are stored on-chain, but not fully in-chain as the newer pieces. They represent a piece of 256ART&#x27;s history and evolution.</p>
 </li>
-<li><p><strong>Dynamic</strong>: Artworks tagged as Dynamic are capable of changing based on blockchain parameters. For example, artists could use the parameters <code v-pre>tokenId</code>, <code v-pre>hash</code>, <code v-pre>ownerOfPiece</code>, <code v-pre>blockHash</code>, <code v-pre>blockNumber</code>, <code v-pre>prevrandao</code>, <code v-pre>totalSupply</code>, or <code v-pre>balanceOfOwner</code> to influence the appearance of the art. This can lead to unique variations and experiences for different collectors.</p>
+<li><p><strong>Dynamic</strong>: Artworks tagged as Dynamic are capable of changing based on blockchain parameters. For example, artists could use the parameters <code v-pre>tokenId</code>, <code v-pre>hash</code>, <code v-pre>ownerOfPiece</code>, <code v-pre>blockHash</code>, <code v-pre>blockNumber</code>, <code v-pre>prevrandao</code>, <code v-pre>totalSupply</code>, <code v-pre>balanceOfOwner</code> and more to influence the appearance of the art. This can lead to unique variations and experiences for different collectors.</p>
 </li>
 <li><p><strong>Animated</strong>: This tag is pretty straightforward - it represents artworks that include animation elements.</p>
 </li>

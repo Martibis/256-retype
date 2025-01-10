@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789781933771">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789824436219">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.789781933771" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.789824436219" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.789781933771" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.789824436219" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.789781933771" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.789824436219" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -178,26 +178,25 @@
 <p>Purchasing art on 256ART involves interacting with a smart contract, via the &quot;Mint&quot; button. Here&#x27;s the general process:</p>
 <ol>
 <li>Navigate to the art series you are interested in.</li>
-<li>Click the &quot;Mint&quot; button. This opens a modal.</li>
-<li>Depending on how the artist setup the sales and seeding mechanisms, you&#x27;ll see different options here.</li>
-<li>Once you&#x27;ve selected the amount you would like to mint, click the final &quot;Mint&quot; button in the modal.</li>
+<li>Click the &quot;Mint&quot; button.</li>
 <li>Your wallet will then ask you to confirm the transaction.</li>
 </ol>
-<p>Once the transaction is confirmed, congratulations! You&#x27;ve just purchased your artwork(s).</p>
+<p>Once the transaction is confirmed, congratulations! You&#x27;ve just purchased your artwork(s) and can immediately view them from the blockchain.</p>
 <doc-anchor-target id="how-to-get-the-art-live-from-chain">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-get-the-art-live-from-chain">#</doc-anchor-trigger>
         <span>How to Get the Art Live from Chain</span>
     </h3>
 </doc-anchor-target>
-<p>If you&#x27;re interested in viewing the live version of your artwork directly from the Ethereum blockchain, you can do so using Etherscan:</p>
+<p>If you&#x27;re interested in viewing the live version of your artwork directly from the blockchain, you can do so using Etherscan / Basescan:</p>
 <ol>
-<li>Go to the contract of the artwork on Etherscan.</li>
-<li>Access the <code v-pre>getTokenHtml</code> function.</li>
+<li>Go to the contract of the artwork on Etherscan / Basescan</li>
+<li>Access the <code v-pre>tokenHtml</code> function.</li>
 <li>Enter your <code v-pre>tokenId</code>.</li>
 <li>The output will be the base64 encoded live HTML of your artwork as it exists on-chain.</li>
 <li>Copy paste the result in the address bar of your browser (all modern browsers).</li>
 </ol>
+<p>If you want to view the entire metadata, you can use the same steps with the <code v-pre>tokenURI</code> function.</p>
 
                                 
                                 <!-- Required only on API pages -->
