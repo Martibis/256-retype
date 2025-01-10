@@ -1,6 +1,6 @@
 ---
 
-order: 84
+order: 70
 
 ---
 
@@ -8,7 +8,7 @@ order: 84
 
 We strongly recommend artists to set up and update various aspects of their NFT collections directly on OpenSea. Below are the key sections available under the **Edit Project** area in OpenSea:
 
-## 1. **Details**
+### Details
 
 Manage the foundational aspects of your NFT collection to enhance its visibility and appeal.
 
@@ -65,7 +65,7 @@ Manage the foundational aspects of your NFT collection to enhance its visibility
     - Cannot modify creator earnings percentages
   - **Example:** Adding a co-artist or marketing manager as a collaborator.
 
-## 2. **Creator Earnings**
+### Creator Earnings
 
 - **Enforceability of Creator Earnings**
   - **Description:** As 256ART contracts now adhere to the [ERC721-C](https://opensea.io/blog/articles/creator-earnings-erc721-c-compatibility-on-opensea) standard, artists can optionally enforce creator earnings on-chain, ensuring that royalties are automatically applied across all marketplaces that support this feature.
