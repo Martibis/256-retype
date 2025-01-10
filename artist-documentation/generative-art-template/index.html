@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789824651202">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789824914158">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.789824651202" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.789824914158" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.789824651202" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.789824914158" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.789824651202" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.789824651202" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.789824914158" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.789824914158" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -170,7 +170,7 @@
         <span>Generative Art Template</span>
     </h1>
 </doc-anchor-target>
-<p>When creating a generative artwork that you want to release on 256ART it’s recommended to use the below template as a starting point. With 256ART we simplify the development process compared to other platforms by requiring only one artwork.js file (for rendering your art) and a simple traits.json file for defining traits. Our template also emulates everything exactly the same ways as it would be if deployed live on the Ethereum mainnet.</p>
+<p>When creating a generative artwork that you want to release on 256ART it’s recommended to use the below template as a starting point. With 256ART we simplify the development process compared to other platforms by requiring only one artwork.js file (for rendering your art) and a simple traits.json file for defining traits. Our template also emulates everything exactly the same ways as it would be if deployed live on the Ethereum or Base mainnet.</p>
 <doc-anchor-target id="random-class">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#random-class">#</doc-anchor-trigger>
@@ -272,7 +272,7 @@ function draw(){
     </h3>
 </doc-anchor-target>
 <p>Modify the <code v-pre>artwork.js</code> / <code v-pre>artwork-p5.js</code> file to implement your desired artwork. Make sure the output is dimension agnostic, meaning it scales seamlessly to any dimension. Define a default dimension and create a multiplier to scale coordinates or sizes relative to the canvas dimensions.</p>
-<p>Modify the <code v-pre>traits.json</code> file for the traits for your generative artwork. Keep in mind that <code v-pre>traits.json</code> is only for the traits you would like to store on the Ethereum blockchain. These traits cannot depend on the values of other traits.</p>
+<p>Modify the <code v-pre>traits.json</code> file for the traits for your generative artwork. Keep in mind that <code v-pre>traits.json</code> is only for the traits you would like to store on the blockchain. These traits cannot depend on the values of other traits.</p>
 <p>Access the traits defined in <code v-pre>traits.json</code> from <code v-pre>artwork.js</code> / <code v-pre>artwork-p5.js</code>  using the inputData object. For example, if you defined a trait for &quot;Paint Color&quot; in traits.json, you could access this trait value in your code like this:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">function draw() {
