@@ -4,11 +4,11 @@ order: 80
 # Testing Your Project
 
 ### Testing for Release
-Before you release your project, it has to be tested, this is to ensure that everything works as intended before deploying to the Ethereum mainnet. We have built a testing feature that simplifies this process, allowing you to run tests on an emulation of the Ethereum network without incurring gas fees. This section will guide you through the testing process, explains how it works behind the scenes and will go into the benefits of using it.
+Before you release your project, it has to be tested, this is to ensure that everything works as intended before deploying to the Ethereum or Base mainnet. We have built a testing feature that simplifies this process, allowing you to run tests on an emulation of the Sepolia network without incurring gas fees. This section will guide you through the testing process, explains how it works behind the scenes and will go into the benefits of using it.
 ### How Does It Work Behind the Scenes?
-We use Hardhat, an Ethereum development environment, to run tests on top of an archival node on our back-end. This approach enables us to simulate how your project would function on the Ethereum mainnet without paying gas fees. As a result, we can perform tests at no cost while still simulating the actual network conditions.
+We use Hardhat, an Ethereum development environment, to run tests on top of an archival node on our back-end. This approach enables us to simulate how your project would function on the Ethereum or Base mainnet without paying gas fees. As a result, we can perform tests at no cost while still simulating the actual network conditions.
 ### Initiating the Test
-To initiate the testing process, go to the [artist portal](https://256art.com/portal) and click on one of your unreleased projects. Make sure the project details form is filled out [Project Details Form](/artist-documentation/project-details-form). Once you have completed the form, navigate to "Test Project" and click the "Test Project" button. This will start the test, and show the testing terminal that displays the test progress, results, and any errors that may occur.
+To initiate the testing process, go to the [artist portal](https://256art.com/artistportal) and click on one of your unreleased projects. Make sure the project details form is filled out [Project Details Form](/artist-documentation/project-details-form). Once you have completed the form, navigate to "Test Project" and click the "Test Project" button. This will start the test, and show the testing terminal that displays the test progress, results, and any errors that may occur.
 ### Understanding the Testing Process
 The following is tested:
 1. Deployment of your project's smart contract.

@@ -8,11 +8,11 @@ order: 100
 256ART is an open platform for artists and collectors alike to create and collect fully in-chain generative art.
 
 ### What Does "Fully In-Chain" Mean?
-One of the unique features of 256ART is the fully in-chain nature of the generative art released on the platform. Traditionally, in the world of generative art, the art script is (often) stored on-chain. This means that you can technically recreate the artwork from that script if you have the developer skills to do so. However, other elements, such as the metadata, live HTML, and static image, are usually linked to a centralized or IPFS URL.
+Traditionally, in the world of generative art, the art script is (often) stored on-chain, but not offered through ERC721 standardized functions. The tokenURI which holds the traits, artwork, preview of the art etc. are usually hosted on a centralized server.
 
-With 256ART, both the metadata and live HTML are entirely built and stored fully in-chain. This approach provides the best perseverance of your art as the artwork and the details related to it are permanently stored on the blockchain, ensuring they will always be accessible and immune to any potential data loss issues associated with centralized storage. 
+With 256ART both the metadata and live view of your art are entirely built and stored fully in-chain. This approach provides the best perseverance of your art as the artwork and the details related to it are permanently stored on the blockchain, ensuring they will always be accessible and immune to any potential data loss issues associated with centralized storage.
 
-On front-ends and marketplaces, if a centralized URL goes down, an NFT relying on this URL would no longer be visible. This problem is non-existent with 256ART's fully in-chain approach.
+On front-ends and marketplaces, if a centralized URL, served through the tokenURI goes down, the NFT would no longer be accessible through standardized functions. This problem is non-existent with 256ART's fully in-chain approach.
 
 ### Benefits of an Open Platform
 256ART is an open platform, welcoming and empowering artists from all walks of life to create and sell their generative art. This openness benefits artists and collectors alike. 
@@ -24,7 +24,7 @@ Tags on 256ART provide essential information about the artwork and can help you 
 
 - **OG**: This tag is applied to the first eight series released on 256ART, before the platform transitioned to an open format. These OG artworks are stored on-chain, but not fully in-chain as the newer pieces. They represent a piece of 256ART's history and evolution.
 
-- **Dynamic**: Artworks tagged as Dynamic are capable of changing based on blockchain parameters. For example, artists could use the parameters `tokenId`, `hash`, `ownerOfPiece`, `blockHash`, `blockNumber`, `prevrandao`, `totalSupply`, or `balanceOfOwner` to influence the appearance of the art. This can lead to unique variations and experiences for different collectors.
+- **Dynamic**: Artworks tagged as Dynamic are capable of changing based on blockchain parameters. For example, artists could use the parameters `tokenId`, `hash`, `ownerOfPiece`, `blockHash`, `blockNumber`, `prevrandao`, `totalSupply`, `balanceOfOwner` and more to influence the appearance of the art. This can lead to unique variations and experiences for different collectors.
 
 - **Animated**: This tag is pretty straightforward - it represents artworks that include animation elements.
 

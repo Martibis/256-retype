@@ -4,7 +4,7 @@ order: 90
 
 # Generative Art Template
 
-When creating a generative art project that you want to release on 256ART it’s recommended to use the below template as a starting point. With 256ART we simplify the development process compared to other platforms by requiring only one artwork.js file (for rendering your art) and a simple traits.json file for defining traits. Our template also emulates everything exactly the same ways as it would be if deployed live on the Ethereum mainnet.
+When creating a generative artwork that you want to release on 256ART it’s recommended to use the below template as a starting point. With 256ART we simplify the development process compared to other platforms by requiring only one artwork.js file (for rendering your art) and a simple traits.json file for defining traits. Our template also emulates everything exactly the same ways as it would be if deployed live on the Ethereum mainnet.
 
 ### Random class
 
@@ -80,7 +80,7 @@ function draw(){
 ### GitHub Repository
 https://github.com/Martibis/256ART-generative-art-template 
 
-### Using the Template Project
+### Using the Template Artwork
 Clone or download the [256ART Generative Art Template repository](https://github.com/Martibis/256ART-generative-art-template) to begin. This template provides a starting point for creating generative art that can be released fully in-chain via 256ART. The main files you will be working with are:
 - `artwork.js` or `artwork-p5.js`: Contains the code for generating your generative art.
 - `traits.json`: Defines the traits that should be stored on-chain.
@@ -92,11 +92,13 @@ Modify the `artwork.js` / `artwork-p5.js` file to implement your desired artwork
 
 Modify the `traits.json` file for the traits for your generative artwork. Keep in mind that `traits.json` is only for the traits you would like to store on the Ethereum blockchain. These traits cannot depend on the values of other traits.
 
-Access the traits defined in `traits.json` from `artwork.js` / `artwork-p5.js`  using the inputData object. For example, if you defined a trait for color in traits.json, you could access this trait in your code like this:
+Access the traits defined in `traits.json` from `artwork.js` / `artwork-p5.js`  using the inputData object. For example, if you defined a trait for "Paint Color" in traits.json, you could access this trait value in your code like this:
 ```javascript
 function draw() {
-  let color = inputData.color; // Access the color trait defined in traits.json
-  // Add code for creating generative art using the color trait...
+    let color = inputData["Paint Color"].value; // Access the Paint Color trait value defined in traits.json
+
+    // Example usage: Set the background color using the Paint Color value
+    background(color);
 }
 ```
 ### Available Libraries
@@ -104,3 +106,92 @@ Only use libraries available on EthFS, as the libraries need to be available on 
 - p5js v1.5.0
 - Tone.js (version unknown)
 - threejs v0.147.0
+
+### Image Preview Generation for 256ART
+
+To allow 256ART to generate image previews of your generative artwork for marketplaces, digital galleries, and other front-ends, you need to set the `window.rendered` property equal to the `canvas` object when the work is fully rendered. This way, 256ART can capture the generated canvas, create an image preview, and store it as part of the tokenURI in the ERC721 smart contract under the "image" property.
+
+Make sure to add the following line of code in your `artwork.js` / `artwork-p5.js` file once the artwork is completely rendered:
+
+```
+window.rendered = canvas;
+```
+
+For example, in a p5js sketch, you could add the `window.rendered = c.canvas;` line at the end of the `draw()` function after the artwork has been fully rendered:
+
+```javascript
+let c;
+function setup(){
+  // Create your canvas
+  c = createCanvas(width, height);
+}
+function draw() {
+  // Add code for creating generative art here...
+
+  // Set window.rendered to the canvas object when artwork is fully rendered
+  window.rendered = c.canvas;
+}
+```
+
+By setting the `window.rendered` property, you are providing 256ART with a signal to capture the rendered canvas and generate an image preview. Providing image previews is needed for front-ends as they may not be able to render multiple "live rendering" of the art script, especially when the artworks are resource-intensive. The image previews make it easier for front-ends to display your generative art without the performance overhead of rendering the artwork live.
+
+### Creating Dynamic Artworks
+
+With 256ART exposing a variety of blockchain parameters through the `inputData` object, you can create generative artworks that respond to on-chain events and states. This allows your artwork to evolve based on actions such as transfers, sales, or changes in an owner's ETH balance. Below, we'll explore how to utilize these parameters to add dynamic behavior to your generative art.
+
+#### Available Blockchain Parameters
+
+The following blockchain parameters are available in `inputData`:
+
+- `ownerOfPiece`: The hexadecimal address of the current owner of the token.
+- `blockHash`: The hash of the previous block.
+- `blockNumber`: The current block number.
+- `blockTimestamp`: The timestamp of the current block.
+- `blockBaseFee`: The base fee of the current block.
+- `blockCoinbase`: The hexadecimal address of the block miner.
+- `prevrandao`: The previous randomness value from the block.
+- `totalSupply`: The total number of tokens minted.
+- `balanceOfOwner`: The number of tokens owned by the current owner.
+- `ethBalanceOfOwner`: The ETH balance of the current owner.
+
+These parameters can be accessed in your `artwork.js` or `artwork-p5.js` file via the `inputData` object. Below are examples of how to incorporate these parameters into your artwork.
+
+#### Accessing Blockchain Parameters
+
+Here's how you can access and utilize the blockchain parameters within your artwork code:
+
+```javascript
+function draw() {
+    // Accessing blockchain parameters from inputData
+    const ownerAddress = inputData["ownerOfPiece"];
+    const blockHash = inputData["blockHash"];
+    const blockNumber = parseInt(inputData["blockNumber"]);
+    const blockTimestamp = parseInt(inputData["blockTimestamp"]);
+    const blockBaseFee = parseFloat(inputData["blockBaseFee"]);
+    const blockCoinbase = inputData["blockCoinbase"];
+    const prevrandao = parseInt(inputData["prevrandao"]);
+    const totalSupply = parseInt(inputData["totalSupply"]);
+    const balanceOfOwner = parseInt(inputData["balanceOfOwner"]);
+    const ethBalanceOfOwner = parseFloat(inputData["ethBalanceOfOwner"]);
+
+    // Example usage: Change background color based on ETH balance
+    const colorIntensity = map(ethBalanceOfOwner, 0, 100, 0, 255);
+    background(colorIntensity, 100, 150);
+
+    // Example usage: Display owner address as part of the artwork
+    fill(255);
+    textSize(w * 0.02);
+    text(`Owner: ${ownerAddress}`, 10, h - 20);
+
+    // Example usage: Animate elements based on block number
+    let angle = (blockNumber % 360) * (PI / 180);
+    push();
+    translate(w / 2, h / 2);
+    rotate(angle);
+    // Draw a rotating shape
+    ellipse(0, 0, w * 0.3, h * 0.3);
+    pop();
+
+    // Additional dynamic elements can be added using other parameters
+}
+```
