@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789824914158">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.790173089153">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.789824914158" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.790173089153" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.789824914158" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.790173089153" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.789824914158" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.789824914158" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.790173089153" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.790173089153" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -320,6 +320,54 @@ function draw() {
 }</code></pre>
 </doc-codeblock></div>
 <p>By setting the <code v-pre>window.rendered</code> property, you are providing 256ART with a signal to capture the rendered canvas and generate an image preview. Providing image previews is needed for front-ends as they may not be able to render multiple &quot;live rendering&quot; of the art script, especially when the artworks are resource-intensive. The image previews make it easier for front-ends to display your generative art without the performance overhead of rendering the artwork live.</p>
+<doc-anchor-target id="batch-artwork-generator">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#batch-artwork-generator">#</doc-anchor-trigger>
+        <span>Batch Artwork Generator</span>
+    </h3>
+</doc-anchor-target>
+<p>When your <code v-pre>artwork-p5.js</code> or <code v-pre>artwork.js</code> and your <code v-pre>traits.json</code> are completed, you can use the batch artwork generator for testing purposes. The <strong>Batch Artwork Generator</strong> tool streamlines the creation of multiple previews. It allows you to specify the number of previews and their dimensions, generates them efficiently, and provides an option to download all images as a ZIP file.</p>
+<doc-anchor-target id="features">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#features">#</doc-anchor-trigger>
+        <span>Features</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Batch Generation:</strong> Create multiple artworks in one go.</li>
+<li><strong>Customizable Image Size:</strong> Define the width and height for each image.</li>
+<li><strong>Progress Monitoring:</strong> Visual progress bar to track generation.</li>
+<li><strong>Download as ZIP:</strong> Easily download all generated images together.</li>
+</ul>
+<doc-anchor-target id="how-to-use">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-use">#</doc-anchor-trigger>
+        <span>How to Use</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><p><strong>Open the Generator:</strong></p>
+<ul>
+<li>Navigate to <code v-pre>batch-generator.html</code> in your browser. Ensure it&#x27;s served from a local server.</li>
+</ul>
+</li>
+<li><p><strong>Configure Parameters:</strong></p>
+<ul>
+<li><strong>Batch Size:</strong> Enter the number of artworks you wish to generate.</li>
+<li><strong>Image Size:</strong> Specify the desired size in pixels.</li>
+</ul>
+</li>
+<li><p><strong>Start Generation:</strong></p>
+<ul>
+<li>Click the <strong>Start Batch</strong> button. The progress bar will indicate the generation status.</li>
+</ul>
+</li>
+<li><p><strong>Download Images:</strong></p>
+<ul>
+<li>Once completed, click the <strong>Download All as ZIP</strong> button to download all generated artworks.</li>
+</ul>
+</li>
+</ol>
 <doc-anchor-target id="creating-dynamic-artworks">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#creating-dynamic-artworks">#</doc-anchor-trigger>
