@@ -8,7 +8,7 @@ Before you release your project, it has to be tested, this is to ensure that eve
 ### How Does It Work Behind the Scenes?
 We use Hardhat, an Ethereum development environment, to run tests on top of an archival node on our back-end. This approach enables us to simulate how your project would function on the Ethereum or Base mainnet without paying gas fees. As a result, we can perform tests at no cost while still simulating the actual network conditions.
 ### Initiating the Test
-To initiate the testing process, go to the [artist portal](https://256art.com/artistportal) and click on one of your unreleased projects. Make sure the project details form is filled out [Project Details Form](/artist-documentation/project-details-form). Once you have completed the form, navigate to "Test Project" and click the "Test Project" button. This will start the test, and show the testing terminal that displays the test progress, results, and any errors that may occur.
+To initiate the testing process, go to the [artist portal](https://256.art/artistportal) and click on one of your unreleased projects. Make sure the project details form is filled out [Project Details Form](/artist-documentation/project-details-form). Once you have completed the form, navigate to "Test Project" and click the "Test Project" button. This will start the test, and show the testing terminal that displays the test progress, results, and any errors that may occur.
 ### Understanding the Testing Process
 The following is tested:
 1. Deployment of your project's smart contract.
