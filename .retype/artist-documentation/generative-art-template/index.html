@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.789780011088">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791402678306">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -11,31 +11,31 @@
     <!-- Primary Meta Tags -->
     <title>Generative Art Template</title>
     <meta name="title" content="Generative Art Template">
-    <meta name="description" content="When creating a generative art project that you want to release on 256ART it’s recommended to use the below template as a starting point.">
+    <meta name="description" content="When creating a generative artwork that you want to release on 256ART it’s recommended to use the below template as a starting point.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.256art.com/artist-documentation/generative-art-template/">
+    <link rel="canonical" href="https://docs.256.art/artist-documentation/generative-art-template/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.256art.com/artist-documentation/generative-art-template/">
+    <meta property="og:url" content="https://docs.256.art/artist-documentation/generative-art-template/">
     <meta property="og:title" content="Generative Art Template">
-    <meta property="og:description" content="When creating a generative art project that you want to release on 256ART it’s recommended to use the below template as a starting point.">
+    <meta property="og:description" content="When creating a generative artwork that you want to release on 256ART it’s recommended to use the below template as a starting point.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.256art.com/artist-documentation/generative-art-template/">
+    <meta property="twitter:url" content="https://docs.256.art/artist-documentation/generative-art-template/">
     <meta property="twitter:title" content="Generative Art Template">
-    <meta property="twitter:description" content="When creating a generative art project that you want to release on 256ART it’s recommended to use the below template as a starting point.">
+    <meta property="twitter:description" content="When creating a generative artwork that you want to release on 256ART it’s recommended to use the below template as a starting point.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.789780011088" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.791402678306" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.789780011088" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791402678306" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.789780011088" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.789780011088" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791402678306" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791402678306" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -170,7 +170,7 @@
         <span>Generative Art Template</span>
     </h1>
 </doc-anchor-target>
-<p>When creating a generative art project that you want to release on 256ART it’s recommended to use the below template as a starting point. With 256ART we simplify the development process compared to other platforms by requiring only one artwork.js file (for rendering your art) and a simple traits.json file for defining traits. Our template also emulates everything exactly the same ways as it would be if deployed live on the Ethereum mainnet.</p>
+<p>When creating a generative artwork that you want to release on 256ART it’s recommended to use the below template as a starting point. With 256ART we simplify the development process compared to other platforms by requiring only one artwork.js file (for rendering your art) and a simple traits.json file for defining traits. Our template also emulates everything exactly the same ways as it would be if deployed live on the Ethereum or Base mainnet.</p>
 <doc-anchor-target id="random-class">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#random-class">#</doc-anchor-trigger>
@@ -253,10 +253,10 @@ function draw(){
     </h3>
 </doc-anchor-target>
 <p><a href="https://github.com/Martibis/256ART-generative-art-template">https://github.com/Martibis/256ART-generative-art-template</a></p>
-<doc-anchor-target id="using-the-template-project">
+<doc-anchor-target id="using-the-template-artwork">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#using-the-template-project">#</doc-anchor-trigger>
-        <span>Using the Template Project</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#using-the-template-artwork">#</doc-anchor-trigger>
+        <span>Using the Template Artwork</span>
     </h3>
 </doc-anchor-target>
 <p>Clone or download the <a href="https://github.com/Martibis/256ART-generative-art-template">256ART Generative Art Template repository</a> to begin. This template provides a starting point for creating generative art that can be released fully in-chain via 256ART. The main files you will be working with are:</p>
@@ -272,12 +272,14 @@ function draw(){
     </h3>
 </doc-anchor-target>
 <p>Modify the <code v-pre>artwork.js</code> / <code v-pre>artwork-p5.js</code> file to implement your desired artwork. Make sure the output is dimension agnostic, meaning it scales seamlessly to any dimension. Define a default dimension and create a multiplier to scale coordinates or sizes relative to the canvas dimensions.</p>
-<p>Modify the <code v-pre>traits.json</code> file for the traits for your generative artwork. Keep in mind that <code v-pre>traits.json</code> is only for the traits you would like to store on the Ethereum blockchain. These traits cannot depend on the values of other traits.</p>
-<p>Access the traits defined in <code v-pre>traits.json</code> from <code v-pre>artwork.js</code> / <code v-pre>artwork-p5.js</code>  using the inputData object. For example, if you defined a trait for color in traits.json, you could access this trait in your code like this:</p>
+<p>Modify the <code v-pre>traits.json</code> file for the traits for your generative artwork. Keep in mind that <code v-pre>traits.json</code> is only for the traits you would like to store on the blockchain. These traits cannot depend on the values of other traits.</p>
+<p>Access the traits defined in <code v-pre>traits.json</code> from <code v-pre>artwork.js</code> / <code v-pre>artwork-p5.js</code>  using the inputData object. For example, if you defined a trait for &quot;Paint Color&quot; in traits.json, you could access this trait value in your code like this:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">function draw() {
-  let color = inputData.color; // Access the color trait defined in traits.json
-  // Add code for creating generative art using the color trait...
+    let color = inputData[&quot;Paint Color&quot;].value; // Access the Paint Color trait value defined in traits.json
+
+    // Example usage: Set the background color using the Paint Color value
+    background(color);
 }</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="available-libraries">
@@ -292,6 +294,149 @@ function draw(){
 <li>Tone.js (version unknown)</li>
 <li>threejs v0.147.0</li>
 </ul>
+<doc-anchor-target id="image-preview-generation-for-256art">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#image-preview-generation-for-256art">#</doc-anchor-trigger>
+        <span>Image Preview Generation for 256ART</span>
+    </h3>
+</doc-anchor-target>
+<p>To allow 256ART to generate image previews of your generative artwork for marketplaces, digital galleries, and other front-ends, you need to set the <code v-pre>window.rendered</code> property equal to the <code v-pre>canvas</code> object when the work is fully rendered. This way, 256ART can capture the generated canvas, create an image preview, and store it as part of the tokenURI in the ERC721 smart contract under the &quot;image&quot; property.</p>
+<p>Make sure to add the following line of code in your <code v-pre>artwork.js</code> / <code v-pre>artwork-p5.js</code> file once the artwork is completely rendered:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">window.rendered = canvas;</code></pre>
+</doc-codeblock></div>
+<p>For example, in a p5js sketch, you could add the <code v-pre>window.rendered = c.canvas;</code> line at the end of the <code v-pre>draw()</code> function after the artwork has been fully rendered:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">let c;
+function setup(){
+  // Create your canvas
+  c = createCanvas(width, height);
+}
+function draw() {
+  // Add code for creating generative art here...
+
+  // Set window.rendered to the canvas object when artwork is fully rendered
+  window.rendered = c.canvas;
+}</code></pre>
+</doc-codeblock></div>
+<p>By setting the <code v-pre>window.rendered</code> property, you are providing 256ART with a signal to capture the rendered canvas and generate an image preview. Providing image previews is needed for front-ends as they may not be able to render multiple &quot;live rendering&quot; of the art script, especially when the artworks are resource-intensive. The image previews make it easier for front-ends to display your generative art without the performance overhead of rendering the artwork live.</p>
+<doc-anchor-target id="batch-artwork-generator">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#batch-artwork-generator">#</doc-anchor-trigger>
+        <span>Batch Artwork Generator</span>
+    </h3>
+</doc-anchor-target>
+<p>When your <code v-pre>artwork-p5.js</code> or <code v-pre>artwork.js</code> and your <code v-pre>traits.json</code> are completed, you can use the batch artwork generator for testing purposes. The <strong>Batch Artwork Generator</strong> tool streamlines the creation of multiple previews. It allows you to specify the number of previews and their dimensions, generates them efficiently, and provides an option to download all images as a ZIP file.</p>
+<doc-anchor-target id="features">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#features">#</doc-anchor-trigger>
+        <span>Features</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Batch Generation:</strong> Create multiple artworks in one go.</li>
+<li><strong>Customizable Image Size:</strong> Define the width and height for each image.</li>
+<li><strong>Progress Monitoring:</strong> Visual progress bar to track generation.</li>
+<li><strong>Download as ZIP:</strong> Easily download all generated images together.</li>
+</ul>
+<doc-anchor-target id="how-to-use">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-use">#</doc-anchor-trigger>
+        <span>How to Use</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><p><strong>Open the Generator:</strong></p>
+<ul>
+<li>Navigate to <code v-pre>batch-generator.html</code> in your browser. Ensure it&#x27;s served from a local server.</li>
+</ul>
+</li>
+<li><p><strong>Configure Parameters:</strong></p>
+<ul>
+<li><strong>Batch Size:</strong> Enter the number of artworks you wish to generate.</li>
+<li><strong>Image Size:</strong> Specify the desired size in pixels.</li>
+</ul>
+</li>
+<li><p><strong>Start Generation:</strong></p>
+<ul>
+<li>Click the <strong>Start Batch</strong> button. The progress bar will indicate the generation status.</li>
+</ul>
+</li>
+<li><p><strong>Download Images:</strong></p>
+<ul>
+<li>Once completed, click the <strong>Download All as ZIP</strong> button to download all generated artworks.</li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="creating-dynamic-artworks">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#creating-dynamic-artworks">#</doc-anchor-trigger>
+        <span>Creating Dynamic Artworks</span>
+    </h3>
+</doc-anchor-target>
+<p>With 256ART exposing a variety of blockchain parameters through the <code v-pre>inputData</code> object, you can create generative artworks that respond to on-chain events and states. This allows your artwork to evolve based on actions such as transfers, sales, or changes in an owner&#x27;s ETH balance. Below, we&#x27;ll explore how to utilize these parameters to add dynamic behavior to your generative art.</p>
+<doc-anchor-target id="available-blockchain-parameters">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#available-blockchain-parameters">#</doc-anchor-trigger>
+        <span>Available Blockchain Parameters</span>
+    </h4>
+</doc-anchor-target>
+<p>The following blockchain parameters are available in <code v-pre>inputData</code>:</p>
+<ul>
+<li><code v-pre>ownerOfPiece</code>: The hexadecimal address of the current owner of the token.</li>
+<li><code v-pre>blockHash</code>: The hash of the previous block.</li>
+<li><code v-pre>blockNumber</code>: The current block number.</li>
+<li><code v-pre>blockTimestamp</code>: The timestamp of the current block.</li>
+<li><code v-pre>blockBaseFee</code>: The base fee of the current block.</li>
+<li><code v-pre>blockCoinbase</code>: The hexadecimal address of the block miner.</li>
+<li><code v-pre>prevrandao</code>: The previous randomness value from the block.</li>
+<li><code v-pre>totalSupply</code>: The total number of tokens minted.</li>
+<li><code v-pre>balanceOfOwner</code>: The number of tokens owned by the current owner.</li>
+<li><code v-pre>ethBalanceOfOwner</code>: The ETH balance of the current owner.</li>
+</ul>
+<p>These parameters can be accessed in your <code v-pre>artwork.js</code> or <code v-pre>artwork-p5.js</code> file via the <code v-pre>inputData</code> object. Below are examples of how to incorporate these parameters into your artwork.</p>
+<doc-anchor-target id="accessing-blockchain-parameters">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#accessing-blockchain-parameters">#</doc-anchor-trigger>
+        <span>Accessing Blockchain Parameters</span>
+    </h4>
+</doc-anchor-target>
+<p>Here&#x27;s how you can access and utilize the blockchain parameters within your artwork code:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">function draw() {
+    // Accessing blockchain parameters from inputData
+    const ownerAddress = inputData[&quot;ownerOfPiece&quot;];
+    const blockHash = inputData[&quot;blockHash&quot;];
+    const blockNumber = parseInt(inputData[&quot;blockNumber&quot;]);
+    const blockTimestamp = parseInt(inputData[&quot;blockTimestamp&quot;]);
+    const blockBaseFee = parseFloat(inputData[&quot;blockBaseFee&quot;]);
+    const blockCoinbase = inputData[&quot;blockCoinbase&quot;];
+    const prevrandao = parseInt(inputData[&quot;prevrandao&quot;]);
+    const totalSupply = parseInt(inputData[&quot;totalSupply&quot;]);
+    const balanceOfOwner = parseInt(inputData[&quot;balanceOfOwner&quot;]);
+    const ethBalanceOfOwner = parseFloat(inputData[&quot;ethBalanceOfOwner&quot;]);
+
+    // Example usage: Change background color based on ETH balance
+    const colorIntensity = map(ethBalanceOfOwner, 0, 100, 0, 255);
+    background(colorIntensity, 100, 150);
+
+    // Example usage: Display owner address as part of the artwork
+    fill(255);
+    textSize(w * 0.02);
+    text(`Owner: ${ownerAddress}`, 10, h - 20);
+
+    // Example usage: Animate elements based on block number
+    let angle = (blockNumber % 360) * (PI / 180);
+    push();
+    translate(w / 2, h / 2);
+    rotate(angle);
+    // Draw a rotating shape
+    ellipse(0, 0, w * 0.3, h * 0.3);
+    pop();
+
+    // Additional dynamic elements can be added using other parameters
+}</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -311,10 +456,10 @@ function draw(){
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../artist-documentation/project-details-form/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../artist-documentation/artwork-details-form/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Project Details Form</span>
+                                                <span class="block mt-1">Artwork Details Form</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>

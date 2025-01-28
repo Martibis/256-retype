@@ -1,12 +1,15 @@
 {
   "version": "3.6.0",
-  "created": "2025-01-09T23:20:12Z",
+  "created": "2025-01-28T18:04:40Z",
   "files": [
     {
       "path": ".nojekyll"
     },
     {
       "path": "404.html"
+    },
+    {
+      "path": "artist-documentation\\artwork-details-form\\index.html"
     },
     {
       "path": "artist-documentation\\generative-art-template\\index.html"
@@ -18,10 +21,18 @@
       "path": "artist-documentation\\index.html"
     },
     {
-      "path": "artist-documentation\\project-details-form\\index.html"
+      "path": "artist-documentation\\opensea-enforcing-royalties\\index.html"
     },
     {
-      "path": "artist-documentation\\releasing-your-project\\index.html"
+      "path": "artist-documentation\\project-details-form\\index.html",
+      "old": true
+    },
+    {
+      "path": "artist-documentation\\releasing-your-artwork\\index.html"
+    },
+    {
+      "path": "artist-documentation\\releasing-your-project\\index.html",
+      "old": true
     },
     {
       "path": "artist-documentation\\testing-your-project\\index.html"
