@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://docs.256art.com/sitemap.xml.gz
+Sitemap: https://docs.256.art/sitemap.xml.gz
