@@ -10,15 +10,15 @@ Purchasing art on 256ART involves interacting with a smart contract, via the "Mi
 
 1. Navigate to the art series you are interested in.
 2. Click the "Mint" button.
-5. Your wallet will then ask you to confirm the transaction.
+3. Your wallet will then ask you to confirm the transaction.
 
 Once the transaction is confirmed, congratulations! You've just purchased your artwork(s) and can immediately view them from the blockchain.
 
 ### How to Get the Art Live from Chain
 
-If you're interested in viewing the live version of your artwork directly from the blockchain, you can do so using Etherscan / Basescan:
+If you're interested in viewing the live version of your artwork directly from the blockchain, you can do so using Etherscan / Basescan / Shapescan:
 
-1. Go to the contract of the artwork on Etherscan / Basescan
+1. Go to the contract of the artwork on Etherscan / Basescan / Shapescan
 2. Access the `tokenHtml` function.
 3. Enter your `tokenId`.
 4. The output will be the base64 encoded live HTML of your artwork as it exists on-chain.

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791402678306">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795314031909">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.791402678306" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.795314031909" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791402678306" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795314031909" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791402678306" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791402678306" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795314031909" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.795314031909" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -170,7 +170,7 @@
         <span>Generative Art Template</span>
     </h1>
 </doc-anchor-target>
-<p>When creating a generative artwork that you want to release on 256ART it’s recommended to use the below template as a starting point. With 256ART we simplify the development process compared to other platforms by requiring only one artwork.js file (for rendering your art) and a simple traits.json file for defining traits. Our template also emulates everything exactly the same ways as it would be if deployed live on the Ethereum or Base mainnet.</p>
+<p>When creating a generative artwork that you want to release on 256ART it’s recommended to use the below template as a starting point. With 256ART we simplify the development process compared to other platforms by requiring only one artwork.js file (for rendering your art) and a simple traits.json file for defining traits. Our template also emulates everything exactly the same ways as it would be if deployed live on the Ethereum, Base or Shape mainnet.</p>
 <doc-anchor-target id="random-class">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#random-class">#</doc-anchor-trigger>
@@ -180,35 +180,44 @@
 <p>We very strongly recommend using our Random class, which is an improved version of the Random class provided by ArtBlocks. You can remove functionality you don&#x27;t need.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">class Random {
-    constructor() {
-        let offset = 0;
-        for (let i = 2; i &lt; 66; i += 8) offset += parseInt(inputData.hash.substr(i, 8), 16);
-        offset %= 7;
+  constructor() {
+    let offset = 0;
+    for (let i = 2; i &lt; 66; i += 8)
+      offset += parseInt(inputData.hash.substr(i, 8), 16);
+    offset %= 7;
 
-        const p = pos =&gt; parseInt(inputData.hash.substr((pos + offset), 8), 16);
-        let a = p(2) ^ p(34), b = p(10) ^ p(42), c = p(18) ^ p(50), d = p(26) ^ p(58) ^ p(2 + (8 - offset));
+    const p = (pos) =&gt; parseInt(inputData.hash.substr(pos + offset, 8), 16);
+    let a = p(2) ^ p(34),
+      b = p(10) ^ p(42),
+      c = p(18) ^ p(50),
+      d = p(26) ^ p(58) ^ p(2 + (8 - offset));
 
-        this.r = () =&gt; {
-            a |= 0; b |= 0; c |= 0; d |= 0;
-            let t = (((a + b) | 0) + d) | 0;
-            d = (d + 1) | 0; a = b ^ (b &gt;&gt;&gt; 9);
-            b = (c + (c &lt;&lt; 3)) | 0; c = (c &lt;&lt; 21) | (c &gt;&gt;&gt; 11);
-            c = (c + t) | 0;
-            return (t &gt;&gt;&gt; 0) / 4294967296;
-        };
-        // 256 warmup cycles
-        for (let i = 0; i &lt; 256; i++) this.r();
-    }
-    // Random decimal [0, 1)
-    random_dec = () =&gt; this.r();
-    // Random number [a, b)
-    random_num = (a, b) =&gt; a + (b - a) * this.random_dec();
-    // Random integer [a, b] (a &lt; b required)
-    random_int = (a, b) =&gt; Math.floor(this.random_num(a, b + 1));
-    // Random boolean (p = true probability)
-    random_bool = (p) =&gt; this.random_dec() &lt; p;
-    // Choose random item from array
-    random_choice = (list) =&gt; list[this.random_int(0, list.length - 1)];
+    this.r = () =&gt; {
+      a |= 0;
+      b |= 0;
+      c |= 0;
+      d |= 0;
+      let t = (((a + b) | 0) + d) | 0;
+      d = (d + 1) | 0;
+      a = b ^ (b &gt;&gt;&gt; 9);
+      b = (c + (c &lt;&lt; 3)) | 0;
+      c = (c &lt;&lt; 21) | (c &gt;&gt;&gt; 11);
+      c = (c + t) | 0;
+      return (t &gt;&gt;&gt; 0) / 4294967296;
+    };
+    // 256 warmup cycles
+    for (let i = 0; i &lt; 256; i++) this.r();
+  }
+  // Random decimal [0, 1)
+  random_dec = () =&gt; this.r();
+  // Random number [a, b)
+  random_num = (a, b) =&gt; a + (b - a) * this.random_dec();
+  // Random integer [a, b] (a &lt; b required)
+  random_int = (a, b) =&gt; Math.floor(this.random_num(a, b + 1));
+  // Random boolean (p = true probability)
+  random_bool = (p) =&gt; this.random_dec() &lt; p;
+  // Choose random item from array
+  random_choice = (list) =&gt; list[this.random_int(0, list.length - 1)];
 }</code></pre>
 </doc-codeblock></div>
 <p>Shoutout to <a href="https://twitter.com/piterpasma">Piter Pasma</a> for providing feedback on the PRNG.</p>
@@ -222,28 +231,27 @@
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">let c = document.createElement(&quot;canvas&quot;); // Create canvas
 function setup() {
+  let dp = window.devicePixelRatio; // Get device pixel ratio; not needed in p5js
+  let ih = window.innerHeight * dp; // Get window innerHeight
+  let iw = window.innerWidth * dp; // Get window innerWidth
 
-    let dp = window.devicePixelRatio; // Get device pixel ratio; not needed in p5js
-    let ih = window.innerHeight * dp; // Get window innerHeight
-    let iw = window.innerWidth * dp; // Get window innerWidth
+  // Scale correctly
+  if (ih / iw &lt; aspectRatio) {
+    c.height = ih;
+    c.width = ih / aspectRatio;
+  } else {
+    c.width = iw;
+    c.height = iw * aspectRatio;
+  }
 
-    // Scale correctly
-    if (ih / iw &lt; aspectRatio) {
-        c.height = ih;
-        c.width = ih / aspectRatio;
-    } else {
-        c.width = iw;
-        c.height = iw * aspectRatio;
-    }
-
-    document.body.appendChild(c); // Add canvas to body
+  document.body.appendChild(c); // Add canvas to body
 }
 
-function draw(){
-    let w = c.width; // Width of canvas
-    let h = c.height; // Height of canvas
-    
-    let strokeWidth = w * 0.001; // Scale using the canvas width
+function draw() {
+  let w = c.width; // Width of canvas
+  let h = c.height; // Height of canvas
+
+  let strokeWidth = w * 0.001; // Scale using the canvas width
 }</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="github-repository">
@@ -273,13 +281,13 @@ function draw(){
 </doc-anchor-target>
 <p>Modify the <code v-pre>artwork.js</code> / <code v-pre>artwork-p5.js</code> file to implement your desired artwork. Make sure the output is dimension agnostic, meaning it scales seamlessly to any dimension. Define a default dimension and create a multiplier to scale coordinates or sizes relative to the canvas dimensions.</p>
 <p>Modify the <code v-pre>traits.json</code> file for the traits for your generative artwork. Keep in mind that <code v-pre>traits.json</code> is only for the traits you would like to store on the blockchain. These traits cannot depend on the values of other traits.</p>
-<p>Access the traits defined in <code v-pre>traits.json</code> from <code v-pre>artwork.js</code> / <code v-pre>artwork-p5.js</code>  using the inputData object. For example, if you defined a trait for &quot;Paint Color&quot; in traits.json, you could access this trait value in your code like this:</p>
+<p>Access the traits defined in <code v-pre>traits.json</code> from <code v-pre>artwork.js</code> / <code v-pre>artwork-p5.js</code> using the inputData object. For example, if you defined a trait for &quot;Paint Color&quot; in traits.json, you could access this trait value in your code like this:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">function draw() {
-    let color = inputData[&quot;Paint Color&quot;].value; // Access the Paint Color trait value defined in traits.json
+  let color = inputData[&quot;Paint Color&quot;].value; // Access the Paint Color trait value defined in traits.json
 
-    // Example usage: Set the background color using the Paint Color value
-    background(color);
+  // Example usage: Set the background color using the Paint Color value
+  background(color);
 }</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="available-libraries">
@@ -308,7 +316,7 @@ function draw(){
 <p>For example, in a p5js sketch, you could add the <code v-pre>window.rendered = c.canvas;</code> line at the end of the <code v-pre>draw()</code> function after the artwork has been fully rendered:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">let c;
-function setup(){
+function setup() {
   // Create your canvas
   c = createCanvas(width, height);
 }
@@ -404,37 +412,37 @@ function draw() {
 <p>Here&#x27;s how you can access and utilize the blockchain parameters within your artwork code:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">function draw() {
-    // Accessing blockchain parameters from inputData
-    const ownerAddress = inputData[&quot;ownerOfPiece&quot;];
-    const blockHash = inputData[&quot;blockHash&quot;];
-    const blockNumber = parseInt(inputData[&quot;blockNumber&quot;]);
-    const blockTimestamp = parseInt(inputData[&quot;blockTimestamp&quot;]);
-    const blockBaseFee = parseFloat(inputData[&quot;blockBaseFee&quot;]);
-    const blockCoinbase = inputData[&quot;blockCoinbase&quot;];
-    const prevrandao = parseInt(inputData[&quot;prevrandao&quot;]);
-    const totalSupply = parseInt(inputData[&quot;totalSupply&quot;]);
-    const balanceOfOwner = parseInt(inputData[&quot;balanceOfOwner&quot;]);
-    const ethBalanceOfOwner = parseFloat(inputData[&quot;ethBalanceOfOwner&quot;]);
+  // Accessing blockchain parameters from inputData
+  const ownerAddress = inputData[&quot;ownerOfPiece&quot;];
+  const blockHash = inputData[&quot;blockHash&quot;];
+  const blockNumber = parseInt(inputData[&quot;blockNumber&quot;]);
+  const blockTimestamp = parseInt(inputData[&quot;blockTimestamp&quot;]);
+  const blockBaseFee = parseFloat(inputData[&quot;blockBaseFee&quot;]);
+  const blockCoinbase = inputData[&quot;blockCoinbase&quot;];
+  const prevrandao = parseInt(inputData[&quot;prevrandao&quot;]);
+  const totalSupply = parseInt(inputData[&quot;totalSupply&quot;]);
+  const balanceOfOwner = parseInt(inputData[&quot;balanceOfOwner&quot;]);
+  const ethBalanceOfOwner = parseFloat(inputData[&quot;ethBalanceOfOwner&quot;]);
 
-    // Example usage: Change background color based on ETH balance
-    const colorIntensity = map(ethBalanceOfOwner, 0, 100, 0, 255);
-    background(colorIntensity, 100, 150);
+  // Example usage: Change background color based on ETH balance
+  const colorIntensity = map(ethBalanceOfOwner, 0, 100, 0, 255);
+  background(colorIntensity, 100, 150);
 
-    // Example usage: Display owner address as part of the artwork
-    fill(255);
-    textSize(w * 0.02);
-    text(`Owner: ${ownerAddress}`, 10, h - 20);
+  // Example usage: Display owner address as part of the artwork
+  fill(255);
+  textSize(w * 0.02);
+  text(`Owner: ${ownerAddress}`, 10, h - 20);
 
-    // Example usage: Animate elements based on block number
-    let angle = (blockNumber % 360) * (PI / 180);
-    push();
-    translate(w / 2, h / 2);
-    rotate(angle);
-    // Draw a rotating shape
-    ellipse(0, 0, w * 0.3, h * 0.3);
-    pop();
+  // Example usage: Animate elements based on block number
+  let angle = (blockNumber % 360) * (PI / 180);
+  push();
+  translate(w / 2, h / 2);
+  rotate(angle);
+  // Draw a rotating shape
+  ellipse(0, 0, w * 0.3, h * 0.3);
+  pop();
 
-    // Additional dynamic elements can be added using other parameters
+  // Additional dynamic elements can be added using other parameters
 }</code></pre>
 </doc-codeblock></div>
 
