@@ -6,38 +6,74 @@ order: 80
 
 ### Testing for Release
 
-Before you release your project, it has to be tested, this is to ensure that everything works as intended before deploying to the Ethereum, Base or Shape mainnet. We have built a testing feature that simplifies this process, allowing you to run tests on an emulation of the Sepolia network without incurring gas fees. This section will guide you through the testing process, explains how it works behind the scenes and will go into the benefits of using it.
+Every project must pass the Artist Portal test before it can be released on Ethereum, Base, or Shape. The test deploys and mints the project in a controlled Sepolia-based environment, allowing you to inspect the contract output without paying production-network gas.
+
+Before starting:
+
+- complete and save the [Artwork Details Form](/artist-documentation/artwork-details-form/);
+- run the artwork locally across many seeds and dimensions;
+- validate and minify `artwork.js` and `traits.json`;
+- confirm every selected library and version;
+- check `window.rendered` preview signaling; and
+- review names, descriptions, license, tags, supply, sale, seed, allowlist, owner, payout, and royalty settings.
 
 ### How Does It Work Behind the Scenes?
 
-We use Hardhat, an Ethereum development environment, to run tests on top of an archival node on our back-end. This approach enables us to simulate how your project would function on the Ethereum, Base or Shape mainnet without paying gas fees. As a result, we can perform tests at no cost while still simulating the actual network conditions.
+256ART uses Hardhat, an Ethereum development environment, with blockchain state available to its backend test system. The process deploys the project's contracts, mints a token, and calls the same contract interfaces used to build metadata and live artwork.
+
+This is a close functional test, not a guarantee of identical mainnet behavior. Production gas prices, block data, third-party marketplace behavior, browser performance, and future network conditions can differ. Treat the result as one required layer of testing rather than a substitute for reviewing your code and configuration.
 
 ### Initiating the Test
 
-To initiate the testing process, go to the [artist portal](https://256.art/artistportal) and click on one of your unreleased projects. Make sure the project details form is filled out [Project Details Form](/artist-documentation/project-details-form). Once you have completed the form, navigate to "Test Project" and click the "Test Project" button. This will start the test, and show the testing terminal that displays the test progress, results, and any errors that may occur.
+1. Open the [Artist Portal](https://256.art/artistportal).
+2. Select the unreleased project.
+3. Confirm that its [Artwork Details Form](/artist-documentation/artwork-details-form/) is complete and saved.
+4. Open **Test Project**.
+5. Select **Test Project** to begin.
+6. Keep the testing terminal open and monitor each step.
+
+Do not edit the project while a test is running. If you change the artwork file, traits, libraries, or contract configuration after a successful test, run the test again.
 
 ### Understanding the Testing Process
 
-The following is tested:
+The test checks:
 
-1. Deployment of your project's smart contract.
-2. Minting of one artwork.
-3. Retrieving the tokenURI for the minted artwork.
-4. Displaying the metadata, live view, and image previews of the minted artwork.
+1. deployment of the project's smart contracts;
+2. minting of a test token;
+3. retrieval of the token's `tokenURI`;
+4. construction of the metadata and on-chain live view; and
+5. generation and display of static image previews.
+
+It also provides deployment-cost information based on the tested contracts. Treat this as an estimate: the amount paid on release depends on the selected chain and gas conditions when each transaction is submitted.
 
 ### Monitoring the Test Progress
 
-As the test progresses, you will receive real-time updates through the testing interface. The interface will display terminal messages, success messages, error messages, and other relevant information as the test proceeds. Keep an eye on these messages to monitor the progress and identify any issues that may arise.
+The terminal displays progress, successes, warnings, and errors. Read the first relevant error rather than relying only on the final status; later failures can be consequences of an earlier problem.
+
+Common areas to inspect include invalid JSON, incorrect trait weights or value types, missing libraries, JavaScript errors, a render that never sets `window.rendered`, timeouts, blank previews, file-size limits, and insufficient contract-size headroom.
+
+If a message is unclear, save the complete output before restarting and share it with the 256ART team through [Discord](https://discord.gg/wpzVRdcjns).
 
 ### Reviewing the Test Results
 
-Once the test is complete, you can review the results to ensure that the metadata and visual elements of the minted artwork are correct and match your expectations. If the test identifies any issues, you can address them before releasing your project. If the test is successful and you are satisfied with the results, you can proceed to release your project by clicking the "I declare results are as expected" button.
+After a successful run, review the result as if you were a collector:
+
+- confirm the name, artist, description, license, token ID, and traits;
+- open the live view and check the intended rendering, animation, interaction, and sound;
+- inspect the static preview for cropping, blank areas, and completion;
+- confirm that the same seed gives the same base output;
+- for dynamic work, test the expected state changes and fallback behavior; and
+- review the deployment-cost estimate and contract summary.
+
+If anything is wrong, return to the source or form, correct it, and run a new test. When the output is correct, select **I declare results are as expected**. This declaration records your approval; it does not replace your responsibility to verify the release settings.
 
 ### Benefits of Using Our Testing Feature
 
-By using our built-in testing feature, you can:
+The built-in test lets you:
 
-- Test your project in a real-world environment without incurring gas fees.
-- Easily identify potential issues or improvements.
-- Obtain accurate cost estimates for deploying the project
-- Verify that the metadata, live view, and image previews of a minted artwork are correct.
+- exercise the complete deployment and mint path without production gas;
+- catch contract, metadata, rendering, and preview errors before release;
+- estimate deployment cost; and
+- review the collector-facing result in one workflow.
+
+A successful test is required, but it does not make a deployed contract reversible. Continue with [Releasing Your Artwork](/artist-documentation/releasing-your-artwork/) and complete the final review before signing any production transaction.

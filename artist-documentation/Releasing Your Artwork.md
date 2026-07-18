@@ -2,116 +2,121 @@
 order: 75
 ---
 # Releasing Your Artwork
-Releasing your artwork is the final step before going live with your artwork. It involves deploying your smart contracts and setting up the details for your artwork launch.
+
+Releasing deploys the production smart contracts and schedules the mint. Deployment creates permanent on-chain records and costs gas, so complete the [Artist Portal test](/artist-documentation/testing-your-project/) and review every setting before signing.
+
+Use the wallet intended to submit the deployment transactions, switch it to the selected chain, and make sure it has enough ETH for the estimated cost plus a margin for gas changes. Ethereum, Base, and Shape are separate networks.
 
 ### Information Verification
-In the release step, you will see a brief overview of your artwork details. Please carefully verify this information, if all is correct continue.
+
+The release step shows a summary of the saved artwork and contract configuration. Compare it with your source files and release plan.
+
+Check at minimum:
+
+- artwork name, artist, descriptions, license, and tags;
+- target chain;
+- `artwork.js`, `traits.json`, and selected libraries;
+- sales and seeding mechanisms;
+- collection size or Open Edition settings;
+- reserve, public, and allowlist prices;
+- allowlist and per-address limit;
+- owner and every payout address;
+- primary and secondary revenue percentages; and
+- royalty percentage and enforcement choice.
+
+Do not continue if an address is truncated and you have not verified the full value. If you change a tested file or setting, save it and rerun the required test before release.
 
 ### Deploying Your Smart Contracts
-The next step is to deploy your smart contracts. Depending on the size of your ArtScript, there could be one or more smart contracts for it:
-- **Art Info Contract**: This contract holds crucial information about your artwork, such as your name, the license of your work, and a brief description of your artwork.
-- **ArtScript Contract(s)**: These contracts contain your ArtScript. To significantly reduce the cost of deployment, we gzip and base64 encode your ArtScript before deploying it on the blockchain. During the live view from the chain, we gunzip the ArtScript and inject it into the HTML page. Due to a size limit of 24KB of bytecode per smart contract, your ArtScript may be split across multiple contracts.
-- **Royalty Splitter Contract**: This contract ensures that you receive your fair share from secondary sales royalties.
+
+256ART separates release data across contracts. Depending on the release and script size, you may deploy:
+
+- **Art Info Contract**: stores core information such as the artist, artwork name, license, and short description.
+- **ArtScript Contract(s)**: stores the compressed artwork code. 256ART gzip-compresses and encodes the script, then reconstructs it for the live HTML. Because Ethereum, Base, and Shape limit the deployed code size of one contract, a larger script may require more than one ArtScript contract.
+- **Royalty Splitter Contract**: distributes paid secondary royalties according to the configured secondary split.
+- **Main collection contract**: creates and manages the ERC-721 tokens, sale, metadata, and live-render interfaces.
+
+The portal may request multiple wallet transactions. For each one:
+
+1. confirm that you are on the intended network;
+2. verify that the request comes from `256.art`;
+3. review the value and gas estimate;
+4. submit it once; and
+5. wait for confirmation before continuing.
+
+Do not close the workflow or submit a duplicate transaction merely because confirmation is slow. Check the pending transaction in your wallet or block explorer.
 
 ### Selecting Your Release Dates
-With these smart contracts successfully deployed, the next step is setting up your release dates.
-- **Release Date**: This is the date your artwork will be publicly available for minting.
-- **Allow List Date**: If you've created an allow list of addresses that can mint your artwork before the general public, you'll need to specify the allowlist minting date. Remember, the allow list mint closes as soon as the public mint begins.
-- **End Date**: If your art release is an open edition, you can also set an end date.
 
-Once you've confirmed these dates, you can click on 'Release Artwork'. If all goes as planned, your final contract will be deployed, marking the official launch of your artwork. You will then be redirected to your artwork's page.
+After the supporting contracts are deployed, configure the sale schedule:
+
+- **Release Date**: when the public mint opens.
+- **Allow List Date**: when approved addresses can begin minting. The allowlist phase ends when the public mint opens.
+- **End Date**: when an Open Edition closes.
+
+Check the timezone displayed by the portal and communicate dates with an explicit timezone. Make sure the allowlist date precedes the public release and that an Open Edition end date follows it.
+
+Select **Release Artwork** only after this final check. The portal deploys the main collection contract and then redirects to the artwork page.
+
+Save the collection address and transaction links. On the artwork page, verify the chain, status, schedule, prices, supply, and collector-facing text. If the public mint is scheduled for later, the contract is deployed even though minting is not yet open.
 
 ### Post-Release
-After releasing your artwork, there are several post-release functions that you can perform. These include:
-- **Artist Mint**: mint tokens to yourself or friends for free (only when no dutch auction is in progress and the max supply has not been reached).
 
-- **Withdrawing Funds from the Main Contract**: After your work is minted and sold, the funds are stored in the main contract. You can withdraw these funds.
-  
-- **Withdrawing Funds from the Royalty Splitter Contract**: If secondary sales occur and royalties are paid, these royalties are sent to the royalty splitter contract. You can withdraw these funds.
+The released contract may expose owner-only administrative functions. Available functions vary by contract generation and sale type.
 
-- **Updating the Max Supply**: In the event that a series doesn't mint out, you can adjust the max supply to a lower value (though it can't be less than the current token supply).
+- **Artist Mint**: mint without the public mint price to an address, where supported. This is unavailable while a Fair Dutch Auction is active and cannot exceed the maximum supply. The transaction still costs gas.
+- **Withdraw primary funds**: distribute sale proceeds held by the main contract.
+- **Withdraw secondary royalties**: distribute paid royalties held by the Royalty Splitter.
+- **Reduce max supply**: lower an unsold collection's maximum where supported. It cannot be set below the number already minted.
+- **Update image base URL**: change where static token preview images are loaded from. This affects the metadata's convenience image, not the on-chain live artwork or its seed.
+- **Update royalty information**: change supported royalty settings. Marketplace listings and enforcement configuration may also need to be refreshed.
+- **Update allowlist data**: a new address list requires a new Merkle tree and root.
+- **Update ArtScripts or ArtLibraries**: these are high-impact changes to the code used for live rendering and require compression, storage, and compatibility checks.
 
-- **Updating the Image Base URL**: You can modify the base URL for the images associated with your tokens to update or correct the artwork display. This is particularly useful if you wish to self-host your images or use IPFS hosting, ensuring that your previews remain accessible even if the platform encounters issues.
+Do not assume that every item can be changed directly or safely. In particular, allowlist, ArtScript, and ArtLibrary changes can depend on backend preparation and the exact contract. Contact the 256ART team through [Discord](https://discord.gg/wpzVRdcjns) before attempting them.
 
-- **Updating Royalty Information**:
-  - **Royalty Percentage**: Adjust the royalty percentage for secondary sales to reflect any changes in your revenue model.
-
-- **Requesting Updates to Merkle Root, ArtScripts, and ArtLibraries**:
-  - **Merkle Root**: Modifying the allowlist's Merkle Root requires backend processing to generate and verify the new Merkle Tree. 
-  - **ArtScripts and ArtLibraries**: Updating ArtScripts or ArtLibraries involves compressing, encoding, and ensuring compatibility with EthFS and other dependencies.
-
-  **_Warning:_** *These updates can be performed directly by artists through the smart contract interface, but we recommend reaching out to us for assistance.*
-
-- **Future Tools**:
-  - We are actively working on integrating tools into our platform to make managing these settings more accessible and user-friendly. Stay tuned for updates!
-
-Currently, all of these actions are performed directly through the smart contracts themselves. We're working on integrating this functionality into our front-end to make it more accessible. For the time being, we'll provide guidance on withdrawing funds from contracts and updating artwork details.
-
-**Note**: If you're unfamiliar with interacting with smart contracts or have any questions, please contact a member of the 256ART team via our [Discord](https://discord.gg/wpzVRdcjns) channel.
+Owner-only changes are blockchain transactions: they cost gas, are publicly recorded, and may affect every token. Read the contract function and parameters, simulate or verify the action where possible, and never use a write function you do not understand.
 
 ### Withdrawing Funds
 
-To withdraw funds from the main contract or the royalty splitter contract, you will need to interact directly with the smart contract on Etherscan. Here's a step-by-step guide:
+Primary funds and secondary royalties can be held in different contracts, so check and withdraw them separately.
 
-1. **Navigate to Your Contract on Etherscan**:
-   - Go to [Etherscan](https://etherscan.io/) and enter your contract's address in the search bar.
+1. Copy the relevant contract address from the Artist Portal or confirmed deployment transaction.
+2. Open it on the explorer for its chain:
+   - [Etherscan](https://etherscan.io/) for Ethereum
+   - [BaseScan](https://basescan.org/) for Base
+   - [Shapescan](https://shapescan.xyz/) for Shape
+3. Verify the address and contract name before connecting a wallet.
+4. On Etherscan or BaseScan, open **Contract** and then **Write Contract** or **Write as Proxy**. On Shapescan's Blockscout interface, open the verified **Contract** tab and use **Read/Write Contract** or **Read/Write Proxy**. If these controls are absent, stop rather than supplying a custom ABI.
+5. Connect the owner wallet and make sure it is on the correct network.
+6. Find `withdraw`, read its inputs, and submit it only on the intended main or Royalty Splitter contract.
+7. Review and confirm the wallet transaction.
+8. After confirmation, inspect the transaction's transfers and the receiving addresses.
 
-2. **Connect Your Wallet**:
-   - Ensure that the wallet connected is the one set as the owner of the contract.
-   - Click on the "Connect to Web3" button, usually found in the top right corner of the Etherscan interface.
-
-3. **Access the 'Write Contract' Tab**:
-   - Once connected, navigate to the 'Write Contract' tab to access the contract's functions.
-
-4. **Locate the 'withdraw' Function**:
-   - Scroll through the list of functions until you find the `withdraw` function.
-
-5. **Execute the Withdrawal**:
-   - Click on the `withdraw` function.
-   - Enter any required parameters if prompted (usually none for a simple withdrawal).
-   - Click the 'Write' button to initiate the transaction. This will trigger a transaction request in your connected wallet.
-
-6. **Confirm the Transaction**:
-   - Review the transaction details in your wallet.
-   - Confirm and authorize the transaction to withdraw the funds to your wallet.
-
-7. **Verify the Withdrawal**:
-   - After the transaction is confirmed on the blockchain, verify that the funds have been transferred to your wallet.
-
-Please reach out to our team via [Discord](https://discord.gg/wpzVRdcjns) if you need any assistance with this process. We're here to help!
+A withdrawal executes the configured split; it is not necessarily a transfer of the full balance to the connected wallet. If the function, contract, or expected receivers are unclear, stop and contact the 256ART team through [Discord](https://discord.gg/wpzVRdcjns).
 
 ### Updating Artwork Settings
 
-To update artwork settings such as the image base URL and royalty percentage, follow these steps:
+Use the same network-specific explorer and owner-wallet checks described above.
 
-1. **Navigate to Your Contract on Etherscan**:
-   - Go to [Etherscan](https://etherscan.io/) and enter your contract's address in the search bar.
+1. Open the verified collection contract.
+2. Review current values through **Read Contract** on Etherscan or BaseScan, or the read controls in Shapescan's **Read/Write Contract** view.
+3. Open the corresponding write interface described in the withdrawal steps above.
+4. Locate the relevant owner-only function. Depending on the contract, image and royalty setters may appear as `setImageBase` and `setRoyalty`.
+5. Confirm the expected parameter format from the verified contract source or 256ART guidance.
+6. Submit the transaction and verify the new value after confirmation.
 
-2. **Connect Your Wallet**:
-   - Ensure that the wallet connected is the one set as the owner of the contract.
-   - Click on the "Connect to Web3" button.
+For an image base URL, confirm whether the contract appends a token ID and whether the URL requires a trailing slash or filename pattern. Test several resulting preview URLs before updating it. The on-chain `animation_url` and artwork code remain separate from this static image setting.
 
-3. **Access the 'Write Contract' Tab**:
-   - Navigate to the 'Write Contract' tab to access the contract's functions.
+For royalty changes, review the Royalty Splitter and marketplace configuration as well as the collection contract. An on-chain percentage change does not guarantee that every marketplace will pay or immediately display the new value.
 
-4. **Locate the Relevant Setter Functions**:
-   - **Set Image Base URL**: Find the `setImageBase` function to update the image base URL.
-   - **Set Royalty Percentage**: Use the `setRoyalty` function to adjust the royalty percentage.
+**Important considerations:**
 
-   **_Important:_** 
-   - **Merkle Root, ArtScripts, and ArtLibraries**: These settings cannot be updated directly by artists. To request changes, please contact the 256ART team via our [Discord](https://discord.gg/wpzVRdcjns) channel.
+- **Gas**: every write requires the network's native ETH.
+- **Authorization**: only the configured owner can call owner-only functions.
+- **Immutability**: many core release values cannot be changed after deployment.
+- **Contract variation**: function names and available updates can differ between releases.
+- **Security**: use the official explorer domain and verify the contract address; block-explorer write actions are real transactions.
 
-5. **Execute the Desired Function**:
-   - Click on the function you wish to execute.
-   - Enter the necessary parameters as prompted.
-   - Click the 'Write' button to initiate the transaction.
+For Merkle root, ArtScript, ArtLibrary, or any uncertain change, contact the 256ART team through [Discord](https://discord.gg/wpzVRdcjns) before submitting a transaction.
 
-6. **Confirm the Transaction**:
-   - Review the transaction details in your wallet.
-   - Confirm and authorize the transaction.
-
-**Important Considerations**:
-- **Gas Fees**: Updating contract settings requires gas. Ensure you have sufficient ETH in your wallet to cover transaction fees.
-- **Immutability**: While many settings are adjustable, most core artwork and smartcontract parameters remain immutable post-deployment.
-
-For detailed assistance or if you encounter any issues, please contact the 256ART team via our [Discord](https://discord.gg/wpzVRdcjns) channel.
+If you plan to list the collection on OpenSea, continue with [OpenSea & Enforcing Royalties](/artist-documentation/opensea-enforcing-royalties/).

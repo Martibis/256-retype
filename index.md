@@ -5,7 +5,13 @@ icon: code
 
 # Welcome to the 256ART Docs
 
-This documentations consists of two sections:
-- **[Artist Documentation](./artist-documentation)**: if you want to understand the benefits of releasing on 256ART and how to release, this is the place for you.
+256ART is an open platform where artists release generative art that lives fully on-chain, and collectors mint unique outputs created by each artist's algorithm.
 
-- **[Learn More](./learn-more/)**: if you want to learn more about the benefits of 256ART as a collector and gain a deeper understanding behind the key concepts of the platform, this is the place for you.
+New to generative art, wallets, or blockchains? Start with **[Understanding and Navigating 256ART](/learn-more/understanding-and-navigating-256art/)**. It explains the main ideas and defines the terms used throughout these docs.
+
+Choose the path that matches what you want to do:
+
+- **[Learn More](/learn-more/)**: understand how 256ART works, collect an artwork, and use your gallery.
+- **[Artist Documentation](/artist-documentation/)**: prepare, test, and release your own generative artwork.
+
+You can also [browse artworks on 256ART](https://256.art/artworks) or go directly to the [Artist Portal](https://256.art/artistportal).

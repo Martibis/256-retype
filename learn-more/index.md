@@ -5,6 +5,12 @@ icon: book
 
 # Learn More
 
-If you want to learn more about the inner workings of 256ART and get a better overview of the key features, you've come to the right place.
+This section explains 256ART for collectors and anyone new to fully on-chain generative art.
 
-### This section is still under construction 
+Follow these pages in order:
+
+1. **[Understanding and Navigating 256ART](/learn-more/understanding-and-navigating-256art/)** explains generative art, fully on-chain storage, wallets, minting, sales, seeds, and artwork tags.
+2. **[Collecting Art on 256ART](/learn-more/collecting-art-on-256art/)** walks through preparing for and completing a mint.
+3. **[The Gallery Page](/learn-more/the-gallery-page/)** explains how to view live artwork, download high-resolution previews, and request a new preview render.
+
+Ready to explore? [Browse artworks on 256ART](https://256.art/artworks).

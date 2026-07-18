@@ -5,7 +5,9 @@ branding:
   title: 256ART
   label: Docs
 links:
-- text: Getting Started
-  link: https://retype.com/guides/getting-started/
+- text: Visit 256ART
+  link: https://256.art/
+- text: Artist Portal
+  link: https://256.art/artistportal
 footer:
   copyright: "&copy; Copyright {{ year }}. All rights reserved."

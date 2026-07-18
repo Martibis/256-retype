@@ -6,78 +6,132 @@ order: 85
 
 # Artwork Details Form
 
+The Artwork Details Form defines what collectors see and configures the contracts used for your release. Complete the [Generative Art Template](/artist-documentation/generative-art-template/) workflow first, then open an unreleased project in the [Artist Portal](https://256.art/artistportal).
+
+Fields marked with `*` are required. Review addresses, percentages, files, prices, supply, and sale type especially carefully: some values are costly or impossible to change after deployment.
+
 ### Artwork Name*
-The name of your artwork. It should be unique and descriptive to effectively represent your artwork.
+
+Enter the public name of the series. Check spelling and capitalization, and search for confusingly similar names before release. This name appears in the artwork details and token metadata.
 
 ### License*
-Specify the license for your artwork. Choosing an appropriate license clarifies how others can use and share your artwork.
+
+Choose the license that describes what token owners and other people may do with the artwork. A license can govern copying, display, modification, and commercial use; owning an NFT does not automatically transfer copyright.
+
+Read the full terms of the available license before selecting it. If you need custom legal terms or are uncertain which license fits your intent, get appropriate legal advice before deployment.
 
 ### Tags
-Add relevant tags to your artwork. These tags assist collectors in discovering your artwork more easily during searches and provide quick insights into your artwork's themes and features.
+
+Select only tags that describe the work's actual behavior, such as Dynamic, Animated, Interactive, or Sound. Collectors use these tags to filter and understand releases. See [Understanding the Tags](/learn-more/understanding-and-navigating-256art/#understanding-the-tags).
 
 ### Short Description for the Artwork*
-A concise description of your artwork. Since this description is stored on-chain, it's advisable to keep it brief to minimize costs. The maximum character limit for this field is **1500 characters**.
+
+Write a concise summary of the concept and experience. This description is stored on-chain, so length affects deployment size and cost. The maximum is **1,500 characters**.
+
+Prefer plain text that will still make sense in a wallet or marketplace without the rest of the 256ART page.
 
 ### Detailed Story Behind Your Artwork
-Share the detailed story behind your artwork. This section allows you to provide context about your artwork, its inspiration, and any other pertinent information to help potential collectors and viewers better understand and appreciate your artwork.
+
+Use this optional section for the longer story: inspiration, process, visual system, intended interaction, and any viewing instructions. Clearly explain dynamic behavior or keyboard, pointer, touch, fullscreen, sound, and image-save controls.
 
 ### Sales Mechanism*
-Choose the sales mechanism for your release. The available options are:
 
-- **Fair Dutch Auction**: A descending price auction where the price starts high and decreases at set intervals until all NFTs are sold or a minimum price is reached. Any minter that paid more than the minimum price can claim a rebate.
-- **Fixed Price**: Each NFT is sold at a predetermined price, and all transactions occur at this rate.
-- **Open Edition**: An unlimited number of NFTs can be minted during the sale period, allowing for continuous minting until the sale ends.
+Choose how the public sale works:
+
+- **Fair Dutch Auction**: the price starts high and decreases at set intervals until the series sells out or reaches its reserve price. Eligible minters who paid more than the final clearing price can claim a rebate.
+- **Fixed Price**: each public mint uses the configured price.
+- **Open Edition**: any number of tokens can be minted at a fixed price while the sale is open.
+
+The choice affects the required fields and collector experience. It is not simply a display setting, so test the selected mechanism and dates before release.
 
 ### Seeding Mechanism*
-Select the seeding mechanism for your release. The available options are:
 
-- **Random Seed at Mint**: Each NFT's traits are randomly assigned when it is minted, ensuring unpredictability.
-- **Collector Selected Seed**: Collectors can input a seed value during minting to influence the generation of their NFT's traits, allowing for a degree of customization.
+Choose how each token receives the seed used by your algorithm:
+
+- **Random Seed at Mint (Long form)**: the contract creates the seed during minting. Collectors can preview examples, but they do not choose the final output.
+- **Collector Selected Seed (collector curated mint)**: collectors generate previews and mint a chosen seed, receiving the corresponding output.
+
+Make sure the artwork page's description matches this experience. A selected seed should reproduce the preview consistently.
 
 ### Collection Size*
-Specify the total number of NFTs in the collection. This field is **only applicable** when the sales mechanism is **not** set to **Open Edition**.
+
+Set the maximum token supply for a Fixed Price or Fair Dutch Auction release. This field does not apply to an Open Edition, whose final supply is determined by how many tokens are minted before its end date.
+
+Choose a size that fits the generative system's range and your release goals. Batch-test enough outputs to support that decision.
 
 ### Reserve Price*
-The reserve price or minimum price for your release. Depending on the sales mechanism:
-- **Open Edition** and **Fixed Price**: The reserve price is the sale price.
-- **Dutch Auction**: The reserve price is utilized in the `currentPrice()` function within the smart contract to determine the current auction price. The starting mint price is approximately 25 times higher than the reserve price and decreases every 7.5 minutes (by roughly 1.5x each interval) over a one-hour duration.
+
+Enter the amount in ETH:
+
+- **Open Edition and Fixed Price**: this is the public mint price.
+- **Fair Dutch Auction**: this is the minimum auction price used by the contract's `currentPrice()` calculation. The auction starts at approximately 25 times the reserve price and decreases roughly every 7.5 minutes over one hour.
+
+Review the calculated start and reserve values shown by the portal. The collector also pays network gas, which is separate from this price.
 
 ### Allowlist Price*
-Set a special price for allow-listed addresses. Allow-listed participants can mint NFTs at this price before the public mint opens at the reserve price. This ensures early access for selected addresses.
+
+Set the price available to approved wallet addresses during the allowlist period. The allowlist mint closes when the public sale begins. Confirm whether the intended value is lower than, equal to, or higher than the later public price.
 
 ### Max Mints per Allowlisted Address*
-Define the maximum number of NFTs each allow-listed address can mint. This helps control the distribution and ensures fairness among allow-listed participants.
+
+Set how many tokens each approved address may mint during the allowlist period. Consider the collection size and number of listed addresses; the limit does not guarantee that every address will receive a token.
 
 ### Allow List Addresses
-Provide the addresses you wish to add to your allow list. Allow-listed addresses will mint at the **allowlist price** before the public sale begins at the reserve price. You can add addresses manually or upload a CSV file containing multiple addresses.
+
+Add addresses manually or upload a CSV using the format requested by the portal. Before submission:
+
+- verify that every address is complete and uses the intended account;
+- remove accidental duplicates and blank rows;
+- keep a copy of the final list; and
+- test the allowlist configuration before release.
+
+The backend derives a **Merkle root**, a compact cryptographic summary used to prove that an address belongs to the allowlist. Changing the list after deployment may require an on-chain update and assistance from the 256ART team.
 
 ### Artwork Libraries*
-List any external libraries used in your artwork. While multiple libraries can be selected from the provided list, it's recommended to use as few as possible. Large libraries can significantly slow down the retrieval of your art from the blockchain.
+
+Select every external library the uploaded artwork actually uses, with the same versions used during local testing. Only supported on-chain EthFS libraries can be included. Fewer and smaller libraries generally produce faster live loads. See [Available Libraries](/artist-documentation/generative-art-template/#available-libraries).
 
 ### Artwork.js*
-Include the JavaScript code that generates your artwork. Ensure it follows the [Generative Art Template](/artist-documentation/generative-art-template).
+
+Upload the completed, minified `artwork.js` or `artwork-p5.js` code produced from the [Generative Art Template](/artist-documentation/generative-art-template/). Keep an unminified source copy under your own version control.
+
+After any code change, rerun local batch tests and the Artist Portal test. Even a small change can alter deterministic random-call order or preview generation.
 
 ### Traits.json*
-Provide the `Traits.json` file containing metadata for your artwork. It should be in valid JSON format and **must not exceed 20KB** in size. Refer to the [Generative Art Template](/artist-documentation/generative-art-template) for formatting guidelines.
+
+Upload the minified `traits.json` file. It must be valid JSON, follow the template's cumulative-weight format, and not exceed **20 KB**.
+
+The filename and documentation use lowercase `traits.json`. Validate that descriptions and values are strings, weights increase correctly, and the final threshold for each trait is `10000`.
 
 ### Primary & Secondary Revenue Split*
-Define the revenue distribution among primary and secondary receivers. The form includes pre-set rows for:
-- **Owner**: Automatically calculated percentage.
-- **Platform (256ART)**: Locked percentage.
 
-You can add additional receivers with custom names, addresses, and percentage splits. Ensure that the total percentage does not exceed **100%**.
+Configure the payout addresses and percentages for primary revenue and paid secondary royalties. The form includes:
 
-You can update the owner address here. This address is the **smart contract owner** and will receive ETH from both primary and secondary sales.
+- **Owner**: the remaining or automatically calculated share.
+- **Platform (256ART)**: the locked platform share.
+- **Additional receivers**: collaborators or other recipients you add with a label, address, and percentage.
+
+Verify every address independently. Blockchain transfers cannot be reversed merely because a payout address was entered incorrectly. The complete split must equal the total expected by the portal and cannot exceed **100%**.
+
+The configured owner address becomes the **smart contract owner** and participates in revenue according to the displayed split. Use an address you control and can use for future contract administration. Do not assume the connected login wallet is automatically the correct owner or receiver.
 
 ### Secondary Royalty Percentage*
-Set the percentage of royalties you'll receive from secondary sales of your work.
+
+Set the royalty requested when a token is sold on a secondary marketplace. Royalties apply only when a marketplace supports and pays the configured mechanism. The percentage is separate from primary mint revenue.
 
 #### Enforceability of Secondary Royalties
-Secondary royalties are now **optionally enforceable**. This means you can choose to make the royalty percentage mandatory for participating marketplaces or leave it flexible based on marketplace compliance.
+
+256ART contracts support optional ERC721-C creator-earnings enforcement. Enabling it restricts transfers through marketplace protocols that do not comply with the contract's rules. This can improve royalty enforcement but may reduce where collectors can list or purchase tokens.
+
+ERC721-C compatibility does not make every marketplace support the collection automatically. Read [OpenSea & Enforcing Royalties](/artist-documentation/opensea-enforcing-royalties/) before choosing enforcement.
 
 ### Additional Notes:
-- **Validation & Errors**: The form includes validation for essential fields. Ensure all required fields are correctly filled to avoid submission errors.
-- **Warnings**: After submission, you may receive warnings indicating actions needed if changes are made, such as redeploying contracts or re-testing your release.
-- **Submission Feedback**: Upon submitting the form, feedback will be provided to indicate the status of your submission.
+
+- **Validation and errors**: resolve every required-field, JSON, file-size, address, percentage, and compatibility error.
+- **Warnings**: read warnings carefully. A file or configuration change can invalidate a previous test or require a contract to be redeployed.
+- **Submission feedback**: wait for the portal to confirm that the form was saved; do not treat a button click alone as confirmation.
+- **Final review**: compare the saved summary with your source files and release plan before testing.
 
 ---
+
+Next, [test your project](/artist-documentation/testing-your-project/).

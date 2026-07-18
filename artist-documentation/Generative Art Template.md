@@ -4,11 +4,31 @@ order: 90
 
 # Generative Art Template
 
-When creating a generative artwork that you want to release on 256ART it’s recommended to use the below template as a starting point. With 256ART we simplify the development process compared to other platforms by requiring only one artwork.js file (for rendering your art) and a simple traits.json file for defining traits. Our template also emulates everything exactly the same ways as it would be if deployed live on the Ethereum, Base or Shape mainnet.
+Use the official template as the starting point for a 256ART release. The two files you prepare for upload are:
+
+- `artwork.js` or `artwork-p5.js`: the JavaScript that renders the artwork; and
+- `traits.json`: the trait definitions stored and assigned on-chain.
+
+The template supplies local test data through `inputData`, loads your traits, and runs the artwork in a browser. It approximates the data provided by a deployed 256ART contract, but local testing does not replace the Artist Portal's [pre-release test](/artist-documentation/testing-your-project/).
+
+Before you begin, you should be comfortable editing JavaScript and running a local web server. You do not need a bundler. If you use p5.js or another library, read [Available Libraries](#available-libraries) before building around it.
+
+A practical workflow is:
+
+1. Download or clone the template.
+2. Run it through a local web server.
+3. Build the artwork and traits.
+4. Test many seeds, trait combinations, screen sizes, and browser conditions.
+5. Signal when each render is complete with `window.rendered`.
+6. Minify the final artwork and trait files.
+7. Upload them in the [Artwork Details Form](/artist-documentation/artwork-details-form/).
+8. Run the Artist Portal test before deployment.
 
 ### Random class
 
-We very strongly recommend using our Random class, which is an improved version of the Random class provided by ArtBlocks. You can remove functionality you don't need.
+Use deterministic randomness so the same token hash always reconstructs the same base output. The template's `Random` class seeds its pseudo-random number generator from `inputData.hash`. Do not use `Math.random()` for decisions that must remain consistent between renders.
+
+Create one generator in a predictable place and call its methods in a consistent order. Adding or removing an early random call later can change every value that follows, so lock the algorithm before release and retest after any code change. You may remove helper methods you do not use.
 
 ```javascript
 class Random {
@@ -53,11 +73,13 @@ class Random {
 }
 ```
 
-Shoutout to [Piter Pasma](https://twitter.com/piterpasma) for providing feedback on the PRNG.
+Thanks to [Piter Pasma](https://twitter.com/piterpasma) for feedback on this pseudo-random number generator (PRNG).
 
 ### Dimension Agnostic Coding
 
-Your artwork should scale seamlessly to any dimension, regardless of the viewer's browser size or resolution. We will also render a still image of the output at 2048x2048. Here's an example of how to achieve dimension agnostic coding:
+Collectors may render the work on a phone, desktop monitor, projection, or high-resolution export. Keep a fixed aspect ratio if the composition requires one, but calculate the actual canvas dimensions from the available viewport.
+
+Scale positions, line widths, type sizes, and other measurements from the canvas width or height rather than fixed pixels. In vanilla canvas code, account for `window.devicePixelRatio` so the output remains sharp:
 
 ```javascript
 let c = document.createElement("canvas"); // Create canvas
@@ -86,26 +108,43 @@ function draw() {
 }
 ```
 
+Test very small and very large viewports, portrait and landscape windows, and the intended aspect ratio. Make sure resizing does not accidentally choose a new random sequence or change a token's base composition.
+
 ### GitHub Repository
 
-https://github.com/Martibis/256ART-generative-art-template
+[github.com/Martibis/256ART-generative-art-template](https://github.com/Martibis/256ART-generative-art-template)
 
 ### Using the Template Artwork
 
-Clone or download the [256ART Generative Art Template repository](https://github.com/Martibis/256ART-generative-art-template) to begin. This template provides a starting point for creating generative art that can be released fully in-chain via 256ART. The main files you will be working with are:
+Clone or download the [256ART Generative Art Template repository](https://github.com/Martibis/256ART-generative-art-template), then follow its current [README](https://github.com/Martibis/256ART-generative-art-template/blob/main/README.md).
 
-- `artwork.js` or `artwork-p5.js`: Contains the code for generating your generative art.
-- `traits.json`: Defines the traits that should be stored on-chain.
+The repository includes:
 
-Follow the instructions in the [readme.md](https://github.com/Martibis/256ART-generative-art-template/blob/main/README.md) file to get started.
+- `scripts/artwork.js`: the vanilla JavaScript example.
+- `scripts/artwork-p5.js`: the p5.js example.
+- `scripts/traits.json`: example trait definitions.
+- `dependencies/inputData.js`: the local emulator that creates `inputData` and loads the artwork. Do not modify this file.
+- `index.html`: the local artwork viewer.
+- `batch-generator.html`: a tool for rendering many test outputs.
+
+Serve the repository through a local HTTP server; opening `index.html` directly with a `file://` URL can prevent the browser from loading `traits.json`. For example, you can use a local-server extension in your editor.
+
+The final upload uses the completed and minified artwork file plus `traits.json`, not the template's HTML or local emulator.
 
 ### Customizing the Template
 
-Modify the `artwork.js` / `artwork-p5.js` file to implement your desired artwork. Make sure the output is dimension agnostic, meaning it scales seamlessly to any dimension. Define a default dimension and create a multiplier to scale coordinates or sizes relative to the canvas dimensions.
+Implement the artwork in either `artwork.js` or `artwork-p5.js`. Remove unused example code, keep the output dimension agnostic, and use the deterministic `Random` class for repeatable variation.
 
-Modify the `traits.json` file for the traits for your generative artwork. Keep in mind that `traits.json` is only for the traits you would like to store on the blockchain. These traits cannot depend on the values of other traits.
+Define only the traits that should appear in the token metadata in `traits.json`. For each trait:
 
-Access the traits defined in `traits.json` from `artwork.js` / `artwork-p5.js` using the inputData object. For example, if you defined a trait for "Paint Color" in traits.json, you could access this trait value in your code like this:
+- `trait_description` and `trait_value` must be strings;
+- `weight` is a cumulative threshold on a 0–10,000 scale;
+- thresholds must increase, and the final option should end at `10000`; and
+- one on-chain trait cannot depend on the selected value of another trait.
+
+For example, thresholds of `2000`, `7000`, and `10000` produce approximate probabilities of 20%, 50%, and 30%.
+
+The template adds each selected trait to `inputData`. Access the value from your artwork code and explicitly parse it when you need a number or boolean:
 
 ```javascript
 function draw() {
@@ -118,23 +157,21 @@ function draw() {
 
 ### Available Libraries
 
-Only use libraries available on EthFS, as the libraries need to be available on chain. To use one of the available libraries during development, add a CDN to the library in the index.html file. We recommend using as few libraries as possible (getting large libraries from chain can significantly slow down getting your art from chain). Some of the libraries available on EthFS at the time of writing are:
+Only use a library that 256ART can retrieve from [EthFS](https://ethfs.xyz/) and that is available for selection in the Artist Portal. EthFS stores reusable web files on-chain. An arbitrary npm package or CDN URL used during development will not automatically become part of the on-chain release.
 
-- p5js v1.5.0
-- Tone.js (version unknown)
-- threejs v0.147.0
+During local development, load the matching library version in `index.html`. In the Artwork Details Form, select that same library and version so the live contract render receives compatible code.
+
+Use as few libraries as practical. Large libraries increase retrieval and rendering time, and version differences can change the output. Check the current EthFS/Artist Portal list rather than relying on an old version list in documentation. If a required library is missing, contact the 256ART team before completing the project; storing a new library on-chain can be expensive.
 
 ### Image Preview Generation for 256ART
 
-To allow 256ART to generate image previews of your generative artwork for marketplaces, digital galleries, and other front-ends, you need to set the `window.rendered` property equal to the `canvas` object when the work is fully rendered. This way, 256ART can capture the generated canvas, create an image preview, and store it as part of the tokenURI in the ERC721 smart contract under the "image" property.
-
-Make sure to add the following line of code in your `artwork.js` / `artwork-p5.js` file once the artwork is completely rendered:
+256ART needs to know when the canvas is ready to capture. Assign the completed canvas element to `window.rendered` only after the intended preview frame has finished rendering:
 
 ```
 window.rendered = canvas;
 ```
 
-For example, in a p5js sketch, you could add the `window.rendered = c.canvas;` line at the end of the `draw()` function after the artwork has been fully rendered:
+For p5.js, `createCanvas` returns a renderer. Assign its underlying canvas:
 
 ```javascript
 let c;
@@ -150,61 +187,61 @@ function draw() {
 }
 ```
 
-By setting the `window.rendered` property, you are providing 256ART with a signal to capture the rendered canvas and generate an image preview. Providing image previews is needed for front-ends as they may not be able to render multiple "live rendering" of the art script, especially when the artworks are resource-intensive. The image previews make it easier for front-ends to display your generative art without the performance overhead of rendering the artwork live.
+If the work loads assets or builds its composition asynchronously, do not set `window.rendered` until those steps are complete. Setting it too early can create blank or partial previews; never setting it can cause preview generation to time out.
+
+The resulting static image is used by 256ART, galleries, and marketplaces that cannot efficiently run every live artwork. It does not replace the fully on-chain live render, which is exposed separately in the token metadata.
 
 ### Batch Artwork Generator
 
-When your `artwork-p5.js` or `artwork.js` and your `traits.json` are completed, you can use the batch artwork generator for testing purposes. The **Batch Artwork Generator** tool streamlines the creation of multiple previews. It allows you to specify the number of previews and their dimensions, generates them efficiently, and provides an option to download all images as a ZIP file.
+Use `batch-generator.html` to inspect many seeds before upload. A single successful output is not enough to validate a generative system: uncommon traits, edge combinations, and rendering-time problems may appear only in a larger sample.
 
 #### Features
 
-- **Batch Generation:** Create multiple artworks in one go.
-- **Customizable Image Size:** Define the width and height for each image.
-- **Progress Monitoring:** Visual progress bar to track generation.
-- **Download as ZIP:** Easily download all generated images together.
+- **Batch generation**: create multiple test outputs in one run.
+- **Custom image size**: test the width and height used for each output.
+- **Progress monitoring**: follow generation and identify timeouts.
+- **ZIP download**: save the generated previews for review.
 
 #### How to Use
 
-1. **Open the Generator:**
+1. Start the template with a local web server.
+2. Open `batch-generator.html` from that server.
+3. Enter the batch size and image dimensions.
+4. Select **Start Batch** and watch for errors or unusually slow renders.
+5. Select **Download All as ZIP** if you want to review the outputs outside the browser.
 
-   - Navigate to `batch-generator.html` in your browser. Ensure it's served from a local server.
-
-2. **Configure Parameters:**
-
-   - **Batch Size:** Enter the number of artworks you wish to generate.
-   - **Image Size:** Specify the desired size in pixels.
-
-3. **Start Generation:**
-
-   - Click the **Start Batch** button. The progress bar will indicate the generation status.
-
-4. **Download Images:**
-   - Once completed, click the **Download All as ZIP** button to download all generated artworks.
+Review the batch for visual errors, unexpectedly common or missing traits, duplicate-looking compositions, clipping, blank frames, and inconsistent aspect ratios. Repeat at different dimensions. The batch generator improves coverage but does not prove the probabilities or code are correct; inspect the console and validate `traits.json` separately.
 
 ### Creating Dynamic Artworks
 
-With 256ART exposing a variety of blockchain parameters through the `inputData` object, you can create generative artworks that respond to on-chain events and states. This allows your artwork to evolve based on actions such as transfers, sales, or changes in an owner's ETH balance. Below, we'll explore how to utilize these parameters to add dynamic behavior to your generative art.
+An artwork is **dynamic** when its live output responds to blockchain state that can change after minting. For example, it can react to a transfer, the current block, total minted supply, or the owner's balance.
+
+`inputData.tokenId` and `inputData.hash` identify the token and its original seed. They remain the foundation for a repeatable base composition. The dynamic parameters below describe state at the time the live HTML is requested, so using them can intentionally change later renders.
 
 #### Available Blockchain Parameters
 
-The following blockchain parameters are available in `inputData`:
+The current template emulates these values in `inputData`:
 
-- `ownerOfPiece`: The hexadecimal address of the current owner of the token.
-- `blockHash`: The hash of the previous block.
-- `blockNumber`: The current block number.
-- `blockTimestamp`: The timestamp of the current block.
-- `blockBaseFee`: The base fee of the current block.
-- `blockCoinbase`: The hexadecimal address of the block miner.
-- `prevrandao`: The previous randomness value from the block.
-- `totalSupply`: The total number of tokens minted.
-- `balanceOfOwner`: The number of tokens owned by the current owner.
-- `ethBalanceOfOwner`: The ETH balance of the current owner.
+- `tokenId`: the token's numeric ID.
+- `hash`: the token's fixed seed as a hexadecimal string.
+- `ownerOfPiece`: the current owner's hexadecimal address.
+- `blockHash`: the previous block's hash.
+- `blockNumber`: the current block number.
+- `blockTimestamp`: the current block timestamp in seconds.
+- `blockBaseFee`: the current block's base fee in wei, the smallest ETH unit (`1 ETH = 10^18 wei`).
+- `blockCoinbase`: the current block's fee-recipient address.
+- `prevrandao`: the current block's randomness value.
+- `totalSupply`: the number of tokens currently minted in the series.
+- `balanceOfOwner`: the number of tokens from this series held by the current owner.
+- `ethBalanceOfOwner`: the current owner's native ETH balance in wei.
 
-These parameters can be accessed in your `artwork.js` or `artwork-p5.js` file via the `inputData` object. Below are examples of how to incorporate these parameters into your artwork.
+Contract generations can expose different subsets of dynamic values. Treat the Artist Portal's deployment test as the final compatibility check for your release, and do not make the artwork fail completely when an optional value is unavailable.
+
+In the local template, URL overrides are strings while generated defaults are numbers; deployed contract generations can also differ. Inspect each value and its type in the Artist Portal test. A JavaScript `Number` above `Number.MAX_SAFE_INTEGER` may already have lost precision, and converting it to `BigInt` cannot recover the lost bits. Do not rely on exact full-width values unless the tested live interface supplies a decimal or hexadecimal string.
 
 #### Accessing Blockchain Parameters
 
-Here's how you can access and utilize the blockchain parameters within your artwork code:
+Here's how you can access and utilize these parameters within your artwork code:
 
 ```javascript
 function draw() {
@@ -241,3 +278,9 @@ function draw() {
   // Additional dynamic elements can be added using other parameters
 }
 ```
+
+Test dynamic work with explicit URL parameters supported by the local template, for example `?blockNumber=123&totalSupply=64`. Test owner changes, zero values, large values, and missing optional values.
+
+Remember that static marketplace previews show one captured state. Make the live behavior understandable and ensure the piece still has a useful preview. Explain important dynamic behavior in the artwork description so collectors know what can change.
+
+When the files are complete, continue with the [Artwork Details Form](/artist-documentation/artwork-details-form/).
