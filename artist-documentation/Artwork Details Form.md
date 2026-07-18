@@ -18,7 +18,15 @@ Enter the public name of the series. Check spelling and capitalization, and sear
 
 Choose the license that describes what token owners and other people may do with the artwork. A license can govern copying, display, modification, and commercial use; owning an NFT does not automatically transfer copyright.
 
-Read the full terms of the available license before selecting it. If you need custom legal terms or are uncertain which license fits your intent, get appropriate legal advice before deployment.
+The available choices are:
+
+- **[NFT License 2.0](https://www.nftlicense.org/)**: grants rights to the current owner of the token-specific artwork, including limited commercial merchandise rights under the license's terms. Those token-holder-specific rights end when ownership is transferred.
+- **[Creative Commons Attribution–NonCommercial 4.0 International / CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)**: lets the public share and adapt the licensed material for noncommercial purposes with attribution. Token ownership is not required.
+- **[CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)**: dedicates the licensed material to the public domain to the fullest extent permitted by law, allowing public reuse, modification, and commercial use without requiring token ownership.
+
+These choices create different relationships: NFT License 2.0 ties specified rights to the current token holder, while CC BY-NC 4.0 and CC0 are public instruments available to everyone. Read [The Three Artwork Licenses on 256ART](https://256.art/learn/256art-artwork-licenses) and the complete canonical text before selecting one.
+
+This summary is general information, not legal advice. Define which material the license covers, confirm that all collaborators authorized the choice, and obtain appropriate legal advice when needed.
 
 ### Tags
 
@@ -53,11 +61,13 @@ Choose how each token receives the seed used by your algorithm:
 
 Make sure the artwork page's description matches this experience. A selected seed should reproduce the preview consistently.
 
+Read [Artist-Curated, Collector-Curated and Random Generative Art](https://256.art/learn/generative-art-curation) for the creative implications of this choice.
+
 ### Collection Size*
 
 Set the maximum token supply for a Fixed Price or Fair Dutch Auction release. This field does not apply to an Open Edition, whose final supply is determined by how many tokens are minted before its end date.
 
-Choose a size that fits the generative system's range and your release goals. Batch-test enough outputs to support that decision.
+Choose a size that fits the generative system's range and your release goals. Batch-test enough outputs to support that decision. See [What Is Long-Form Generative Art?](https://256.art/learn/long-form-generative-art) for how supply and direct minting change the design problem.
 
 ### Reserve Price*
 

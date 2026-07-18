@@ -26,7 +26,7 @@ A practical workflow is:
 
 ### Random class
 
-Use deterministic randomness so the same token hash always reconstructs the same base output. The template's `Random` class seeds its pseudo-random number generator from `inputData.hash`. Do not use `Math.random()` for decisions that must remain consistent between renders.
+Use [deterministic randomness](https://256.art/learn/deterministic-generative-art) so the same token hash always reconstructs the same base output. The template's `Random` class seeds its pseudo-random number generator from `inputData.hash`. Do not use `Math.random()` for decisions that must remain consistent between renders.
 
 Create one generator in a predictable place and call its methods in a consistent order. Adding or removing an early random call later can change every value that follows, so lock the algorithm before release and retest after any code change. You may remove helper methods you do not use.
 
@@ -189,7 +189,7 @@ function draw() {
 
 If the work loads assets or builds its composition asynchronously, do not set `window.rendered` until those steps are complete. Setting it too early can create blank or partial previews; never setting it can cause preview generation to time out.
 
-The resulting static image is used by 256ART, galleries, and marketplaces that cannot efficiently run every live artwork. It does not replace the fully on-chain live render, which is exposed separately in the token metadata.
+The resulting static image is used by 256ART, galleries, and marketplaces that cannot efficiently run every live artwork. It does not replace the fully on-chain live render, which is exposed separately in the token metadata. See [Live Generative Artwork vs Preview Image](https://256.art/learn/live-artwork-vs-preview).
 
 ### Batch Artwork Generator
 
@@ -214,7 +214,7 @@ Review the batch for visual errors, unexpectedly common or missing traits, dupli
 
 ### Creating Dynamic Artworks
 
-An artwork is **dynamic** when its live output responds to blockchain state that can change after minting. For example, it can react to a transfer, the current block, total minted supply, or the owner's balance.
+An artwork is **[dynamic](https://256.art/learn/256art-dynamic-art)** when its live output responds to blockchain state that can change after minting. For example, it can react to a transfer, the current block, total minted supply, or the owner's balance.
 
 `inputData.tokenId` and `inputData.hash` identify the token and its original seed. They remain the foundation for a repeatable base composition. The dynamic parameters below describe state at the time the live HTML is requested, so using them can intentionally change later renders.
 
@@ -237,7 +237,7 @@ The current template emulates these values in `inputData`:
 
 Contract generations can expose different subsets of dynamic values. Treat the Artist Portal's deployment test as the final compatibility check for your release, and do not make the artwork fail completely when an optional value is unavailable.
 
-In the local template, URL overrides are strings while generated defaults are numbers; deployed contract generations can also differ. Inspect each value and its type in the Artist Portal test. A JavaScript `Number` above `Number.MAX_SAFE_INTEGER` may already have lost precision, and converting it to `BigInt` cannot recover the lost bits. Do not rely on exact full-width values unless the tested live interface supplies a decimal or hexadecimal string.
+In the local template, URL overrides are strings while generated defaults are numbers; deployed contract generations can also differ. Inspect each value and its type in the Artist Portal test. A JavaScript `Number` above `Number.MAX_SAFE_INTEGER` may already have lost precision, and converting it to `BigInt` cannot recover the lost bits. Do not rely on exact full-width values unless the tested live interface supplies a decimal or hexadecimal string. The example below keeps full-width values as `BigInt`, clamps the wei balance, and reduces it to a safely sized visual value before converting to `Number`.
 
 #### Accessing Blockchain Parameters
 
@@ -255,9 +255,13 @@ function draw() {
   const prevrandao = parseInt(inputData["prevrandao"]);
   const totalSupply = parseInt(inputData["totalSupply"]);
   const balanceOfOwner = parseInt(inputData["balanceOfOwner"]);
-  const ethBalanceOfOwner = parseFloat(inputData["ethBalanceOfOwner"]);
+  const ethBalanceWei = BigInt(inputData["ethBalanceOfOwner"].toString());
 
-  // Example usage: Change background color based on ETH balance
+  // Example usage: Convert wei to ETH before mapping a 0–100 ETH visual range
+  const weiPerEth = 10n ** 18n;
+  const maxMappedWei = 100n * weiPerEth;
+  const clampedWei = ethBalanceWei > maxMappedWei ? maxMappedWei : ethBalanceWei;
+  const ethBalanceOfOwner = Number(clampedWei / 10n ** 15n) / 1000;
   const colorIntensity = map(ethBalanceOfOwner, 0, 100, 0, 255);
   background(colorIntensity, 100, 150);
 

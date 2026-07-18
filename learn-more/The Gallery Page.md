@@ -12,7 +12,7 @@ The [Gallery Page](https://256.art/gallery) shows the 256ART tokens held by your
 - view or download its high-resolution static preview; and
 - request a new static preview if the current one did not render correctly.
 
-The live artwork and static preview serve different purposes. **Live View** runs the artist's on-chain code. The **High Resolution Image** is a captured still image that is more convenient for downloads, thumbnails, and applications that cannot run the live code.
+The live artwork and static preview serve different purposes. **Live View** runs the artist's on-chain code. The **High Resolution Image** is a captured still image that is more convenient for downloads, thumbnails, and applications that cannot run the live code. See [Live Generative Artwork vs Preview Image](https://256.art/learn/live-artwork-vs-preview) for a detailed comparison.
 
 ### Accessing Your Gallery Page
 

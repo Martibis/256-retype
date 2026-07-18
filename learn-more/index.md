@@ -3,9 +3,9 @@ order: 90
 icon: book
 ---
 
-# Learn More
+# Collector Guide
 
-This section explains 256ART for collectors and anyone new to fully on-chain generative art.
+This section contains the operational guides for collecting and viewing work on 256ART. For broader conceptual education, visit [256ART Learn](https://256.art/learn).
 
 Follow these pages in order:
 
