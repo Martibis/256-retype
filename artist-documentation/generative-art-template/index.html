@@ -3,183 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795314066934">
+    <meta name="color-scheme" content="light dark">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837706067383">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.6.0">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>Generative Art Template</title>
     <meta name="title" content="Generative Art Template">
-    <meta name="description" content="When creating a generative artwork that you want to release on 256ART it’s recommended to use the below template as a starting point.">
+    <meta name="description" content="Use the official template as the starting point for a 256ART release. The two files you prepare for upload are:">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.256.art/artist-documentation/generative-art-template/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.256.art/sitemap.xml">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.256.art/artist-documentation/generative-art-template/">
     <meta property="og:title" content="Generative Art Template">
-    <meta property="og:description" content="When creating a generative artwork that you want to release on 256ART it’s recommended to use the below template as a starting point.">
+    <meta property="og:description" content="Use the official template as the starting point for a 256ART release. The two files you prepare for upload are:">
+    <meta property="og:site_name" content="256ART">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.256.art/artist-documentation/generative-art-template/">
-    <meta property="twitter:title" content="Generative Art Template">
-    <meta property="twitter:description" content="When creating a generative artwork that you want to release on 256ART it’s recommended to use the below template as a starting point.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.256.art/artist-documentation/generative-art-template/">
+    <meta name="twitter:title" content="Generative Art Template">
+    <meta name="twitter:description" content="Use the official template as the starting point for a 256ART release. The two files you prepare for upload are:">
 
-    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.256.art/artist-documentation/generative-art-template.md">
 
-    <link href="../../resources/css/retype.css?v=3.6.0.795314066934" rel="stylesheet">
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795314066934" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795314066934" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.795314066934" defer></script>
+    <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
+    <link href="../../resources/css/retype.css?v=4.6.0.837706067383" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837706067383" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837706067383" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.837706067383" defer></script>
 </head>
 <body>
-    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
-        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+    <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+
+    <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+        <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+            <!-- Mobile menu button skeleton -->
+            <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-hidden rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+            <div v-cloak id="retype-sidebar-left-toggle-button"></div>
     
-        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
-            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
-                <!-- Mobile menu button skeleton -->
-                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-                <div v-cloak id="docs-sidebar-toggle"></div>
-        
-                <!-- Logo -->
-                <div class="flex items-center justify-between h-full py-2 md:w-75">
-                    <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
-                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">256ART</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
-                    </div>
-        
-                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+            <!-- Logo -->
+            <div class="flex items-center justify-between h-full py-2 md:w-75">
+                <div class="flex items-center px-2 md:px-6">
+                    <a id="retype-branding-logo" href="https://docs.256.art/" class="flex items-center leading-snug text-2xl">
+                        <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">256ART</span>
+                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
                 </div>
-        
-                <div class="flex justify-between md:grow">
-                    <!-- Top Nav -->
-                    <nav class="hidden md:flex">
-                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://retype.com/guides/getting-started/">Getting Started</a>
-                            </li>
-        
-                        </ul>
-                    </nav>
-        
-                    <!-- Header Right Skeleton -->
-                    <div v-cloak class="flex justify-end grow skeleton">
-        
-                        <!-- Search input mock -->
-                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
-                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                            </div>
-                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
-                        </div>
-        
-                        <!-- Mobile search button -->
-                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                        </div>
-        
-                        <!-- Dark mode switch placeholder -->
-                        <div class="w-10 h-10 lg:ml-2"></div>
-        
-                        <!-- History button -->
-                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
-                        </div>
-                    </div>
-        
-                    <div v-cloak class="flex justify-end grow">
-                        <div id="docs-mobile-search-button"></div>
-                        <doc-search-desktop></doc-search-desktop>
-        
-                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
-                        <doc-history></doc-history>
-                    </div>
+    
+                <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            </div>
+    
+            <div class="flex justify-between md:grow">
+                <!-- Top Nav -->
+                <nav id="retype-header-nav" class="hidden md:flex">
+                    <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/">Visit 256ART</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/artistportal">Artist Portal</a>
+                        </li>
+    
+                    </ul>
+                </nav>
+    
+                <div v-cloak class="flex justify-end grow">
+                    <div id="retype-mobile-search-button"></div>
+                    <doc-search-desktop></doc-search-desktop>
+    
+                    <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                    <doc-history></doc-history>
                 </div>
             </div>
-        </header>
-    
-        <div class="container relative flex bg-white">
-            <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
-            
-                <!-- Render this div, if config.showSidebarFilter is `true` -->
-                <div class="flex items-center h-16 px-6">
-                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
-                </div>
-            
-                <div class="pl-6 mt-1 mb-4">
-                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                </div>
-            
-                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
-                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+        </div>
+    </header>
+
+
+    <div id="retype-container" class="container relative flex bg-white">
+        <!-- Sidebar Skeleton -->
+        <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+        
+            <div class="flex items-center h-16 px-6">
+                <input id="retype-filter-input-mock" class="w-full h-10 pl-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded-lg shadow-none md:text-sm hover:border-filter-border-hover focus:outline-hidden focus:border-filter-border-focus placeholder-filter-placeholder" type="text">
+            </div>
+        
+            <div class="pl-6 mt-1 mb-4">
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            </div>
+        
+            <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                    <span class="text-xs whitespace-nowrap">Powered by</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Sidebar component -->
+        <doc-sidebar v-cloak>
+            <template #sidebar-footer>
+                <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+        
+                    <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                        <nav>
+                            <ul class="flex flex-wrap justify-center items-center">
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/">Visit 256ART</a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/artistportal">Artist Portal</a>
+                                </li>
+        
+                            </ul>
+                        </nav>
+                    </div>
+        
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                         <span class="text-xs whitespace-nowrap">Powered by</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                     </a>
                 </div>
-            </div>
-            
-            <!-- Sidebar component -->
-            <doc-sidebar v-cloak>
-                <template #sidebar-footer>
-                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
-            
-                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
-                            <nav>
-                                <ul class="flex flex-wrap justify-center items-center">
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://retype.com/guides/getting-started/">Getting Started</a>
-                                    </li>
-            
-                                </ul>
-                            </nav>
-                        </div>
-            
-                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
-                            <span class="text-xs whitespace-nowrap">Powered by</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
-                        </a>
-                    </div>
-                </template>
-            </doc-sidebar>
-    
-            <div class="grow min-w-0 dark:bg-dark-850">
-                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
-                <div class="flex">
-                    <div class="min-w-0 p-4 grow md:px-16">
-                        <main class="relative pb-12 lg:pt-2">
-                            <div class="docs-markdown" id="docs-content">
-                                <!-- Rendered if sidebar right is enabled -->
-                                <div id="docs-sidebar-right-toggle"></div>
-                                <!-- Page content  -->
-<doc-anchor-target id="generative-art-template" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#generative-art-template">#</doc-anchor-trigger>
-        <span>Generative Art Template</span>
-    </h1>
-</doc-anchor-target>
-<p>When creating a generative artwork that you want to release on 256ART it’s recommended to use the below template as a starting point. With 256ART we simplify the development process compared to other platforms by requiring only one artwork.js file (for rendering your art) and a simple traits.json file for defining traits. Our template also emulates everything exactly the same ways as it would be if deployed live on the Ethereum, Base or Shape mainnet.</p>
-<doc-anchor-target id="random-class">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#random-class">#</doc-anchor-trigger>
-        <span>Random class</span>
-    </h3>
-</doc-anchor-target>
-<p>We very strongly recommend using our Random class, which is an improved version of the Random class provided by ArtBlocks. You can remove functionality you don&#x27;t need.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">class Random {
+            </template>
+        </doc-sidebar>
+
+        <div class="grow min-w-0 bg-body-bg">
+            <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+<div class="flex">
+    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+        <main class="relative pb-12 lg:pt-2">
+            <div class="relative retype-markdown" id="retype-content">
+                <!-- Rendered if sidebar right is enabled -->
+                <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
+                <!-- Page content  -->
+<h1 id="generative-art-template">Generative Art Template</h1>
+<p>Use the official template as the starting point for a 256ART release. The two files you prepare for upload are:</p>
+<ul>
+<li><code translate="no" v-pre>artwork.js</code> or <code translate="no" v-pre>artwork-p5.js</code>: the JavaScript that renders the artwork; and</li>
+<li><code translate="no" v-pre>traits.json</code>: the trait definitions stored and assigned on-chain.</li>
+</ul>
+<p>The template supplies local test data through <code translate="no" v-pre>inputData</code>, loads your traits, and runs the artwork in a browser. It approximates the data provided by a deployed 256ART contract, but local testing does not replace the Artist Portal&#x27;s <a href="/artist-documentation/testing-your-project/">pre-release test</a>.</p>
+<p>Before you begin, you should be comfortable editing JavaScript and running a local web server. You do not need a bundler. If you use p5.js or another library, read <doc-anchor-trigger to="#available-libraries">Available Libraries</doc-anchor-trigger> before building around it.</p>
+<p>A practical workflow is:</p>
+<ol>
+<li>Download or clone the template.</li>
+<li>Run it through a local web server.</li>
+<li>Build the artwork and traits.</li>
+<li>Test many seeds, trait combinations, screen sizes, and browser conditions.</li>
+<li>Signal when each render is complete with <code translate="no" v-pre>window.rendered</code>.</li>
+<li>Minify the final artwork and trait files.</li>
+<li>Upload them in the <a href="/artist-documentation/artwork-details-form/">Artwork Details Form</a>.</li>
+<li>Run the Artist Portal test before deployment.</li>
+</ol>
+<h3 id="random-class">Random class</h3>
+<p>Use deterministic randomness so the same token hash always reconstructs the same base output. The template&#x27;s <code translate="no" v-pre>Random</code> class seeds its pseudo-random number generator from <code translate="no" v-pre>inputData.hash</code>. Do not use <code translate="no" v-pre>Math.random()</code> for decisions that must remain consistent between renders.</p>
+<p>Create one generator in a predictable place and call its methods in a consistent order. Adding or removing an early random call later can change every value that follows, so lock the algorithm before release and retest after any code change. You may remove helper methods you do not use.</p>
+<div id="random-class-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">class Random {
   constructor() {
     let offset = 0;
     for (let i = 2; i &lt; 66; i += 8)
@@ -220,16 +219,12 @@
   random_choice = (list) =&gt; list[this.random_int(0, list.length - 1)];
 }</code></pre>
 </doc-codeblock></div>
-<p>Shoutout to <a href="https://twitter.com/piterpasma">Piter Pasma</a> for providing feedback on the PRNG.</p>
-<doc-anchor-target id="dimension-agnostic-coding">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#dimension-agnostic-coding">#</doc-anchor-trigger>
-        <span>Dimension Agnostic Coding</span>
-    </h3>
-</doc-anchor-target>
-<p>Your artwork should scale seamlessly to any dimension, regardless of the viewer&#x27;s browser size or resolution. We will also render a still image of the output at 2048x2048. Here&#x27;s an example of how to achieve dimension agnostic coding:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">let c = document.createElement(&quot;canvas&quot;); // Create canvas
+<p>Thanks to <a href="https://twitter.com/piterpasma">Piter Pasma</a> for feedback on this pseudo-random number generator (PRNG).</p>
+<h3 id="dimension-agnostic-coding">Dimension Agnostic Coding</h3>
+<p>Collectors may render the work on a phone, desktop monitor, projection, or high-resolution export. Keep a fixed aspect ratio if the composition requires one, but calculate the actual canvas dimensions from the available viewport.</p>
+<p>Scale positions, line widths, type sizes, and other measurements from the canvas width or height rather than fixed pixels. In vanilla canvas code, account for <code translate="no" v-pre>window.devicePixelRatio</code> so the output remains sharp:</p>
+<div id="dimension-agnostic-coding-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">let c = document.createElement(&quot;canvas&quot;); // Create canvas
 function setup() {
   let dp = window.devicePixelRatio; // Get device pixel ratio; not needed in p5js
   let ih = window.innerHeight * dp; // Get window innerHeight
@@ -254,68 +249,53 @@ function draw() {
   let strokeWidth = w * 0.001; // Scale using the canvas width
 }</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="github-repository">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#github-repository">#</doc-anchor-trigger>
-        <span>GitHub Repository</span>
-    </h3>
-</doc-anchor-target>
-<p><a href="https://github.com/Martibis/256ART-generative-art-template">https://github.com/Martibis/256ART-generative-art-template</a></p>
-<doc-anchor-target id="using-the-template-artwork">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#using-the-template-artwork">#</doc-anchor-trigger>
-        <span>Using the Template Artwork</span>
-    </h3>
-</doc-anchor-target>
-<p>Clone or download the <a href="https://github.com/Martibis/256ART-generative-art-template">256ART Generative Art Template repository</a> to begin. This template provides a starting point for creating generative art that can be released fully in-chain via 256ART. The main files you will be working with are:</p>
+<p>Test very small and very large viewports, portrait and landscape windows, and the intended aspect ratio. Make sure resizing does not accidentally choose a new random sequence or change a token&#x27;s base composition.</p>
+<h3 id="github-repository">GitHub Repository</h3>
+<p><a href="https://github.com/Martibis/256ART-generative-art-template">github.com/Martibis/256ART-generative-art-template</a></p>
+<h3 id="using-the-template-artwork">Using the Template Artwork</h3>
+<p>Clone or download the <a href="https://github.com/Martibis/256ART-generative-art-template">256ART Generative Art Template repository</a>, then follow its current <a href="https://github.com/Martibis/256ART-generative-art-template/blob/main/README.md">README</a>.</p>
+<p>The repository includes:</p>
 <ul>
-<li><code v-pre>artwork.js</code> or <code v-pre>artwork-p5.js</code>: Contains the code for generating your generative art.</li>
-<li><code v-pre>traits.json</code>: Defines the traits that should be stored on-chain.</li>
+<li><code translate="no" v-pre>scripts/artwork.js</code>: the vanilla JavaScript example.</li>
+<li><code translate="no" v-pre>scripts/artwork-p5.js</code>: the p5.js example.</li>
+<li><code translate="no" v-pre>scripts/traits.json</code>: example trait definitions.</li>
+<li><code translate="no" v-pre>dependencies/inputData.js</code>: the local emulator that creates <code translate="no" v-pre>inputData</code> and loads the artwork. Do not modify this file.</li>
+<li><code translate="no" v-pre>index.html</code>: the local artwork viewer.</li>
+<li><code translate="no" v-pre>batch-generator.html</code>: a tool for rendering many test outputs.</li>
 </ul>
-<p>Follow the instructions in the <a href="https://github.com/Martibis/256ART-generative-art-template/blob/main/README.md">readme.md</a> file to get started.</p>
-<doc-anchor-target id="customizing-the-template">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#customizing-the-template">#</doc-anchor-trigger>
-        <span>Customizing the Template</span>
-    </h3>
-</doc-anchor-target>
-<p>Modify the <code v-pre>artwork.js</code> / <code v-pre>artwork-p5.js</code> file to implement your desired artwork. Make sure the output is dimension agnostic, meaning it scales seamlessly to any dimension. Define a default dimension and create a multiplier to scale coordinates or sizes relative to the canvas dimensions.</p>
-<p>Modify the <code v-pre>traits.json</code> file for the traits for your generative artwork. Keep in mind that <code v-pre>traits.json</code> is only for the traits you would like to store on the blockchain. These traits cannot depend on the values of other traits.</p>
-<p>Access the traits defined in <code v-pre>traits.json</code> from <code v-pre>artwork.js</code> / <code v-pre>artwork-p5.js</code> using the inputData object. For example, if you defined a trait for &quot;Paint Color&quot; in traits.json, you could access this trait value in your code like this:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">function draw() {
+<p>Serve the repository through a local HTTP server; opening <code translate="no" v-pre>index.html</code> directly with a <code translate="no" v-pre>file://</code> URL can prevent the browser from loading <code translate="no" v-pre>traits.json</code>. For example, you can use a local-server extension in your editor.</p>
+<p>The final upload uses the completed and minified artwork file plus <code translate="no" v-pre>traits.json</code>, not the template&#x27;s HTML or local emulator.</p>
+<h3 id="customizing-the-template">Customizing the Template</h3>
+<p>Implement the artwork in either <code translate="no" v-pre>artwork.js</code> or <code translate="no" v-pre>artwork-p5.js</code>. Remove unused example code, keep the output dimension agnostic, and use the deterministic <code translate="no" v-pre>Random</code> class for repeatable variation.</p>
+<p>Define only the traits that should appear in the token metadata in <code translate="no" v-pre>traits.json</code>. For each trait:</p>
+<ul>
+<li><code translate="no" v-pre>trait_description</code> and <code translate="no" v-pre>trait_value</code> must be strings;</li>
+<li><code translate="no" v-pre>weight</code> is a cumulative threshold on a 0–10,000 scale;</li>
+<li>thresholds must increase, and the final option should end at <code translate="no" v-pre>10000</code>; and</li>
+<li>one on-chain trait cannot depend on the selected value of another trait.</li>
+</ul>
+<p>For example, thresholds of <code translate="no" v-pre>2000</code>, <code translate="no" v-pre>7000</code>, and <code translate="no" v-pre>10000</code> produce approximate probabilities of 20%, 50%, and 30%.</p>
+<p>The template adds each selected trait to <code translate="no" v-pre>inputData</code>. Access the value from your artwork code and explicitly parse it when you need a number or boolean:</p>
+<div id="customizing-the-template-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">function draw() {
   let color = inputData[&quot;Paint Color&quot;].value; // Access the Paint Color trait value defined in traits.json
 
   // Example usage: Set the background color using the Paint Color value
   background(color);
 }</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="available-libraries">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#available-libraries">#</doc-anchor-trigger>
-        <span>Available Libraries</span>
-    </h3>
-</doc-anchor-target>
-<p>Only use libraries available on EthFS, as the libraries need to be available on chain. To use one of the available libraries during development, add a CDN to the library in the index.html file. We recommend using as few libraries as possible (getting large libraries from chain can significantly slow down getting your art from chain). Some of the libraries available on EthFS at the time of writing are:</p>
-<ul>
-<li>p5js v1.5.0</li>
-<li>Tone.js (version unknown)</li>
-<li>threejs v0.147.0</li>
-</ul>
-<doc-anchor-target id="image-preview-generation-for-256art">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#image-preview-generation-for-256art">#</doc-anchor-trigger>
-        <span>Image Preview Generation for 256ART</span>
-    </h3>
-</doc-anchor-target>
-<p>To allow 256ART to generate image previews of your generative artwork for marketplaces, digital galleries, and other front-ends, you need to set the <code v-pre>window.rendered</code> property equal to the <code v-pre>canvas</code> object when the work is fully rendered. This way, 256ART can capture the generated canvas, create an image preview, and store it as part of the tokenURI in the ERC721 smart contract under the &quot;image&quot; property.</p>
-<p>Make sure to add the following line of code in your <code v-pre>artwork.js</code> / <code v-pre>artwork-p5.js</code> file once the artwork is completely rendered:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">window.rendered = canvas;</code></pre>
+<h3 id="available-libraries">Available Libraries</h3>
+<p>Only use a library that 256ART can retrieve from <a href="https://ethfs.xyz/">EthFS</a> and that is available for selection in the Artist Portal. EthFS stores reusable web files on-chain. An arbitrary npm package or CDN URL used during development will not automatically become part of the on-chain release.</p>
+<p>During local development, load the matching library version in <code translate="no" v-pre>index.html</code>. In the Artwork Details Form, select that same library and version so the live contract render receives compatible code.</p>
+<p>Use as few libraries as practical. Large libraries increase retrieval and rendering time, and version differences can change the output. Check the current EthFS/Artist Portal list rather than relying on an old version list in documentation. If a required library is missing, contact the 256ART team before completing the project; storing a new library on-chain can be expensive.</p>
+<h3 id="image-preview-generation-for-256art">Image Preview Generation for 256ART</h3>
+<p>256ART needs to know when the canvas is ready to capture. Assign the completed canvas element to <code translate="no" v-pre>window.rendered</code> only after the intended preview frame has finished rendering:</p>
+<div id="image-preview-generation-for-256art-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">window.rendered = canvas;</code></pre>
 </doc-codeblock></div>
-<p>For example, in a p5js sketch, you could add the <code v-pre>window.rendered = c.canvas;</code> line at the end of the <code v-pre>draw()</code> function after the artwork has been fully rendered:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">let c;
+<p>For p5.js, <code translate="no" v-pre>createCanvas</code> returns a renderer. Assign its underlying canvas:</p>
+<div id="image-preview-generation-for-256art-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">let c;
 function setup() {
   // Create your canvas
   c = createCanvas(width, height);
@@ -327,91 +307,51 @@ function draw() {
   window.rendered = c.canvas;
 }</code></pre>
 </doc-codeblock></div>
-<p>By setting the <code v-pre>window.rendered</code> property, you are providing 256ART with a signal to capture the rendered canvas and generate an image preview. Providing image previews is needed for front-ends as they may not be able to render multiple &quot;live rendering&quot; of the art script, especially when the artworks are resource-intensive. The image previews make it easier for front-ends to display your generative art without the performance overhead of rendering the artwork live.</p>
-<doc-anchor-target id="batch-artwork-generator">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#batch-artwork-generator">#</doc-anchor-trigger>
-        <span>Batch Artwork Generator</span>
-    </h3>
-</doc-anchor-target>
-<p>When your <code v-pre>artwork-p5.js</code> or <code v-pre>artwork.js</code> and your <code v-pre>traits.json</code> are completed, you can use the batch artwork generator for testing purposes. The <strong>Batch Artwork Generator</strong> tool streamlines the creation of multiple previews. It allows you to specify the number of previews and their dimensions, generates them efficiently, and provides an option to download all images as a ZIP file.</p>
-<doc-anchor-target id="features">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#features">#</doc-anchor-trigger>
-        <span>Features</span>
-    </h4>
-</doc-anchor-target>
+<p>If the work loads assets or builds its composition asynchronously, do not set <code translate="no" v-pre>window.rendered</code> until those steps are complete. Setting it too early can create blank or partial previews; never setting it can cause preview generation to time out.</p>
+<p>The resulting static image is used by 256ART, galleries, and marketplaces that cannot efficiently run every live artwork. It does not replace the fully on-chain live render, which is exposed separately in the token metadata.</p>
+<h3 id="batch-artwork-generator">Batch Artwork Generator</h3>
+<p>Use <code translate="no" v-pre>batch-generator.html</code> to inspect many seeds before upload. A single successful output is not enough to validate a generative system: uncommon traits, edge combinations, and rendering-time problems may appear only in a larger sample.</p>
+<h4 id="features">Features</h4>
 <ul>
-<li><strong>Batch Generation:</strong> Create multiple artworks in one go.</li>
-<li><strong>Customizable Image Size:</strong> Define the width and height for each image.</li>
-<li><strong>Progress Monitoring:</strong> Visual progress bar to track generation.</li>
-<li><strong>Download as ZIP:</strong> Easily download all generated images together.</li>
+<li><strong>Batch generation</strong>: create multiple test outputs in one run.</li>
+<li><strong>Custom image size</strong>: test the width and height used for each output.</li>
+<li><strong>Progress monitoring</strong>: follow generation and identify timeouts.</li>
+<li><strong>ZIP download</strong>: save the generated previews for review.</li>
 </ul>
-<doc-anchor-target id="how-to-use">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-use">#</doc-anchor-trigger>
-        <span>How to Use</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="how-to-use">How to Use</h4>
 <ol>
-<li><p><strong>Open the Generator:</strong></p>
-<ul>
-<li>Navigate to <code v-pre>batch-generator.html</code> in your browser. Ensure it&#x27;s served from a local server.</li>
-</ul>
-</li>
-<li><p><strong>Configure Parameters:</strong></p>
-<ul>
-<li><strong>Batch Size:</strong> Enter the number of artworks you wish to generate.</li>
-<li><strong>Image Size:</strong> Specify the desired size in pixels.</li>
-</ul>
-</li>
-<li><p><strong>Start Generation:</strong></p>
-<ul>
-<li>Click the <strong>Start Batch</strong> button. The progress bar will indicate the generation status.</li>
-</ul>
-</li>
-<li><p><strong>Download Images:</strong></p>
-<ul>
-<li>Once completed, click the <strong>Download All as ZIP</strong> button to download all generated artworks.</li>
-</ul>
-</li>
+<li>Start the template with a local web server.</li>
+<li>Open <code translate="no" v-pre>batch-generator.html</code> from that server.</li>
+<li>Enter the batch size and image dimensions.</li>
+<li>Select <strong>Start Batch</strong> and watch for errors or unusually slow renders.</li>
+<li>Select <strong>Download All as ZIP</strong> if you want to review the outputs outside the browser.</li>
 </ol>
-<doc-anchor-target id="creating-dynamic-artworks">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#creating-dynamic-artworks">#</doc-anchor-trigger>
-        <span>Creating Dynamic Artworks</span>
-    </h3>
-</doc-anchor-target>
-<p>With 256ART exposing a variety of blockchain parameters through the <code v-pre>inputData</code> object, you can create generative artworks that respond to on-chain events and states. This allows your artwork to evolve based on actions such as transfers, sales, or changes in an owner&#x27;s ETH balance. Below, we&#x27;ll explore how to utilize these parameters to add dynamic behavior to your generative art.</p>
-<doc-anchor-target id="available-blockchain-parameters">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#available-blockchain-parameters">#</doc-anchor-trigger>
-        <span>Available Blockchain Parameters</span>
-    </h4>
-</doc-anchor-target>
-<p>The following blockchain parameters are available in <code v-pre>inputData</code>:</p>
+<p>Review the batch for visual errors, unexpectedly common or missing traits, duplicate-looking compositions, clipping, blank frames, and inconsistent aspect ratios. Repeat at different dimensions. The batch generator improves coverage but does not prove the probabilities or code are correct; inspect the console and validate <code translate="no" v-pre>traits.json</code> separately.</p>
+<h3 id="creating-dynamic-artworks">Creating Dynamic Artworks</h3>
+<p>An artwork is <strong>dynamic</strong> when its live output responds to blockchain state that can change after minting. For example, it can react to a transfer, the current block, total minted supply, or the owner&#x27;s balance.</p>
+<p><code translate="no" v-pre>inputData.tokenId</code> and <code translate="no" v-pre>inputData.hash</code> identify the token and its original seed. They remain the foundation for a repeatable base composition. The dynamic parameters below describe state at the time the live HTML is requested, so using them can intentionally change later renders.</p>
+<h4 id="available-blockchain-parameters">Available Blockchain Parameters</h4>
+<p>The current template emulates these values in <code translate="no" v-pre>inputData</code>:</p>
 <ul>
-<li><code v-pre>ownerOfPiece</code>: The hexadecimal address of the current owner of the token.</li>
-<li><code v-pre>blockHash</code>: The hash of the previous block.</li>
-<li><code v-pre>blockNumber</code>: The current block number.</li>
-<li><code v-pre>blockTimestamp</code>: The timestamp of the current block.</li>
-<li><code v-pre>blockBaseFee</code>: The base fee of the current block.</li>
-<li><code v-pre>blockCoinbase</code>: The hexadecimal address of the block miner.</li>
-<li><code v-pre>prevrandao</code>: The previous randomness value from the block.</li>
-<li><code v-pre>totalSupply</code>: The total number of tokens minted.</li>
-<li><code v-pre>balanceOfOwner</code>: The number of tokens owned by the current owner.</li>
-<li><code v-pre>ethBalanceOfOwner</code>: The ETH balance of the current owner.</li>
+<li><code translate="no" v-pre>tokenId</code>: the token&#x27;s numeric ID.</li>
+<li><code translate="no" v-pre>hash</code>: the token&#x27;s fixed seed as a hexadecimal string.</li>
+<li><code translate="no" v-pre>ownerOfPiece</code>: the current owner&#x27;s hexadecimal address.</li>
+<li><code translate="no" v-pre>blockHash</code>: the previous block&#x27;s hash.</li>
+<li><code translate="no" v-pre>blockNumber</code>: the current block number.</li>
+<li><code translate="no" v-pre>blockTimestamp</code>: the current block timestamp in seconds.</li>
+<li><code translate="no" v-pre>blockBaseFee</code>: the current block&#x27;s base fee in wei, the smallest ETH unit (<code translate="no" v-pre>1 ETH = 10^18 wei</code>).</li>
+<li><code translate="no" v-pre>blockCoinbase</code>: the current block&#x27;s fee-recipient address.</li>
+<li><code translate="no" v-pre>prevrandao</code>: the current block&#x27;s randomness value.</li>
+<li><code translate="no" v-pre>totalSupply</code>: the number of tokens currently minted in the series.</li>
+<li><code translate="no" v-pre>balanceOfOwner</code>: the number of tokens from this series held by the current owner.</li>
+<li><code translate="no" v-pre>ethBalanceOfOwner</code>: the current owner&#x27;s native ETH balance in wei.</li>
 </ul>
-<p>These parameters can be accessed in your <code v-pre>artwork.js</code> or <code v-pre>artwork-p5.js</code> file via the <code v-pre>inputData</code> object. Below are examples of how to incorporate these parameters into your artwork.</p>
-<doc-anchor-target id="accessing-blockchain-parameters">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#accessing-blockchain-parameters">#</doc-anchor-trigger>
-        <span>Accessing Blockchain Parameters</span>
-    </h4>
-</doc-anchor-target>
-<p>Here&#x27;s how you can access and utilize the blockchain parameters within your artwork code:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">function draw() {
+<p>Contract generations can expose different subsets of dynamic values. Treat the Artist Portal&#x27;s deployment test as the final compatibility check for your release, and do not make the artwork fail completely when an optional value is unavailable.</p>
+<p>In the local template, URL overrides are strings while generated defaults are numbers; deployed contract generations can also differ. Inspect each value and its type in the Artist Portal test. A JavaScript <code translate="no" v-pre>Number</code> above <code translate="no" v-pre>Number.MAX_SAFE_INTEGER</code> may already have lost precision, and converting it to <code translate="no" v-pre>BigInt</code> cannot recover the lost bits. Do not rely on exact full-width values unless the tested live interface supplies a decimal or hexadecimal string.</p>
+<h4 id="accessing-blockchain-parameters">Accessing Blockchain Parameters</h4>
+<p>Here&#x27;s how you can access and utilize these parameters within your artwork code:</p>
+<div id="accessing-blockchain-parameters-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">function draw() {
   // Accessing blockchain parameters from inputData
   const ownerAddress = inputData[&quot;ownerOfPiece&quot;];
   const blockHash = inputData[&quot;blockHash&quot;];
@@ -445,72 +385,75 @@ function draw() {
   // Additional dynamic elements can be added using other parameters
 }</code></pre>
 </doc-codeblock></div>
+<p>Test dynamic work with explicit URL parameters supported by the local template, for example <code translate="no" v-pre>?blockNumber=123&amp;totalSupply=64</code>. Test owner changes, zero values, large values, and missing optional values.</p>
+<p>Remember that static marketplace previews show one captured state. Make the live behavior understandable and ensure the piece still has a useful preview. Explain important dynamic behavior in the artwork description so collectors know what can change.</p>
+<p>When the files are complete, continue with the <a href="/artist-documentation/artwork-details-form/">Artwork Details Form</a>.</p>
 
-                                
-                                <!-- Required only on API pages -->
-                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
-                            </div>
-                            <footer class="clear-both">
-                            
-                                <nav class="flex mt-14">
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../artist-documentation/getting-started/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                            <span>
-                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Getting Started</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                            
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../artist-documentation/artwork-details-form/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Artwork Details Form</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
-                                    </div>
-                                </nav>
-                            </footer>
-                        </main>
                 
-                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between">
-                                <div>
-                                    <ul class="flex flex-wrap items-center text-sm">
-                                    </ul>
-                                </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
-                            </footer>
-                        </div>
-                    </div>
-                
-                    <!-- Rendered if sidebar right is enabled -->
-                    <!-- Sidebar right skeleton-->
-                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
-                        <div class="pl-5">
-                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                        </div>
-                    </div>
-                
-                    <!-- User should be able to hide sidebar right -->
-                    <doc-sidebar-right v-cloak></doc-sidebar-right>
-                </div>
-
+                <!-- Required only on API pages -->
+                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
             </div>
+            <footer id="retype-content-footer" class="clear-both">
+            
+                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../artist-documentation/getting-started/">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                            <span>
+                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                <span class="block mt-1">Getting Started</span>
+                            </span>
+                        </a>
+                    </div>
+            
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../artist-documentation/artwork-details-form/">
+                            <span>
+                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                <span class="block mt-1">Artwork Details Form</span>
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                        </a>
+                    </div>
+                </nav>
+            </footer>
+        </main>
+
+        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                <div id="retype-footer-links" class="print:hidden">
+                    <ul class="flex flex-wrap items-center text-sm">
+                    </ul>
+                </div>
+                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
+            </footer>
         </div>
-    
-        <doc-search-mobile></doc-search-mobile>
-        <doc-back-to-top></doc-back-to-top>
     </div>
 
+    <!-- Rendered if sidebar right is enabled -->
+    <!-- Sidebar right skeleton-->
+    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:translate-x-0 sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+        <div class="pl-5">
+            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+        </div>
+    </div>
 
-    <div id="docs-overlay-target"></div>
+    <!-- User should be able to hide sidebar right -->
+    <doc-sidebar-right v-cloak></doc-sidebar-right>
+</div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Generative Art Template", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        </div>
+    </div>
+
+    <doc-search-mobile></doc-search-mobile>
+    <doc-back-to-top></doc-back-to-top>
+</div>
+
+
+    <div id="retype-overlay-target"></div>
+
+        <script data-cfasync="false">window.__DOCS__ = { "title": "Generative Art Template", level: 2, icon: "file", hasPrism: true, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/artist-documentation/generative-art-template.md" }</script>
 </body>
 </html>

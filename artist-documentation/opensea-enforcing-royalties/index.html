@@ -3,365 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795314066934">
+    <meta name="color-scheme" content="light dark">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837706067383">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.6.0">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Opensea &amp; Enforcing Royalties</title>
-    <meta name="title" content="Opensea & Enforcing Royalties">
-    <meta name="description" content="We strongly recommend artists to set up and update various aspects of their NFT collections directly on OpenSea.">
+    <title>OpenSea &amp; Enforcing Royalties</title>
+    <meta name="title" content="OpenSea & Enforcing Royalties">
+    <meta name="description" content="After a 256ART release is deployed, OpenSea may discover its tokens from the chain automatically. OpenSea's collection page and creator-earnings settings are marketplace configuration; they do not replace the on-chain artwork metadata or the 256ART mint page.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.256.art/artist-documentation/opensea-enforcing-royalties/">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://docs.256.art/sitemap.xml">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.256.art/artist-documentation/opensea-enforcing-royalties/">
-    <meta property="og:title" content="Opensea & Enforcing Royalties">
-    <meta property="og:description" content="We strongly recommend artists to set up and update various aspects of their NFT collections directly on OpenSea.">
+    <meta property="og:title" content="OpenSea & Enforcing Royalties">
+    <meta property="og:description" content="After a 256ART release is deployed, OpenSea may discover its tokens from the chain automatically. OpenSea's collection page and creator-earnings settings are marketplace configuration; they do not replace the on-chain artwork metadata or the 256ART mint page.">
+    <meta property="og:site_name" content="256ART">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.256.art/artist-documentation/opensea-enforcing-royalties/">
-    <meta property="twitter:title" content="Opensea & Enforcing Royalties">
-    <meta property="twitter:description" content="We strongly recommend artists to set up and update various aspects of their NFT collections directly on OpenSea.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.256.art/artist-documentation/opensea-enforcing-royalties/">
+    <meta name="twitter:title" content="OpenSea & Enforcing Royalties">
+    <meta name="twitter:description" content="After a 256ART release is deployed, OpenSea may discover its tokens from the chain automatically. OpenSea's collection page and creator-earnings settings are marketplace configuration; they do not replace the on-chain artwork metadata or the 256ART mint page.">
 
-    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+    <!-- Alternate Markdown -->
+    <link rel="alternate" type="text/markdown" href="https://docs.256.art/artist-documentation/opensea-enforcing-royalties.md">
 
-    <link href="../../resources/css/retype.css?v=3.6.0.795314066934" rel="stylesheet">
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795314066934" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795314066934" data-turbo-eval="false" defer></script>
+    <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
+    <link href="../../resources/css/retype.css?v=4.6.0.837706067383" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837706067383" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837706067383" data-turbo-eval="false" defer></script>
 </head>
 <body>
-    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
-        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
+    <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
+
+    <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
+        <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+            <!-- Mobile menu button skeleton -->
+            <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-hidden rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+            <div v-cloak id="retype-sidebar-left-toggle-button"></div>
     
-        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
-            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
-                <!-- Mobile menu button skeleton -->
-                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-                <div v-cloak id="docs-sidebar-toggle"></div>
-        
-                <!-- Logo -->
-                <div class="flex items-center justify-between h-full py-2 md:w-75">
-                    <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
-                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">256ART</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
-                    </div>
-        
-                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+            <!-- Logo -->
+            <div class="flex items-center justify-between h-full py-2 md:w-75">
+                <div class="flex items-center px-2 md:px-6">
+                    <a id="retype-branding-logo" href="https://docs.256.art/" class="flex items-center leading-snug text-2xl">
+                        <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">256ART</span>
+                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">Docs</span>
                 </div>
-        
-                <div class="flex justify-between md:grow">
-                    <!-- Top Nav -->
-                    <nav class="hidden md:flex">
-                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
-                            <li class="mr-6">
-                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://retype.com/guides/getting-started/">Getting Started</a>
-                            </li>
-        
-                        </ul>
-                    </nav>
-        
-                    <!-- Header Right Skeleton -->
-                    <div v-cloak class="flex justify-end grow skeleton">
-        
-                        <!-- Search input mock -->
-                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
-                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                            </div>
-                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
-                        </div>
-        
-                        <!-- Mobile search button -->
-                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
-                        </div>
-        
-                        <!-- Dark mode switch placeholder -->
-                        <div class="w-10 h-10 lg:ml-2"></div>
-        
-                        <!-- History button -->
-                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
-                        </div>
-                    </div>
-        
-                    <div v-cloak class="flex justify-end grow">
-                        <div id="docs-mobile-search-button"></div>
-                        <doc-search-desktop></doc-search-desktop>
-        
-                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
-                        <doc-history></doc-history>
-                    </div>
+    
+                <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
+            </div>
+    
+            <div class="flex justify-between md:grow">
+                <!-- Top Nav -->
+                <nav id="retype-header-nav" class="hidden md:flex">
+                    <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/">Visit 256ART</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/artistportal">Artist Portal</a>
+                        </li>
+    
+                    </ul>
+                </nav>
+    
+                <div v-cloak class="flex justify-end grow">
+                    <div id="retype-mobile-search-button"></div>
+                    <doc-search-desktop></doc-search-desktop>
+    
+                    <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                    <doc-history></doc-history>
                 </div>
             </div>
-        </header>
-    
-        <div class="container relative flex bg-white">
-            <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
-            
-                <!-- Render this div, if config.showSidebarFilter is `true` -->
-                <div class="flex items-center h-16 px-6">
-                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
-                </div>
-            
-                <div class="pl-6 mt-1 mb-4">
-                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
-                </div>
-            
-                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
-                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+        </div>
+    </header>
+
+
+    <div id="retype-container" class="container relative flex bg-white">
+        <!-- Sidebar Skeleton -->
+        <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
+        
+            <div class="flex items-center h-16 px-6">
+                <input id="retype-filter-input-mock" class="w-full h-10 pl-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded-lg shadow-none md:text-sm hover:border-filter-border-hover focus:outline-hidden focus:border-filter-border-focus placeholder-filter-placeholder" type="text">
+            </div>
+        
+            <div class="pl-6 mt-1 mb-4">
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            </div>
+        
+            <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
+                <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                    <span class="text-xs whitespace-nowrap">Powered by</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Sidebar component -->
+        <doc-sidebar v-cloak>
+            <template #sidebar-footer>
+                <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
+        
+                    <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
+                        <nav>
+                            <ul class="flex flex-wrap justify-center items-center">
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/">Visit 256ART</a>
+                                </li>
+                                <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/artistportal">Artist Portal</a>
+                                </li>
+        
+                            </ul>
+                        </nav>
+                    </div>
+        
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
                         <span class="text-xs whitespace-nowrap">Powered by</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
                     </a>
                 </div>
+            </template>
+        </doc-sidebar>
+
+        <div class="grow min-w-0 bg-body-bg">
+            <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+<div class="flex">
+    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
+        <main class="relative pb-12 lg:pt-2">
+            <div class="relative retype-markdown" id="retype-content">
+                <!-- Rendered if sidebar right is enabled -->
+                <div id="retype-sidebar-right-toggle"></div>
+                <doc-page-actions></doc-page-actions>
+
+                <!-- Page content  -->
+<h1 id="opensea--enforcing-royalties">OpenSea &amp; Enforcing Royalties</h1>
+<p>After a 256ART release is deployed, OpenSea may discover its tokens from the chain automatically. OpenSea&#x27;s collection page and creator-earnings settings are marketplace configuration; they do not replace the on-chain artwork metadata or the 256ART mint page.</p>
+<p>OpenSea changes its interface over time. Use this page for the 256ART-specific decisions, and follow OpenSea&#x27;s current official guides for button locations:</p>
+<ul>
+<li><a href="https://support.opensea.io/en/articles/8867025-how-do-i-edit-my-collection-details">Edit collection details</a></li>
+<li><a href="https://support.opensea.io/en/articles/8867026-how-do-i-set-creator-earnings-on-opensea">Set creator earnings</a></li>
+</ul>
+<p>Connect the wallet that owns the 256ART collection contract. Verify the chain and full contract address before changing a collection with a similar name.</p>
+<h3 id="details">Details</h3>
+<p>In <a href="https://opensea.io/studio">OpenSea Studio</a>, select the collection associated with the deployed 256ART contract and open <strong>Collection Details</strong>.</p>
+<p>Review the fields currently offered by OpenSea, which can include:</p>
+<ul>
+<li><strong>Display name</strong>: normally match the released artwork name so collectors can identify it.</li>
+<li><strong>Description</strong>: summarize the series and link to the official 256ART artwork or artist page. OpenSea currently supports Markdown.</li>
+<li><strong>Custom OpenSea URL</strong>: choose a clear collection slug if the option is available.</li>
+<li><strong>Collection images and presentation</strong>: use artwork you have the right to publish and preview it at the sizes OpenSea requests.</li>
+<li><strong>Category, tags, and content classification</strong>: describe the collection accurately, including explicit or sensitive content where applicable.</li>
+<li><strong>Collaborators</strong>: add only trusted addresses. Collaborators can change important marketplace presentation settings, although OpenSea restricts earnings settings to the collection owner.</li>
+</ul>
+<p>Publish the changes, then inspect the public collection page while signed out. Confirm the contract address, chain, external links, images, item count, traits, and live-media behavior.</p>
+<p>If token images or metadata are stale, first verify the 256ART live view and <code translate="no" v-pre>tokenURI</code>. A marketplace cache problem is different from an on-chain metadata problem. Use OpenSea&#x27;s refresh tools or support guidance rather than redeploying or changing the artwork without diagnosing the source.</p>
+<h3 id="creator-earnings">Creator Earnings</h3>
+<p>Creator earnings are a percentage paid from a secondary sale when the marketplace and transfer path honor the setting. They are not the same as the primary mint split and are never guaranteed merely because a percentage appears on a marketplace page.</p>
+<p>In OpenSea Studio:</p>
+<ol>
+<li>Select the deployed collection.</li>
+<li>Open <strong>Creator Earnings</strong>.</li>
+<li>Enter the percentage and recipient that correspond to the released 256ART royalty configuration.</li>
+<li>Verify the full recipient address. Depending on the release, it may be a Royalty Splitter contract rather than your personal wallet.</li>
+<li>Save the optional earnings settings.</li>
+</ol>
+<p>Only the collection owner can change OpenSea creator-earnings recipients and percentages. OpenSea currently caps creator earnings at <strong>10%</strong>. Keep the marketplace value aligned with the contract and <a href="/artist-documentation/artwork-details-form/#secondary-royalty-percentage">Artwork Details Form</a>. If you are unsure which recipient to use, confirm it in the deployment records or ask the 256ART team before publishing.</p>
+<h4 id="enforceability-of-creator-earnings">Enforceability of Creator Earnings</h4>
+<p>Current 256ART contracts can support optional <a href="https://docs.opensea.io/docs/creator-fee-enforcement">ERC721-C creator-earnings enforcement</a>. For a compatible custom contract, OpenSea shows an <strong>Enforce earnings</strong> action in the Creator Earnings settings. The owner must complete OpenSea&#x27;s wallet-signature flow to configure it.</p>
+<p>Enforcement has important trade-offs:</p>
+<ul>
+<li>it restricts sales to transfer paths and marketplaces that comply with the configured ERC721-C policy;</li>
+<li>marketplaces that do not support that policy may be unable to trade the tokens;</li>
+<li>existing listings or offers may become invalid and need to be recreated; and</li>
+<li>removing or changing enforcement later can require another configuration step.</li>
+</ul>
+<p>If <strong>Enforce earnings</strong> is absent, do not try to make the collection compatible by calling unfamiliar contract functions. Confirm that you selected the correct owner wallet and contract, then contact OpenSea or the 256ART team.</p>
+<p>Without enforcement, OpenSea treats creator earnings as optional, and the seller chooses whether to include them. Other marketplaces have their own rules. With enforcement, royalties are enforced only through compatible transfer policies; it is not a promise that every marketplace will support trading.</p>
+<hr>
+<h2 id="summary">Summary</h2>
+<p>Use OpenSea Studio to configure the marketplace presentation and creator earnings for the already deployed 256ART contract. Verify the contract, owner, royalty recipient, and percentage; understand the trading restrictions before enabling ERC721-C enforcement; and recheck the public collection after every update.</p>
+<p>For release-contract management outside OpenSea, return to <a href="/artist-documentation/releasing-your-artwork/#post-release">Releasing Your Artwork</a>.</p>
+
+                
+                <!-- Required only on API pages -->
+                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
             </div>
+            <footer id="retype-content-footer" class="clear-both">
             
-            <!-- Sidebar component -->
-            <doc-sidebar v-cloak>
-                <template #sidebar-footer>
-                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
-            
-                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
-                            <nav>
-                                <ul class="flex flex-wrap justify-center items-center">
-                                    <li class="mr-6">
-                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://retype.com/guides/getting-started/">Getting Started</a>
-                                    </li>
-            
-                                </ul>
-                            </nav>
-                        </div>
-            
-                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
-                            <span class="text-xs whitespace-nowrap">Powered by</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                <nav id="retype-nextprev" class="print:hidden flex mt-14">
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../artist-documentation/releasing-your-artwork/">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                            <span>
+                                <span class="block text-xs font-normal text-base-text-muted">Previous</span>
+                                <span class="block mt-1">Releasing Your Artwork</span>
+                            </span>
                         </a>
                     </div>
-                </template>
-            </doc-sidebar>
-    
-            <div class="grow min-w-0 dark:bg-dark-850">
-                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
-                <div class="flex">
-                    <div class="min-w-0 p-4 grow md:px-16">
-                        <main class="relative pb-12 lg:pt-2">
-                            <div class="docs-markdown" id="docs-content">
-                                <!-- Rendered if sidebar right is enabled -->
-                                <div id="docs-sidebar-right-toggle"></div>
-                                <!-- Page content  -->
-<doc-anchor-target id="opensea--enforcing-royalties" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#opensea--enforcing-royalties">#</doc-anchor-trigger>
-        <span>Opensea &amp; Enforcing Royalties</span>
-    </h1>
-</doc-anchor-target>
-<p>We strongly recommend artists to set up and update various aspects of their NFT collections directly on OpenSea. Below are the key sections available under the <strong>Edit Project</strong> area in OpenSea:</p>
-<doc-anchor-target id="details">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#details">#</doc-anchor-trigger>
-        <span>Details</span>
-    </h3>
-</doc-anchor-target>
-<p>Manage the foundational aspects of your NFT collection to enhance its visibility and appeal.</p>
-<ul>
-<li><p><strong>Name</strong></p>
-<ul>
-<li><strong>Description:</strong> The title of your NFT collection. It should be unique and reflective of the artwork or theme.</li>
-<li><strong>Example:</strong> &quot;Test Project&quot;</li>
-</ul>
-</li>
-<li><p><strong>Description</strong></p>
-<ul>
-<li><strong>Description:</strong> Provide a detailed explanation of your collection. Markdown syntax is supported, allowing for formatted text. This description helps potential buyers understand the inspiration and story behind your NFTs.</li>
-<li><strong>Character Limit:</strong> 1000 characters</li>
-<li><strong>Example:</strong> &quot;A collection of generative art pieces exploring the intersection of technology and nature.&quot;</li>
-</ul>
-</li>
-<li><p><strong>URL</strong></p>
-<ul>
-<li><strong>Description:</strong> Customize the URL of your collection on OpenSea. It must contain only lowercase letters, numbers, and hyphens.</li>
-<li><strong>Format:</strong> <code v-pre>https://opensea.io/collection/your-custom-url</code></li>
-<li><strong>Example:</strong> <code v-pre>https://opensea.io/collection/test-project</code></li>
-</ul>
-</li>
-<li><p><strong>Category and Tags</strong></p>
-<ul>
-<li><strong>Description:</strong> Enhance discoverability by selecting an appropriate category and adding relevant tags. Categories help classify your collection, while tags act as keywords for search optimization.</li>
-<li><strong>Options:</strong> Various categories such as Art, Music, Photography, etc.</li>
-<li><strong>Example Tags:</strong> &quot;Generative Art&quot;, &quot;Abstract&quot;, &quot;Digital&quot;</li>
-</ul>
-</li>
-<li><p><strong>Payment Tokens</strong></p>
-<ul>
-<li><strong>Description:</strong> Specify which tokens can be used to buy and sell your items. By default, ETH and WETH are available, but you can add more tokens as needed.</li>
-<li><strong>Options:</strong> ETH, WETH, and others via &quot;Add token&quot;</li>
-</ul>
-</li>
-<li><p><strong>Featured Image</strong></p>
-<ul>
-<li><strong>Description:</strong> Upload an image that will be used to feature your collection on the OpenSea homepage, category pages, or other prominent display areas.</li>
-<li><strong>Recommended Size:</strong> 600 x 400 pixels</li>
-<li><strong>Example:</strong> A high-quality logo or representative artwork from your collection.</li>
-</ul>
-</li>
-<li><p><strong>Display Theme</strong></p>
-<ul>
-<li><strong>Description:</strong> Choose how your items are visually presented on OpenSea.</li>
-<li><strong>Options:</strong>
-<ul>
-<li><strong>Padded:</strong> Adds padding around your items.</li>
-<li><strong>Contained:</strong> Items are contained within a fixed area.</li>
-<li><strong>Covered:</strong> Items cover the entire display area without padding.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>Explicit &amp; Sensitive Content</strong></p>
-<ul>
-<li><strong>Description:</strong> Mark your collection as containing explicit or sensitive content if applicable.</li>
-<li><strong>Options:</strong> Toggle to set the flag.</li>
-</ul>
-</li>
-<li><p><strong>Trait-Based Collection Offers</strong></p>
-<ul>
-<li><strong>Description:</strong> Enable trait-based offers, allowing collectors to make offers based on specific traits of your NFTs.</li>
-</ul>
-</li>
-<li><p><strong>Show OpenRarity Ranking</strong></p>
-<ul>
-<li><strong>Description:</strong> Display OpenRarity rankings after all items have been minted. This provides collectors with information on the rarity of each NFT in your collection.</li>
-</ul>
-</li>
-<li><p><strong>Collaborators</strong></p>
-<ul>
-<li><strong>Description:</strong> Add collaborators who can edit the appearance of your collection or drop pages on OpenSea. Collaborators can make cosmetic changes but cannot alter payout addresses or creator earnings percentages.</li>
-<li><strong>Capabilities:</strong>
-<ul>
-<li>Edit collection or drop appearance</li>
-<li>Cannot change payout addresses</li>
-<li>Cannot modify creator earnings percentages</li>
-</ul>
-</li>
-<li><strong>Example:</strong> Adding a co-artist or marketing manager as a collaborator.</li>
-</ul>
-</li>
-</ul>
-<doc-anchor-target id="creator-earnings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#creator-earnings">#</doc-anchor-trigger>
-        <span>Creator Earnings</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>Enforceability of Creator Earnings</strong>
-<ul>
-<li><strong>Description:</strong> As 256ART contracts now adhere to the <a href="https://opensea.io/blog/articles/creator-earnings-erc721-c-compatibility-on-opensea">ERC721-C</a> standard, artists can optionally enforce creator earnings on-chain, ensuring that royalties are automatically applied across all marketplaces that support this feature.</li>
-<li><strong>Benefits:</strong>
-<ul>
-<li><strong>Full Enforcement:</strong> Guarantees that royalties are honored by restricting sales to compliant marketplaces.</li>
-<li><strong>Control:</strong> Artists maintain consistent royalty earnings without relying on third-party marketplace compliance.</li>
-</ul>
-</li>
-<li><strong>Implications:</strong>
-<ul>
-<li><strong>Marketplace Limitations:</strong> Enforcing royalties may limit your NFTs to only certain marketplaces that honor these settings.</li>
-<li><strong>Invalidation of Existing Listings:</strong> Enforcing earnings will invalidate any existing listings and offers on OpenSea that do not comply with the enforced royalty structure.</li>
-</ul>
-</li>
-<li><strong>Action:</strong> Toggle to &quot;Turn on enforced earnings&quot; to activate this feature.</li>
-<li><strong>Note:</strong> By enabling enforced earnings, artists can fully ensure that their secondary royalties are consistently applied, providing ongoing revenue from future sales.</li>
-</ul>
-</li>
-</ul>
-<hr>
-<doc-anchor-target id="summary">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#summary">#</doc-anchor-trigger>
-        <span>Summary</span>
-    </h2>
-</doc-anchor-target>
-<p>By leveraging the <strong>Details</strong> and <strong>Creator Earnings</strong> sections within OpenSea&#x27;s <strong>Edit Project</strong> feature, artists can comprehensively manage their NFT collections. These settings not only enhance the discoverability and presentation of your collection but also ensure that you maintain control over your revenue streams through enforced secondary royalties.</p>
-<p>For more detailed guidance, refer to OpenSea&#x27;s official <a href="https://docs.opensea.io/">documentation</a>.</p>
+            
+                    <div class="w-1/2">
+                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../learn-more/">
+                            <span>
+                                <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
+                                <span class="block mt-1">Learn More</span>
+                            </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                        </a>
+                    </div>
+                </nav>
+            </footer>
+        </main>
 
-                                
-                                <!-- Required only on API pages -->
-                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
-                            </div>
-                            <footer class="clear-both">
-                            
-                                <nav class="flex mt-14">
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../artist-documentation/releasing-your-artwork/">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                            <span>
-                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Releasing Your Artwork</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                            
-                                    <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../learn-more/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Learn More</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
-                                    </div>
-                                </nav>
-                            </footer>
-                        </main>
-                
-                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between">
-                                <div>
-                                    <ul class="flex flex-wrap items-center text-sm">
-                                    </ul>
-                                </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
-                            </footer>
-                        </div>
-                    </div>
-                
-                    <!-- Rendered if sidebar right is enabled -->
-                    <!-- Sidebar right skeleton-->
-                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
-                        <div class="pl-5">
-                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
-                        </div>
-                    </div>
-                
-                    <!-- User should be able to hide sidebar right -->
-                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
+            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                <div id="retype-footer-links" class="print:hidden">
+                    <ul class="flex flex-wrap items-center text-sm">
+                    </ul>
                 </div>
-
-            </div>
+                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
+            </footer>
         </div>
-    
-        <doc-search-mobile></doc-search-mobile>
-        <doc-back-to-top></doc-back-to-top>
     </div>
 
+    <!-- Rendered if sidebar right is enabled -->
+    <!-- Sidebar right skeleton-->
+    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:translate-x-0 sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
+        <div class="pl-5">
+            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
+        </div>
+    </div>
 
-    <div id="docs-overlay-target"></div>
+    <!-- User should be able to hide sidebar right -->
+    <doc-sidebar-right v-cloak></doc-sidebar-right>
+</div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Opensea & Enforcing Royalties", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+        </div>
+    </div>
+
+    <doc-search-mobile></doc-search-mobile>
+    <doc-back-to-top></doc-back-to-top>
+</div>
+
+
+    <div id="retype-overlay-target"></div>
+
+        <script data-cfasync="false">window.__DOCS__ = { "title": "OpenSea & Enforcing Royalties", level: 2, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/artist-documentation/opensea-enforcing-royalties.md" }</script>
 </body>
 </html>
