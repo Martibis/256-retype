@@ -2,7 +2,7 @@
 
 ### Fully In-Chain
 
-256ART stores and serves the artwork's rendering code, traits, and core ERC-721 metadata through smart contracts. A collector can retrieve that code and metadata from the collection contract without relying on the 256ART website. Your script can still create an external runtime dependency if it fetches media or data from another storage network or web service, so disclose and make that choice resilient where applicable.
+256ART stores and serves the artwork's rendering code, traits, and core ERC-721 metadata through smart contracts. A collector can retrieve that code and metadata from the collection contract without relying on the 256ART website. This [standards-native delivery path](https://256.art/learn/standards-native-on-chain-art) begins with the collection's `tokenURI`. Your script can still create an external runtime dependency if it fetches media or data from another storage network or web service, so disclose and make that choice resilient where applicable.
 
 256ART now generally calls this **fully on-chain**. Read [Understanding and Navigating 256ART](/learn-more/understanding-and-navigating-256art/#what-does-fully-in-chain-mean) for a plain-language explanation, including how live artwork differs from static marketplace previews.
 
@@ -14,7 +14,7 @@
 
 Blockchain deployment cost is strongly affected by the amount of data stored. Before deployment, 256ART compresses the artwork script with gzip and encodes it for storage. This reduces the script's stored size and therefore usually lowers deployment gas compared with storing the uncompressed source.
 
-The final cost still depends on the script and library sizes, the number of contracts required, the selected chain, and gas conditions at deployment. The platform's pre-release test provides an estimate before you release.
+The final cost still depends on the script and library sizes, the number of contracts required, the selected chain, and gas conditions at deployment. The platform's pre-release test provides an estimate before you release. Learn more about [how 256ART compresses JavaScript for on-chain storage](https://256.art/learn/256art-compression).
 
 ### Fully Automated Testing
 
@@ -54,6 +54,6 @@ The [Artwork Details Form](/artist-documentation/artwork-details-form/#sales-mec
 
 The owner address selected in the Artwork Details Form becomes the owner of the released collection contract. That address can use the contract's available administrative functions and receives funds according to the configured split.
 
-Contract ownership also carries responsibility: verify the address carefully, protect its keys, keep enough ETH for future administrative transactions, and understand which settings are editable after deployment. See [Releasing Your Artwork](/artist-documentation/releasing-your-artwork/#post-release).
+Contract ownership also carries responsibility: verify the address carefully, protect its keys, keep enough ETH for future administrative transactions, and understand which settings are editable after deployment. Read [What an Artist-Owned Collection Contract Really Means](https://256.art/learn/artist-owned-contracts), then see [Releasing Your Artwork](/artist-documentation/releasing-your-artwork/#post-release).
 
 Continue with [Getting Started](/artist-documentation/getting-started/).

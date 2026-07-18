@@ -56,8 +56,8 @@ After a successful run, review the result as if you were a collector:
 
 - confirm the name, artist, description, license, token ID, and traits;
 - open the live view and check the intended rendering, animation, interaction, and sound;
-- inspect the static preview for cropping, blank areas, and completion;
-- confirm that the same seed gives the same base output;
+- inspect the static preview for cropping, blank areas, and completion using the [live-versus-preview validation guide](https://256.art/learn/live-artwork-vs-preview);
+- confirm through [deterministic testing](https://256.art/learn/deterministic-generative-art) that the same seed gives the same base output;
 - for dynamic work, test the expected state changes and fallback behavior; and
 - review the deployment-cost estimate and contract summary.
 

@@ -2,9 +2,9 @@
 
 ### What is 256ART?
 
-256ART is an open platform for creating and collecting fully on-chain generative art.
+256ART is an open platform for creating and collecting [fully on-chain generative art](https://256.art/learn/what-is-on-chain-art).
 
-**Generative art** is created with an algorithm: the artist designs a system of rules, and that system can produce many related but distinct outputs. When a collector mints on 256ART, the artist's code combines with a unique seed to create that collector's piece. For deterministic decisions, the same code and seed reproduce the same base composition. Dynamic blockchain state, interaction, animation timing, and viewport conditions can change a render.
+**[Generative art](https://256.art/learn/generative-art)** is created with an algorithm: the artist designs a system of rules, and that system can produce many related but distinct outputs. When a collector mints on 256ART, the artist's code combines with a unique seed to create that collector's piece. For deterministic decisions, the same code and seed reproduce the same base composition. Dynamic blockchain state, interaction, animation timing, and viewport conditions can change a render.
 
 On 256ART, the code needed to render the artwork, its traits, and its ERC-721 metadata are served from smart contracts on the blockchain. This lets collectors retrieve the live artwork without depending on the 256ART website.
 
@@ -26,7 +26,7 @@ On 256ART, the code needed to render the artwork, its traits, and its ERC-721 me
 
 256ART now generally uses the term **fully on-chain**; some earlier 256ART material calls the same approach **fully in-chain**.
 
-An NFT can be on a blockchain while some of its content is stored elsewhere. For example, a contract's `tokenURI` may point to metadata on a project server or a separate storage network. If that external location becomes unavailable, an owner can still prove ownership of the token, but applications may no longer be able to load its metadata or artwork.
+An NFT can be on a blockchain while some of its content is stored elsewhere. For example, a contract's `tokenURI` may point to metadata on a project server or a separate storage network. If that external location becomes unavailable, an owner can still prove ownership of the token, but applications may no longer be able to load its metadata or artwork. See [On-Chain vs IPFS vs Arweave vs Centralized Storage](https://256.art/learn/on-chain-vs-ipfs) for the differences.
 
 For current 256ART releases:
 
@@ -51,7 +51,7 @@ The exact controls depend on the release, but the underlying process is:
 4. The collection contract creates a token and associates it with a seed.
 5. The artwork algorithm uses that seed and the token's traits to render the collector's output.
 
-Most releases assign a random seed at mint; artwork pages may label this traditional generative format **Long form**. A **collector-selected seed** release, also called a **collector curated mint**, lets you generate previews and choose the seed you want before minting. The artwork page tells you whether a preview is only illustrative or can be selected for the final mint.
+Most releases assign a random seed at mint; artwork pages may label this traditional generative format **[Long form](https://256.art/learn/long-form-generative-art)**. A **collector-selected seed** release, also called a **collector curated mint**, lets you generate previews and choose the seed you want before minting. The artwork page tells you whether a preview is only illustrative or can be selected for the final mint.
 
 Artists can choose from three sales mechanisms:
 
@@ -77,7 +77,7 @@ Each is a separate network. Before minting, check the **Chain** field on the art
 
 256ART is open to artists rather than limited to a platform-curated list. Any artist can create an account in the Artist Portal and prepare a release.
 
-For collectors, this provides access to a broad range of artists, styles, release sizes, and prices. Openness is not the same as platform endorsement, however. Before minting, review the artist, artwork details, license, chain, price, supply, and sale terms shown on the artwork page.
+For collectors, this provides access to a broad range of artists, styles, release sizes, and prices. Openness is not the same as platform endorsement, however. Before minting, review the artist, artwork details, [license](https://256.art/learn/256art-artwork-licenses), chain, price, supply, and sale terms shown on the artwork page.
 
 ### Understanding the Tags
 

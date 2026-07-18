@@ -32,6 +32,8 @@ Do not continue if an address is truncated and you have not verified the full va
 - **Royalty Splitter Contract**: distributes paid secondary royalties according to the configured secondary split.
 - **Main collection contract**: creates and manages the ERC-721 tokens, sale, metadata, and live-render interfaces.
 
+For the complete relationship among these contracts, read [How 256ART Stores Generative Art in Contract Bytecode](https://256.art/learn/256art-on-chain-storage).
+
 The portal may request multiple wallet transactions. For each one:
 
 1. confirm that you are on the intended network;
@@ -59,6 +61,8 @@ Save the collection address and transaction links. On the artwork page, verify t
 ### Post-Release
 
 The released contract may expose owner-only administrative functions. Available functions vary by contract generation and sale type.
+
+Before using them, read [What an Artist-Owned Collection Contract Really Means](https://256.art/learn/artist-owned-contracts).
 
 - **Artist Mint**: mint without the public mint price to an address, where supported. This is unavailable while a Fair Dutch Auction is active and cannot exceed the maximum supply. The transaction still costs gas.
 - **Withdraw primary funds**: distribute sale proceeds held by the main contract.

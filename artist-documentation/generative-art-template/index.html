@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837706067383">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837711001524">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.6.0.837706067383" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837711001524" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837706067383" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837711001524" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837706067383" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.837706067383" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837711001524" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.837711001524" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -72,6 +72,9 @@
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
                             <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/">Visit 256ART</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/learn">256ART Learn</a>
                         </li>
                         <li class="mr-6">
                             <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/artistportal">Artist Portal</a>
@@ -129,6 +132,9 @@
                                     <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/">Visit 256ART</a>
                                 </li>
                                 <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/learn">256ART Learn</a>
+                                </li>
+                                <li class="mr-6">
                                     <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/artistportal">Artist Portal</a>
                                 </li>
         
@@ -175,7 +181,7 @@
 <li>Run the Artist Portal test before deployment.</li>
 </ol>
 <h3 id="random-class">Random class</h3>
-<p>Use deterministic randomness so the same token hash always reconstructs the same base output. The template&#x27;s <code translate="no" v-pre>Random</code> class seeds its pseudo-random number generator from <code translate="no" v-pre>inputData.hash</code>. Do not use <code translate="no" v-pre>Math.random()</code> for decisions that must remain consistent between renders.</p>
+<p>Use <a href="https://256.art/learn/deterministic-generative-art">deterministic randomness</a> so the same token hash always reconstructs the same base output. The template&#x27;s <code translate="no" v-pre>Random</code> class seeds its pseudo-random number generator from <code translate="no" v-pre>inputData.hash</code>. Do not use <code translate="no" v-pre>Math.random()</code> for decisions that must remain consistent between renders.</p>
 <p>Create one generator in a predictable place and call its methods in a consistent order. Adding or removing an early random call later can change every value that follows, so lock the algorithm before release and retest after any code change. You may remove helper methods you do not use.</p>
 <div id="random-class-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">class Random {
@@ -308,7 +314,7 @@ function draw() {
 }</code></pre>
 </doc-codeblock></div>
 <p>If the work loads assets or builds its composition asynchronously, do not set <code translate="no" v-pre>window.rendered</code> until those steps are complete. Setting it too early can create blank or partial previews; never setting it can cause preview generation to time out.</p>
-<p>The resulting static image is used by 256ART, galleries, and marketplaces that cannot efficiently run every live artwork. It does not replace the fully on-chain live render, which is exposed separately in the token metadata.</p>
+<p>The resulting static image is used by 256ART, galleries, and marketplaces that cannot efficiently run every live artwork. It does not replace the fully on-chain live render, which is exposed separately in the token metadata. See <a href="https://256.art/learn/live-artwork-vs-preview">Live Generative Artwork vs Preview Image</a>.</p>
 <h3 id="batch-artwork-generator">Batch Artwork Generator</h3>
 <p>Use <code translate="no" v-pre>batch-generator.html</code> to inspect many seeds before upload. A single successful output is not enough to validate a generative system: uncommon traits, edge combinations, and rendering-time problems may appear only in a larger sample.</p>
 <h4 id="features">Features</h4>
@@ -328,7 +334,7 @@ function draw() {
 </ol>
 <p>Review the batch for visual errors, unexpectedly common or missing traits, duplicate-looking compositions, clipping, blank frames, and inconsistent aspect ratios. Repeat at different dimensions. The batch generator improves coverage but does not prove the probabilities or code are correct; inspect the console and validate <code translate="no" v-pre>traits.json</code> separately.</p>
 <h3 id="creating-dynamic-artworks">Creating Dynamic Artworks</h3>
-<p>An artwork is <strong>dynamic</strong> when its live output responds to blockchain state that can change after minting. For example, it can react to a transfer, the current block, total minted supply, or the owner&#x27;s balance.</p>
+<p>An artwork is <strong><a href="https://256.art/learn/256art-dynamic-art">dynamic</a></strong> when its live output responds to blockchain state that can change after minting. For example, it can react to a transfer, the current block, total minted supply, or the owner&#x27;s balance.</p>
 <p><code translate="no" v-pre>inputData.tokenId</code> and <code translate="no" v-pre>inputData.hash</code> identify the token and its original seed. They remain the foundation for a repeatable base composition. The dynamic parameters below describe state at the time the live HTML is requested, so using them can intentionally change later renders.</p>
 <h4 id="available-blockchain-parameters">Available Blockchain Parameters</h4>
 <p>The current template emulates these values in <code translate="no" v-pre>inputData</code>:</p>
@@ -347,7 +353,7 @@ function draw() {
 <li><code translate="no" v-pre>ethBalanceOfOwner</code>: the current owner&#x27;s native ETH balance in wei.</li>
 </ul>
 <p>Contract generations can expose different subsets of dynamic values. Treat the Artist Portal&#x27;s deployment test as the final compatibility check for your release, and do not make the artwork fail completely when an optional value is unavailable.</p>
-<p>In the local template, URL overrides are strings while generated defaults are numbers; deployed contract generations can also differ. Inspect each value and its type in the Artist Portal test. A JavaScript <code translate="no" v-pre>Number</code> above <code translate="no" v-pre>Number.MAX_SAFE_INTEGER</code> may already have lost precision, and converting it to <code translate="no" v-pre>BigInt</code> cannot recover the lost bits. Do not rely on exact full-width values unless the tested live interface supplies a decimal or hexadecimal string.</p>
+<p>In the local template, URL overrides are strings while generated defaults are numbers; deployed contract generations can also differ. Inspect each value and its type in the Artist Portal test. A JavaScript <code translate="no" v-pre>Number</code> above <code translate="no" v-pre>Number.MAX_SAFE_INTEGER</code> may already have lost precision, and converting it to <code translate="no" v-pre>BigInt</code> cannot recover the lost bits. Do not rely on exact full-width values unless the tested live interface supplies a decimal or hexadecimal string. The example below keeps full-width values as <code translate="no" v-pre>BigInt</code>, clamps the wei balance, and reduces it to a safely sized visual value before converting to <code translate="no" v-pre>Number</code>.</p>
 <h4 id="accessing-blockchain-parameters">Accessing Blockchain Parameters</h4>
 <p>Here&#x27;s how you can access and utilize these parameters within your artwork code:</p>
 <div id="accessing-blockchain-parameters-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -362,9 +368,13 @@ function draw() {
   const prevrandao = parseInt(inputData[&quot;prevrandao&quot;]);
   const totalSupply = parseInt(inputData[&quot;totalSupply&quot;]);
   const balanceOfOwner = parseInt(inputData[&quot;balanceOfOwner&quot;]);
-  const ethBalanceOfOwner = parseFloat(inputData[&quot;ethBalanceOfOwner&quot;]);
+  const ethBalanceWei = BigInt(inputData[&quot;ethBalanceOfOwner&quot;].toString());
 
-  // Example usage: Change background color based on ETH balance
+  // Example usage: Convert wei to ETH before mapping a 0–100 ETH visual range
+  const weiPerEth = 10n ** 18n;
+  const maxMappedWei = 100n * weiPerEth;
+  const clampedWei = ethBalanceWei &gt; maxMappedWei ? maxMappedWei : ethBalanceWei;
+  const ethBalanceOfOwner = Number(clampedWei / 10n ** 15n) / 1000;
   const colorIntensity = map(ethBalanceOfOwner, 0, 100, 0, 255);
   background(colorIntensity, 100, 150);
 

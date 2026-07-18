@@ -30,6 +30,8 @@ If token images or metadata are stale, first verify the 256ART live view and `to
 
 Creator earnings are a percentage paid from a secondary sale when the marketplace and transfer path honor the setting. They are not the same as the primary mint split and are never guaranteed merely because a percentage appears on a marketplace page.
 
+Royalties are also separate from the artwork license: a royalty setting concerns payment on resale, while the license defines permitted uses of the artwork. See [The Three Artwork Licenses on 256ART](https://256.art/learn/256art-artwork-licenses).
+
 In OpenSea Studio:
 
 1. Select the deployed collection.

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837706067383">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837711001524">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -38,11 +38,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.6.0.837706067383" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837711001524" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837706067383" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837711001524" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837706067383" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837711001524" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -71,6 +71,9 @@
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
                             <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/">Visit 256ART</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/learn">256ART Learn</a>
                         </li>
                         <li class="mr-6">
                             <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/artistportal">Artist Portal</a>
@@ -128,6 +131,9 @@
                                     <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/">Visit 256ART</a>
                                 </li>
                                 <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/learn">256ART Learn</a>
+                                </li>
+                                <li class="mr-6">
                                     <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/artistportal">Artist Portal</a>
                                 </li>
         
@@ -156,8 +162,8 @@
                 <!-- Page content  -->
 <h1 id="understanding-and-navigating-256art">Understanding and Navigating 256ART</h1>
 <h3 id="what-is-256art">What is 256ART?</h3>
-<p>256ART is an open platform for creating and collecting fully on-chain generative art.</p>
-<p><strong>Generative art</strong> is created with an algorithm: the artist designs a system of rules, and that system can produce many related but distinct outputs. When a collector mints on 256ART, the artist&#x27;s code combines with a unique seed to create that collector&#x27;s piece. For deterministic decisions, the same code and seed reproduce the same base composition. Dynamic blockchain state, interaction, animation timing, and viewport conditions can change a render.</p>
+<p>256ART is an open platform for creating and collecting <a href="https://256.art/learn/what-is-on-chain-art">fully on-chain generative art</a>.</p>
+<p><strong><a href="https://256.art/learn/generative-art">Generative art</a></strong> is created with an algorithm: the artist designs a system of rules, and that system can produce many related but distinct outputs. When a collector mints on 256ART, the artist&#x27;s code combines with a unique seed to create that collector&#x27;s piece. For deterministic decisions, the same code and seed reproduce the same base composition. Dynamic blockchain state, interaction, animation timing, and viewport conditions can change a render.</p>
 <p>On 256ART, the code needed to render the artwork, its traits, and its ERC-721 metadata are served from smart contracts on the blockchain. This lets collectors retrieve the live artwork without depending on the 256ART website.</p>
 <h3 id="key-terms-for-new-collectors">Key Terms for New Collectors</h3>
 <ul>
@@ -175,7 +181,7 @@
 </ul>
 <h3 id="what-does-fully-in-chain-mean">What Does &quot;Fully In-Chain&quot; Mean?</h3>
 <p>256ART now generally uses the term <strong>fully on-chain</strong>; some earlier 256ART material calls the same approach <strong>fully in-chain</strong>.</p>
-<p>An NFT can be on a blockchain while some of its content is stored elsewhere. For example, a contract&#x27;s <code translate="no" v-pre>tokenURI</code> may point to metadata on a project server or a separate storage network. If that external location becomes unavailable, an owner can still prove ownership of the token, but applications may no longer be able to load its metadata or artwork.</p>
+<p>An NFT can be on a blockchain while some of its content is stored elsewhere. For example, a contract&#x27;s <code translate="no" v-pre>tokenURI</code> may point to metadata on a project server or a separate storage network. If that external location becomes unavailable, an owner can still prove ownership of the token, but applications may no longer be able to load its metadata or artwork. See <a href="https://256.art/learn/on-chain-vs-ipfs">On-Chain vs IPFS vs Arweave vs Centralized Storage</a> for the differences.</p>
 <p>For current 256ART releases:</p>
 <ul>
 <li>the artist&#x27;s rendering code is stored on-chain;</li>
@@ -195,7 +201,7 @@
 <li>The collection contract creates a token and associates it with a seed.</li>
 <li>The artwork algorithm uses that seed and the token&#x27;s traits to render the collector&#x27;s output.</li>
 </ol>
-<p>Most releases assign a random seed at mint; artwork pages may label this traditional generative format <strong>Long form</strong>. A <strong>collector-selected seed</strong> release, also called a <strong>collector curated mint</strong>, lets you generate previews and choose the seed you want before minting. The artwork page tells you whether a preview is only illustrative or can be selected for the final mint.</p>
+<p>Most releases assign a random seed at mint; artwork pages may label this traditional generative format <strong><a href="https://256.art/learn/long-form-generative-art">Long form</a></strong>. A <strong>collector-selected seed</strong> release, also called a <strong>collector curated mint</strong>, lets you generate previews and choose the seed you want before minting. The artwork page tells you whether a preview is only illustrative or can be selected for the final mint.</p>
 <p>Artists can choose from three sales mechanisms:</p>
 <ul>
 <li><strong>Fixed Price</strong>: every public mint has the same set price.</li>
@@ -214,7 +220,7 @@
 <p><strong>Sepolia</strong> is an Ethereum test network used during artist testing. Sepolia tokens do not have real monetary value, and Sepolia test releases are not part of the main collector experience.</p>
 <h3 id="benefits-of-an-open-platform">Benefits of an Open Platform</h3>
 <p>256ART is open to artists rather than limited to a platform-curated list. Any artist can create an account in the Artist Portal and prepare a release.</p>
-<p>For collectors, this provides access to a broad range of artists, styles, release sizes, and prices. Openness is not the same as platform endorsement, however. Before minting, review the artist, artwork details, license, chain, price, supply, and sale terms shown on the artwork page.</p>
+<p>For collectors, this provides access to a broad range of artists, styles, release sizes, and prices. Openness is not the same as platform endorsement, however. Before minting, review the artist, artwork details, <a href="https://256.art/learn/256art-artwork-licenses">license</a>, chain, price, supply, and sale terms shown on the artwork page.</p>
 <h3 id="understanding-the-tags">Understanding the Tags</h3>
 <p>Tags describe how an artwork behaves and help you filter the <a href="https://256.art/artworks">artworks page</a>:</p>
 <ul>
@@ -254,7 +260,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                             <span>
                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                <span class="block mt-1">Learn More</span>
+                                <span class="block mt-1">Collector Guide</span>
                             </span>
                         </a>
                     </div>

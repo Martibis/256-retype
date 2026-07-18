@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837706067383">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837711001524">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -38,11 +38,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.6.0.837706067383" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837711001524" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837706067383" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837711001524" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837706067383" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837711001524" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -71,6 +71,9 @@
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
                             <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/">Visit 256ART</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/learn">256ART Learn</a>
                         </li>
                         <li class="mr-6">
                             <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/artistportal">Artist Portal</a>
@@ -128,6 +131,9 @@
                                     <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/">Visit 256ART</a>
                                 </li>
                                 <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/learn">256ART Learn</a>
+                                </li>
+                                <li class="mr-6">
                                     <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/artistportal">Artist Portal</a>
                                 </li>
         
@@ -156,13 +162,13 @@
                 <!-- Page content  -->
 <h1 id="why-choose-256art">Why Choose 256ART</h1>
 <h3 id="fully-in-chain">Fully In-Chain</h3>
-<p>256ART stores and serves the artwork&#x27;s rendering code, traits, and core ERC-721 metadata through smart contracts. A collector can retrieve that code and metadata from the collection contract without relying on the 256ART website. Your script can still create an external runtime dependency if it fetches media or data from another storage network or web service, so disclose and make that choice resilient where applicable.</p>
+<p>256ART stores and serves the artwork&#x27;s rendering code, traits, and core ERC-721 metadata through smart contracts. A collector can retrieve that code and metadata from the collection contract without relying on the 256ART website. This <a href="https://256.art/learn/standards-native-on-chain-art">standards-native delivery path</a> begins with the collection&#x27;s <code translate="no" v-pre>tokenURI</code>. Your script can still create an external runtime dependency if it fetches media or data from another storage network or web service, so disclose and make that choice resilient where applicable.</p>
 <p>256ART now generally calls this <strong>fully on-chain</strong>. Read <a href="/learn-more/understanding-and-navigating-256art/#what-does-fully-in-chain-mean">Understanding and Navigating 256ART</a> for a plain-language explanation, including how live artwork differs from static marketplace previews.</p>
 <h3 id="a-platform-for-artists">A Platform for Artists</h3>
 <p>256ART is an open platform: any artist can create an account in the <a href="https://256.art/artistportal">Artist Portal</a>, prepare a compatible project, test it, and release it. You do not need to apply to a curated release program.</p>
 <h3 id="cost-efficient-on-chain-storage">Cost Efficient On-Chain Storage</h3>
 <p>Blockchain deployment cost is strongly affected by the amount of data stored. Before deployment, 256ART compresses the artwork script with gzip and encodes it for storage. This reduces the script&#x27;s stored size and therefore usually lowers deployment gas compared with storing the uncompressed source.</p>
-<p>The final cost still depends on the script and library sizes, the number of contracts required, the selected chain, and gas conditions at deployment. The platform&#x27;s pre-release test provides an estimate before you release.</p>
+<p>The final cost still depends on the script and library sizes, the number of contracts required, the selected chain, and gas conditions at deployment. The platform&#x27;s pre-release test provides an estimate before you release. Learn more about <a href="https://256.art/learn/256art-compression">how 256ART compresses JavaScript for on-chain storage</a>.</p>
 <h3 id="fully-automated-testing">Fully Automated Testing</h3>
 <p>The Artist Portal can deploy and mint a test version of your project in a Sepolia-based test environment. It checks contract deployment, token metadata, live rendering, and image-preview generation without requiring you to configure a local blockchain toolchain or spend mainnet gas.</p>
 <p>Testing catches many release problems, but it cannot guarantee that every browser, marketplace, or future network condition will behave identically. You are responsible for reviewing the generated output before approving a release. See <a href="/artist-documentation/testing-your-project/">Testing Your Project</a>.</p>
@@ -190,7 +196,7 @@
 <p>The <a href="/artist-documentation/artwork-details-form/#sales-mechanism">Artwork Details Form</a> documents the settings for each mechanism.</p>
 <h3 id="ownership-over-your-smart-contracts">Ownership Over Your Smart Contracts</h3>
 <p>The owner address selected in the Artwork Details Form becomes the owner of the released collection contract. That address can use the contract&#x27;s available administrative functions and receives funds according to the configured split.</p>
-<p>Contract ownership also carries responsibility: verify the address carefully, protect its keys, keep enough ETH for future administrative transactions, and understand which settings are editable after deployment. See <a href="/artist-documentation/releasing-your-artwork/#post-release">Releasing Your Artwork</a>.</p>
+<p>Contract ownership also carries responsibility: verify the address carefully, protect its keys, keep enough ETH for future administrative transactions, and understand which settings are editable after deployment. Read <a href="https://256.art/learn/artist-owned-contracts">What an Artist-Owned Collection Contract Really Means</a>, then see <a href="/artist-documentation/releasing-your-artwork/#post-release">Releasing Your Artwork</a>.</p>
 <p>Continue with <a href="/artist-documentation/getting-started/">Getting Started</a>.</p>
 
                 

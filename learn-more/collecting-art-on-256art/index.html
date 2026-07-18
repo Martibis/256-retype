@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837706067383">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837711001524">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -38,11 +38,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.6.0.837706067383" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.837711001524" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837706067383" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.837711001524" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837706067383" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.837711001524" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -71,6 +71,9 @@
                     <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                         <li class="mr-6">
                             <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/">Visit 256ART</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/learn">256ART Learn</a>
                         </li>
                         <li class="mr-6">
                             <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/artistportal">Artist Portal</a>
@@ -128,6 +131,9 @@
                                     <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/">Visit 256ART</a>
                                 </li>
                                 <li class="mr-6">
+                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/learn">256ART Learn</a>
+                                </li>
+                                <li class="mr-6">
                                     <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://256.art/artistportal">Artist Portal</a>
                                 </li>
         
@@ -170,7 +176,7 @@
 <li><strong>Sales mechanism</strong>: Fixed Price, Fair Dutch Auction, or Open Edition.</li>
 <li><strong>Seeding</strong>: most releases use random-seed <strong>Long form</strong> minting; a collector-selected or <strong>collector curated</strong> release lets you choose a seed.</li>
 <li><strong>Supply and mint limit</strong>: some releases restrict the number of pieces a wallet can mint.</li>
-<li><strong>License</strong>: this explains the rights associated with the artwork.</li>
+<li><strong><a href="https://256.art/learn/256art-artwork-licenses">License</a></strong>: this explains the rights associated with the artwork.</li>
 </ul>
 <p>The preview shown before a random-seed mint is an example, not the piece you will necessarily receive. When this applies, the artwork page displays: <strong>“Preview only. The final mint is generated with a random hash.”</strong></p>
 <h3 id="how-to-purchase-art">How to Purchase Art</h3>
@@ -189,18 +195,19 @@
 <p>After confirmation, open <a href="/learn-more/the-gallery-page/">The Gallery Page</a> to see pieces held by your connected wallet. You can also view recent mints on the series page.</p>
 <h3 id="how-to-get-the-art-live-from-chain">How to Get the Art Live from Chain</h3>
 <p>The easiest way to view the canonical live artwork is to select <strong>Render live from chain</strong> on a minted piece or use <strong>Live View</strong> in your gallery. 256ART retrieves the rendering data from the collection contract.</p>
-<p>You can also read the contract yourself. This is an advanced option and the exact function name can differ for early 256ART contracts. Use only the verified contract address linked from the official 256ART artwork page. <code translate="no" v-pre>getTokenHtml</code> returns executable artist-supplied HTML and JavaScript; on-chain availability does not mean the code has been security-audited.</p>
+<p>You can also read the contract yourself. This is an advanced option and the exact function name differs between contract generations. Use only the verified contract address linked from the official 256ART artwork page. <code translate="no" v-pre>tokenHTML</code> returns executable artist-supplied HTML and JavaScript; on-chain availability does not mean the code has been security-audited. For a deeper audit procedure, see <a href="https://256.art/learn/verify-on-chain-art">How to Verify Whether an Artwork Is Actually On-Chain</a>.</p>
 <ol>
 <li>Find the collection&#x27;s contract address and your token ID on the artwork page, marketplace, or transaction.</li>
 <li>Open the contract on <a href="https://etherscan.io/">Etherscan</a> for Ethereum, <a href="https://basescan.org/">BaseScan</a> for Base, or <a href="https://shapescan.xyz/">Shapescan</a> for Shape.</li>
 <li>On Etherscan or BaseScan, open <strong>Contract</strong> and then <strong>Read Contract</strong> or <strong>Read as Proxy</strong>. On Shapescan, open the verified <strong>Contract</strong> tab and use <strong>Read/Write Contract</strong> or <strong>Read/Write Proxy</strong>.</li>
 <li>If those controls are absent, stop rather than supplying a custom ABI.</li>
-<li>Look for <code translate="no" v-pre>getTokenHtml</code> and enter the token ID. Some earlier contracts use a function such as <code translate="no" v-pre>getArtFromChain</code> instead.</li>
+<li>For a modern release, look for <code translate="no" v-pre>tokenHTML</code> and enter the token ID. If it is absent, try the legacy <code translate="no" v-pre>getTokenHtml</code> function, then the older <code translate="no" v-pre>getArtFromChain</code> function.</li>
 <li>Copy the complete returned value. Current contracts return a data URL beginning with <code translate="no" v-pre>data:text/html;base64,</code>.</li>
 <li>Paste that complete data URL into a new browser tab to render the HTML.</li>
 </ol>
 <p>To inspect the ERC-721 metadata, call <code translate="no" v-pre>tokenURI</code> with the token ID. Current contracts return a data URL beginning with <code translate="no" v-pre>data:application/json;base64,</code>. Opening that complete value in a browser displays the metadata, including the traits and the on-chain live <code translate="no" v-pre>animation_url</code>.</p>
 <p>Only use read functions for inspection. They do not require a wallet transaction or gas. A block explorer&#x27;s <strong>Write Contract</strong> functions can change contract state and may require payment, so do not use them unless you understand the operation.</p>
+<p>For independent recovery without the 256ART interface, read <a href="https://256.art/learn/if-256art-disappears">What Happens to the Artwork If 256ART Disappears?</a>.</p>
 
                 
                 <!-- Required only on API pages -->

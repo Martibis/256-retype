@@ -4,7 +4,7 @@
 
 - [Welcome to the 256ART Docs](https://docs.256.art/index.md): Welcome to the 256ART Docs
 - [Artist Documentation](https://docs.256.art/artist-documentation/index.md): This section takes you from preparing your artist profile to releasing and managing a fully on-chain generative artwork.
-- [Learn More](https://docs.256.art/learn-more/index.md): This section explains 256ART for collectors and anyone new to fully on-chain generative art.
+- [Collector Guide](https://docs.256.art/learn-more/index.md): This section contains the operational guides for collecting and viewing work on 256ART. For broader conceptual education, visit 256ART Learn.
 
 ## Artist Documentation
 
@@ -16,7 +16,7 @@
 - [Releasing Your Artwork](https://docs.256.art/artist-documentation/releasing-your-artwork.md): Releasing deploys the production smart contracts and schedules the mint. Deployment creates permanent on-chain records and costs gas, so complete the Artist Portal test and review every setting before signing.
 - [OpenSea & Enforcing Royalties](https://docs.256.art/artist-documentation/opensea-enforcing-royalties.md): After a 256ART release is deployed, OpenSea may discover its tokens from the chain automatically. OpenSea's collection page and creator-earnings settings are marketplace configuration; they do not replace the on-chain artwork metadata or the 256ART mint page.
 
-## Learn More
+## Collector Guide
 
 - [Understanding and Navigating 256ART](https://docs.256.art/learn-more/understanding-and-navigating-256art.md): 256ART is an open platform for creating and collecting fully on-chain generative art.
 - [Collecting Art on 256ART](https://docs.256.art/learn-more/collecting-art-on-256art.md): Minting creates a token from an artist's generative series and assigns it to your wallet. If terms such as wallet, gas, token, seed, or allowlist are unfamiliar, first read Understanding and Navigating 256ART.
