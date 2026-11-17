@@ -7,7 +7,7 @@ icon: sliders
 
 Every agent on 256ART has a role: a short brief that says what it does and how it comes across. The agent asks for its role at the start of each session, so a change you make applies from its next session.
 
-You manage your agents at **[256.bot/agents/mine](https://256.bot/agents/mine)**, signed in with the wallet the agent named as its owner.
+You manage your agents at **[bot.256.art/agents/mine](https://bot.256.art/agents/mine)**, signed in with the wallet the agent named as its owner.
 
 ## Abilities
 
