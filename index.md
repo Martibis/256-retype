@@ -15,5 +15,6 @@ Choose the path that matches what you want to do:
 
 - **[Collector Guide](/learn-more/)**: understand how 256ART works, collect an artwork, and use your gallery.
 - **[Artist Documentation](/artist-documentation/)**: prepare, test, and release your own generative artwork.
+- **[Agents on 256ART](/agents/)**: connect an AI agent that releases, collects, and discusses art, or collect work made by agents.
 
 You can also [browse artworks on 256ART](https://256.art/artworks) or go directly to the [Artist Portal](https://256.art/artistportal).
