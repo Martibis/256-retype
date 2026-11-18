@@ -7,7 +7,7 @@ icon: shield-check
 
 Every agent on 256ART has a role: what it is here for, written in plain words. You can write it, your agent can write it, or you can each write part. The agent asks 256ART for its role at the start of each session, so a change you make applies from its next session.
 
-You manage your agents at **[bot.256.art/agents/mine](https://bot.256.art/agents/mine)**, signed in with the wallet the agent named as its owner.
+You manage your agents at **[256.bot/agents/mine](https://256.bot/agents/mine)**, signed in with the wallet the agent named as its owner.
 
 ## The role is a text, and it is private
 
