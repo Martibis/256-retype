@@ -2,19 +2,19 @@
 order: 80
 ---
 
-# The Gallery Page
+# My collection
 
-### Overview of the Gallery Page
+### Overview
 
-The [Gallery Page](https://256.art/gallery) shows the 256ART tokens held by your connected wallet. From the gallery, you can:
+[My collection](https://256.art/gallery) shows the 256ART tokens held by your connected wallet. Select a piece to open it large. From there you can:
 
 - render an artwork live from its contract;
 - view or download its high-resolution static preview; and
 - request a new static preview if the current one did not render correctly.
 
-The live artwork and static preview serve different purposes. **Live View** runs the artist's on-chain code. The **High Resolution Image** is a captured still image that is more convenient for downloads, thumbnails, and applications that cannot run the live code. See [Live Generative Artwork vs Preview Image](https://256.art/learn/live-artwork-vs-preview) for a detailed comparison.
+The live artwork and static preview serve different purposes. **Live** runs the artist's on-chain code. The **High-res image** is a captured still image that is more convenient for downloads, thumbnails, and applications that cannot run the live code. See [Live Generative Artwork vs Preview Image](https://256.art/learn/live-artwork-vs-preview) for a detailed comparison.
 
-### Accessing Your Gallery Page
+### Opening My collection
 
 1. Go to [256.art/gallery](https://256.art/gallery).
 2. Select the option to connect your wallet.
@@ -25,29 +25,31 @@ A sign-in message proves that you control the wallet; it is not a blockchain tra
 
 If an expected piece is missing, confirm that the mint transaction succeeded and that you connected the receiving wallet rather than a different account. A newly confirmed mint may also take a short time to appear.
 
-### Live View
+### Live
 
-Select a piece to open its details, then choose **Live View**. 256ART reads the token's rendering data from its collection contract and runs the artist's code in the browser.
+Choose **Live** under a piece, or open the piece and switch from **Still** to **Live**. 256ART reads the token's rendering data from its collection contract and runs the artist's code in the browser. **Full screen** shows it on its own.
 
 This is the canonical live version of the piece. Animated, interactive, sound, or dynamic features may only be available in this view. Dynamic art can respond to current blockchain data, so its live appearance may change over time.
 
-You can also retrieve the live HTML directly from a block explorer. See [How to Get the Art Live from Chain](/learn-more/collecting-art-on-256art/#how-to-get-the-art-live-from-chain).
+You can also retrieve the live HTML directly from a block explorer. See [How to get the art live from chain](/learn-more/collecting-art-on-256art/#how-to-get-the-art-live-from-chain).
 
-### High Resolution Image
+### High-res image
 
-Select a piece and choose **High Res Image** to view or download its high-resolution static preview.
+Select a piece and choose **High-res image** to view or download its high-resolution static preview.
 
 This preview is a captured image of the generative output. It is useful for saving or displaying the piece where live HTML is not supported, but it does not include animation, interaction, sound, or later changes to a dynamic artwork.
 
-### Triggering a Re-render of Your Artworks
+### Rerendering an image
 
-Use **Rerender** when the high-resolution preview is blank, incomplete, or otherwise does not match a correct live render:
+Use **Rerender image** when a piece has no image yet, for example when it keeps showing "Currently rendering…":
 
-1. Select the affected piece in your gallery.
-2. Choose **Rerender**.
-3. Allow up to fifteen minutes for the request to be processed.
-4. Reload the gallery and check **High Res Image** again.
+1. Select the piece in My collection.
+2. Choose **Rerender image**.
+3. Allow up to fifteen minutes for the image to be made.
+4. Reload My collection and check **High-res image** again.
 
-Rerendering replaces the static preview only. It does not mint a new token, change the token's seed or traits, or modify the on-chain artwork.
+If the piece already has an image, My collection says so and nothing changes. If an existing image looks wrong, ask in the 256ART Discord.
 
-Next, return to [Collecting Art on 256ART](/learn-more/collecting-art-on-256art/) or browse [all 256ART artworks](https://256.art/artworks).
+Rerendering only makes the static image. It does not mint a new token, change the token's seed or traits, or modify the on-chain artwork.
+
+Next, return to [Collecting art on 256ART](/learn-more/collecting-art-on-256art/) or browse [all 256ART artworks](https://256.art/artworks).

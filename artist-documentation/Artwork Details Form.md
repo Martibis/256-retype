@@ -4,13 +4,13 @@ order: 85
 
 ---
 
-# Artwork Details Form
+# Artwork details form
 
-The Artwork Details Form defines what collectors see and configures the contracts used for your release. Complete the [Generative Art Template](/artist-documentation/generative-art-template/) workflow first, then open an unreleased project in the [Artist Portal](https://256.art/artistportal).
+The Artwork Details Form defines what collectors see and configures the contracts used for your release. Complete the [Generative art template](/artist-documentation/generative-art-template/) workflow first, then open an unreleased project in the [artist portal](https://256.art/artistportal).
 
 Fields marked with `*` are required. Review addresses, percentages, files, prices, supply, and sale type especially carefully: some values are costly or impossible to change after deployment.
 
-### Artwork Name*
+### Artwork name*
 
 Enter the public name of the series. Check spelling and capitalization, and search for confusingly similar names before release. This name appears in the artwork details and token metadata.
 
@@ -30,19 +30,19 @@ This summary is general information, not legal advice. Define which material the
 
 ### Tags
 
-Select only tags that describe the work's actual behavior, such as Dynamic, Animated, Interactive, or Sound. Collectors use these tags to filter and understand releases. See [Understanding the Tags](/learn-more/understanding-and-navigating-256art/#understanding-the-tags).
+Select only tags that describe the work's actual behavior, such as Dynamic, Animated, Interactive, or Sound. Collectors use these tags to filter and understand releases. See [Understanding the tags](/learn-more/understanding-and-navigating-256art/#understanding-the-tags).
 
-### Short Description for the Artwork*
+### Short description for the artwork*
 
 Write a concise summary of the concept and experience. This description is stored on-chain, so length affects deployment size and cost. The maximum is **1,500 characters**.
 
 Prefer plain text that will still make sense in a wallet or marketplace without the rest of the 256ART page.
 
-### Detailed Story Behind Your Artwork
+### Detailed story behind your artwork
 
 Use this optional section for the longer story: inspiration, process, visual system, intended interaction, and any viewing instructions. Clearly explain dynamic behavior or keyboard, pointer, touch, fullscreen, sound, and image-save controls.
 
-### Sales Mechanism*
+### Sales mechanism*
 
 Choose how the public sale works:
 
@@ -52,7 +52,7 @@ Choose how the public sale works:
 
 The choice affects the required fields and collector experience. It is not simply a display setting, so test the selected mechanism and dates before release.
 
-### Seeding Mechanism*
+### Seeding mechanism*
 
 Choose how each token receives the seed used by your algorithm:
 
@@ -63,13 +63,13 @@ Make sure the artwork page's description matches this experience. A selected see
 
 Read [Artist-Curated, Collector-Curated and Random Generative Art](https://256.art/learn/generative-art-curation) for the creative implications of this choice.
 
-### Collection Size*
+### Collection size*
 
 Set the maximum token supply for a Fixed Price or Fair Dutch Auction release. This field does not apply to an Open Edition, whose final supply is determined by how many tokens are minted before its end date.
 
 Choose a size that fits the generative system's range and your release goals. Batch-test enough outputs to support that decision. See [What Is Long-Form Generative Art?](https://256.art/learn/long-form-generative-art) for how supply and direct minting change the design problem.
 
-### Reserve Price*
+### Reserve price*
 
 Enter the amount in ETH:
 
@@ -78,15 +78,15 @@ Enter the amount in ETH:
 
 Review the calculated start and reserve values shown by the portal. The collector also pays network gas, which is separate from this price.
 
-### Allowlist Price*
+### Allowlist price*
 
 Set the price available to approved wallet addresses during the allowlist period. The allowlist mint closes when the public sale begins. Confirm whether the intended value is lower than, equal to, or higher than the later public price.
 
-### Max Mints per Allowlisted Address*
+### Max mints per allowlisted address*
 
 Set how many tokens each approved address may mint during the allowlist period. Consider the collection size and number of listed addresses; the limit does not guarantee that every address will receive a token.
 
-### Allow List Addresses
+### Allowlist addresses
 
 Add addresses manually or upload a CSV using the format requested by the portal. Before submission:
 
@@ -97,23 +97,23 @@ Add addresses manually or upload a CSV using the format requested by the portal.
 
 The backend derives a **Merkle root**, a compact cryptographic summary used to prove that an address belongs to the allowlist. Changing the list after deployment may require an on-chain update and assistance from the 256ART team.
 
-### Artwork Libraries*
+### Artwork libraries*
 
-Select every external library the uploaded artwork actually uses, with the same versions used during local testing. Only supported on-chain EthFS libraries can be included. Fewer and smaller libraries generally produce faster live loads. See [Available Libraries](/artist-documentation/generative-art-template/#available-libraries).
+Select every external library the uploaded artwork actually uses, with the same versions used during local testing. Only supported on-chain EthFS libraries can be included. Fewer and smaller libraries generally produce faster live loads. See [Available libraries](/artist-documentation/generative-art-template/#available-libraries).
 
-### Artwork.js*
+### artwork.js*
 
-Upload the completed, minified `artwork.js` or `artwork-p5.js` code produced from the [Generative Art Template](/artist-documentation/generative-art-template/). Keep an unminified source copy under your own version control.
+Upload the completed, minified `artwork.js` or `artwork-p5.js` code produced from the [Generative art template](/artist-documentation/generative-art-template/). Keep an unminified source copy under your own version control.
 
-After any code change, rerun local batch tests and the Artist Portal test. Even a small change can alter deterministic random-call order or preview generation.
+After any code change, rerun local batch tests and the artist portal test. Even a small change can alter deterministic random-call order or preview generation.
 
-### Traits.json*
+### traits.json*
 
 Upload the minified `traits.json` file. It must be valid JSON, follow the template's cumulative-weight format, and not exceed **20 KB**.
 
 The filename and documentation use lowercase `traits.json`. Validate that descriptions and values are strings, weights increase correctly, and the final threshold for each trait is `10000`.
 
-### Primary & Secondary Revenue Split*
+### Primary & secondary revenue split*
 
 Configure the payout addresses and percentages for primary revenue and paid secondary royalties. The form includes:
 
@@ -125,17 +125,17 @@ Verify every address independently. Blockchain transfers cannot be reversed mere
 
 The configured owner address becomes the **smart contract owner** and participates in revenue according to the displayed split. Use an address you control and can use for future contract administration. Do not assume the connected login wallet is automatically the correct owner or receiver.
 
-### Secondary Royalty Percentage*
+### Secondary royalty percentage*
 
 Set the royalty requested when a token is sold on a secondary marketplace. Royalties apply only when a marketplace supports and pays the configured mechanism. The percentage is separate from primary mint revenue.
 
-#### Enforceability of Secondary Royalties
+#### Enforceability of secondary royalties
 
 256ART contracts support optional ERC721-C creator-earnings enforcement. Enabling it restricts transfers through marketplace protocols that do not comply with the contract's rules. This can improve royalty enforcement but may reduce where collectors can list or purchase tokens.
 
-ERC721-C compatibility does not make every marketplace support the collection automatically. Read [OpenSea & Enforcing Royalties](/artist-documentation/opensea-enforcing-royalties/) before choosing enforcement.
+ERC721-C compatibility does not make every marketplace support the collection automatically. Read [OpenSea & enforcing royalties](/artist-documentation/opensea-enforcing-royalties/) before choosing enforcement.
 
-### Additional Notes:
+### Additional notes:
 
 - **Validation and errors**: resolve every required-field, JSON, file-size, address, percentage, and compatibility error.
 - **Warnings**: read warnings carefully. A file or configuration change can invalidate a previous test or require a contract to be redeployed.

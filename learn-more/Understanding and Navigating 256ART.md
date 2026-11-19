@@ -2,7 +2,7 @@
 order: 100
 ---
 
-# Understanding and Navigating 256ART
+# Understanding and navigating 256ART
 
 ### What is 256ART?
 
@@ -12,7 +12,7 @@ order: 100
 
 On 256ART, the code needed to render the artwork, its traits, and its ERC-721 metadata are served from smart contracts on the blockchain. This lets collectors retrieve the live artwork without depending on the 256ART website.
 
-### Key Terms for New Collectors
+### Key terms for new collectors
 
 - **Blockchain or chain**: a shared network that records transactions and runs smart contracts. Ethereum, Base, and Shape are separate networks.
 - **Wallet**: an app used to control a blockchain account. You use it to sign in, approve a mint, and hold the resulting token.
@@ -26,7 +26,7 @@ On 256ART, the code needed to render the artwork, its traits, and its ERC-721 me
 - **Metadata**: structured information that wallets and marketplaces read, including the piece's name, description, traits, and links or data used to display it.
 - **Block explorer**: a website for inspecting public blockchain transactions, addresses, and verified smart-contract functions.
 
-### What Does "Fully In-Chain" Mean?
+### What does "fully in-chain" mean?
 
 256ART now generally uses the term **fully on-chain**; some earlier 256ART material calls the same approach **fully in-chain**.
 
@@ -41,11 +41,11 @@ For current 256ART releases:
 
 This guarantees that the code and core metadata stored by 256ART can be retrieved from the contract for as long as the underlying chain and its on-chain dependencies remain available. An artist's script can still introduce an external runtime dependency by fetching media or data from another storage network or web service. Review the artwork details when that distinction matters to you.
 
-256ART also creates static image previews so galleries and marketplaces do not need to run many live artworks at once. A static preview may be regenerated or served separately from the canonical live artwork. It is a convenience image, not the source of the fully on-chain piece. See [The Gallery Page](/learn-more/the-gallery-page/) for the difference between Live View and a high-resolution preview.
+256ART also creates static image previews so galleries and marketplaces do not need to run many live artworks at once. A static preview may be regenerated or served separately from the canonical live artwork. It is a convenience image, not the source of the fully on-chain piece. See [My collection](/learn-more/the-gallery-page/) for the difference between the live artwork and a high-res image.
 
 The first eight series carry the **OG** tag and use an earlier 256ART architecture. They are on-chain releases, but they do not provide the same fully on-chain interfaces as newer series.
 
-### How a Generative Mint Works
+### How a generative mint works
 
 The exact controls depend on the release, but the underlying process is:
 
@@ -65,7 +65,7 @@ Artists can choose from three sales mechanisms:
 
 A release may also have an **allowlist** period. During this earlier period, only approved wallet addresses can mint, usually with a separate price and mint limit.
 
-### What Chains are Supported?
+### What chains are supported?
 
 256ART releases are live on:
 
@@ -77,13 +77,13 @@ Each is a separate network. Before minting, check the **Chain** field on the art
 
 **Sepolia** is an Ethereum test network used during artist testing. Sepolia tokens do not have real monetary value, and Sepolia test releases are not part of the main collector experience.
 
-### Benefits of an Open Platform
+### Benefits of an open platform
 
-256ART is open to artists rather than limited to a platform-curated list. Any artist can create an account in the Artist Portal and prepare a release.
+256ART is open to artists rather than limited to a platform-curated list. Any artist can create an account in the artist portal and prepare a release.
 
 For collectors, this provides access to a broad range of artists, styles, release sizes, and prices. Openness is not the same as platform endorsement, however. Before minting, review the artist, artwork details, [license](https://256.art/learn/256art-artwork-licenses), chain, price, supply, and sale terms shown on the artwork page.
 
-### Understanding the Tags
+### Understanding the tags
 
 Tags describe how an artwork behaves and help you filter the [artworks page](https://256.art/artworks):
 
@@ -99,8 +99,8 @@ Tags describe how an artwork behaves and help you filter the [artworks page](htt
 
 An artwork can have more than one tag. Tags describe features; they are not rarity rankings or quality ratings.
 
-### Next Steps
+### Next steps
 
-- Learn how to prepare for a mint in [Collecting Art on 256ART](/learn-more/collecting-art-on-256art/).
-- Learn how to access collected pieces in [The Gallery Page](/learn-more/the-gallery-page/).
-- If you are an artist, continue with the [Artist Documentation](/artist-documentation/).
+- Learn how to prepare for a mint in [Collecting art on 256ART](/learn-more/collecting-art-on-256art/).
+- Learn how to access collected pieces in [My collection](/learn-more/the-gallery-page/).
+- If you are an artist, continue with the [Artist documentation](/artist-documentation/).

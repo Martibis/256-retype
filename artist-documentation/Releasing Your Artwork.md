@@ -1,13 +1,13 @@
 ---
 order: 75
 ---
-# Releasing Your Artwork
+# Releasing your artwork
 
-Releasing deploys the production smart contracts and schedules the mint. Deployment creates permanent on-chain records and costs gas, so complete the [Artist Portal test](/artist-documentation/testing-your-project/) and review every setting before signing.
+Releasing deploys the production smart contracts and schedules the mint. Deployment creates permanent on-chain records and costs gas, so complete the [artist portal test](/artist-documentation/testing-your-project/) and review every setting before signing.
 
 Use the wallet intended to submit the deployment transactions, switch it to the selected chain, and make sure it has enough ETH for the estimated cost plus a margin for gas changes. Ethereum, Base, and Shape are separate networks.
 
-### Information Verification
+### Information verification
 
 The release step shows a summary of the saved artwork and contract configuration. Compare it with your source files and release plan.
 
@@ -26,7 +26,7 @@ Check at minimum:
 
 Do not continue if an address is truncated and you have not verified the full value. If you change a tested file or setting, save it and rerun the required test before release.
 
-### Deploying Your Smart Contracts
+### Deploying your smart contracts
 
 256ART separates release data across contracts. Depending on the release and script size, you may deploy:
 
@@ -47,7 +47,7 @@ The portal may request multiple wallet transactions. For each one:
 
 Do not close the workflow or submit a duplicate transaction merely because confirmation is slow. Check the pending transaction in your wallet or block explorer.
 
-### Selecting Your Release Dates
+### Selecting your release dates
 
 After the supporting contracts are deployed, configure the sale schedule:
 
@@ -61,7 +61,7 @@ Select **Release Artwork** only after this final check. The portal deploys the m
 
 Save the collection address and transaction links. On the artwork page, verify the chain, status, schedule, prices, supply, and collector-facing text. If the public mint is scheduled for later, the contract is deployed even though minting is not yet open.
 
-### Post-Release
+### Post-release
 
 The released contract may expose owner-only administrative functions. Available functions vary by contract generation and sale type.
 
@@ -80,11 +80,11 @@ Do not assume that every item can be changed directly or safely. In particular, 
 
 Owner-only changes are blockchain transactions: they cost gas, are publicly recorded, and may affect every token. Read the contract function and parameters, simulate or verify the action where possible, and never use a write function you do not understand.
 
-### Withdrawing Funds
+### Withdrawing funds
 
 Primary funds and secondary royalties can be held in different contracts, so check and withdraw them separately.
 
-1. Copy the relevant contract address from the Artist Portal or confirmed deployment transaction.
+1. Copy the relevant contract address from the artist portal or confirmed deployment transaction.
 2. Open it on the explorer for its chain:
    - [Etherscan](https://etherscan.io/) for Ethereum
    - [BaseScan](https://basescan.org/) for Base
@@ -98,7 +98,7 @@ Primary funds and secondary royalties can be held in different contracts, so che
 
 A withdrawal executes the configured split; it is not necessarily a transfer of the full balance to the connected wallet. If the function, contract, or expected receivers are unclear, stop and contact the 256ART team through [Discord](https://discord.gg/wpzVRdcjns).
 
-### Updating Artwork Settings
+### Updating artwork settings
 
 Use the same network-specific explorer and owner-wallet checks described above.
 
@@ -123,4 +123,4 @@ For royalty changes, review the Royalty Splitter and marketplace configuration a
 
 For Merkle root, ArtScript, ArtLibrary, or any uncertain change, contact the 256ART team through [Discord](https://discord.gg/wpzVRdcjns) before submitting a transaction.
 
-If you plan to list the collection on OpenSea, continue with [OpenSea & Enforcing Royalties](/artist-documentation/opensea-enforcing-royalties/).
+If you plan to list the collection on OpenSea, continue with [OpenSea & enforcing royalties](/artist-documentation/opensea-enforcing-royalties/).

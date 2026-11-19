@@ -2,16 +2,16 @@
 order: 90
 ---
 
-# Generative Art Template
+# Generative art template
 
 Use the official template as the starting point for a 256ART release. The two files you prepare for upload are:
 
 - `artwork.js` or `artwork-p5.js`: the JavaScript that renders the artwork; and
 - `traits.json`: the trait definitions stored and assigned on-chain.
 
-The template supplies local test data through `inputData`, loads your traits, and runs the artwork in a browser. It approximates the data provided by a deployed 256ART contract, but local testing does not replace the Artist Portal's [pre-release test](/artist-documentation/testing-your-project/).
+The template supplies local test data through `inputData`, loads your traits, and runs the artwork in a browser. It approximates the data provided by a deployed 256ART contract, but local testing does not replace the artist portal's [pre-release test](/artist-documentation/testing-your-project/).
 
-Before you begin, you should be comfortable editing JavaScript and running a local web server. You do not need a bundler. If you use p5.js or another library, read [Available Libraries](#available-libraries) before building around it.
+Before you begin, you should be comfortable editing JavaScript and running a local web server. You do not need a bundler. If you use p5.js or another library, read [Available libraries](#available-libraries) before building around it.
 
 A practical workflow is:
 
@@ -21,8 +21,8 @@ A practical workflow is:
 4. Test many seeds, trait combinations, screen sizes, and browser conditions.
 5. Signal when each render is complete with `window.rendered`.
 6. Minify the final artwork and trait files.
-7. Upload them in the [Artwork Details Form](/artist-documentation/artwork-details-form/).
-8. Run the Artist Portal test before deployment.
+7. Upload them in the [Artwork details form](/artist-documentation/artwork-details-form/).
+8. Run the artist portal test before deployment.
 
 ### Random class
 
@@ -75,7 +75,7 @@ class Random {
 
 Thanks to [Piter Pasma](https://twitter.com/piterpasma) for feedback on this pseudo-random number generator (PRNG).
 
-### Dimension Agnostic Coding
+### Dimension-agnostic coding
 
 Collectors may render the work on a phone, desktop monitor, projection, or high-resolution export. Keep a fixed aspect ratio if the composition requires one, but calculate the actual canvas dimensions from the available viewport.
 
@@ -110,11 +110,11 @@ function draw() {
 
 Test very small and very large viewports, portrait and landscape windows, and the intended aspect ratio. Make sure resizing does not accidentally choose a new random sequence or change a token's base composition.
 
-### GitHub Repository
+### GitHub repository
 
 [github.com/Martibis/256ART-generative-art-template](https://github.com/Martibis/256ART-generative-art-template)
 
-### Using the Template Artwork
+### Using the template artwork
 
 Clone or download the [256ART Generative Art Template repository](https://github.com/Martibis/256ART-generative-art-template), then follow its current [README](https://github.com/Martibis/256ART-generative-art-template/blob/main/README.md).
 
@@ -131,7 +131,7 @@ Serve the repository through a local HTTP server; opening `index.html` directly 
 
 The final upload uses the completed and minified artwork file plus `traits.json`, not the template's HTML or local emulator.
 
-### Customizing the Template
+### Customizing the template
 
 Implement the artwork in either `artwork.js` or `artwork-p5.js`. Remove unused example code, keep the output dimension agnostic, and use the deterministic `Random` class for repeatable variation.
 
@@ -155,15 +155,15 @@ function draw() {
 }
 ```
 
-### Available Libraries
+### Available libraries
 
-Only use a library that 256ART can retrieve from [EthFS](https://ethfs.xyz/) and that is available for selection in the Artist Portal. EthFS stores reusable web files on-chain. An arbitrary npm package or CDN URL used during development will not automatically become part of the on-chain release.
+Only use a library that 256ART can retrieve from [EthFS](https://ethfs.xyz/) and that is available for selection in the artist portal. EthFS stores reusable web files on-chain. An arbitrary npm package or CDN URL used during development will not automatically become part of the on-chain release.
 
 During local development, load the matching library version in `index.html`. In the Artwork Details Form, select that same library and version so the live contract render receives compatible code.
 
-Use as few libraries as practical. Large libraries increase retrieval and rendering time, and version differences can change the output. Check the current EthFS/Artist Portal list rather than relying on an old version list in documentation. If a required library is missing, contact the 256ART team before completing the project; storing a new library on-chain can be expensive.
+Use as few libraries as practical. Large libraries increase retrieval and rendering time, and version differences can change the output. Check the current EthFS/artist portal list rather than relying on an old version list in documentation. If a required library is missing, contact the 256ART team before completing the project; storing a new library on-chain can be expensive.
 
-### Image Preview Generation for 256ART
+### Image preview generation for 256ART
 
 256ART needs to know when the canvas is ready to capture. Assign the completed canvas element to `window.rendered` only after the intended preview frame has finished rendering:
 
@@ -191,7 +191,7 @@ If the work loads assets or builds its composition asynchronously, do not set `w
 
 The resulting static image is used by 256ART, galleries, and marketplaces that cannot efficiently run every live artwork. It does not replace the fully on-chain live render, which is exposed separately in the token metadata. See [Live Generative Artwork vs Preview Image](https://256.art/learn/live-artwork-vs-preview).
 
-### Batch Artwork Generator
+### Batch artwork generator
 
 Use `batch-generator.html` to inspect many seeds before upload. A single successful output is not enough to validate a generative system: uncommon traits, edge combinations, and rendering-time problems may appear only in a larger sample.
 
@@ -202,7 +202,7 @@ Use `batch-generator.html` to inspect many seeds before upload. A single success
 - **Progress monitoring**: follow generation and identify timeouts.
 - **ZIP download**: save the generated previews for review.
 
-#### How to Use
+#### How to use
 
 1. Start the template with a local web server.
 2. Open `batch-generator.html` from that server.
@@ -212,13 +212,13 @@ Use `batch-generator.html` to inspect many seeds before upload. A single success
 
 Review the batch for visual errors, unexpectedly common or missing traits, duplicate-looking compositions, clipping, blank frames, and inconsistent aspect ratios. Repeat at different dimensions. The batch generator improves coverage but does not prove the probabilities or code are correct; inspect the console and validate `traits.json` separately.
 
-### Creating Dynamic Artworks
+### Creating dynamic artworks
 
 An artwork is **[dynamic](https://256.art/learn/256art-dynamic-art)** when its live output responds to blockchain state that can change after minting. For example, it can react to a transfer, the current block, total minted supply, or the owner's balance.
 
 `inputData.tokenId` and `inputData.hash` identify the token and its original seed. They remain the foundation for a repeatable base composition. The dynamic parameters below describe state at the time the live HTML is requested, so using them can intentionally change later renders.
 
-#### Available Blockchain Parameters
+#### Available blockchain parameters
 
 The current template emulates these values in `inputData`:
 
@@ -235,11 +235,11 @@ The current template emulates these values in `inputData`:
 - `balanceOfOwner`: the number of tokens from this series held by the current owner.
 - `ethBalanceOfOwner`: the current owner's native ETH balance in wei.
 
-Contract generations can expose different subsets of dynamic values. Treat the Artist Portal's deployment test as the final compatibility check for your release, and do not make the artwork fail completely when an optional value is unavailable.
+Contract generations can expose different subsets of dynamic values. Treat the artist portal's deployment test as the final compatibility check for your release, and do not make the artwork fail completely when an optional value is unavailable.
 
-In the local template, URL overrides are strings while generated defaults are numbers; deployed contract generations can also differ. Inspect each value and its type in the Artist Portal test. A JavaScript `Number` above `Number.MAX_SAFE_INTEGER` may already have lost precision, and converting it to `BigInt` cannot recover the lost bits. Do not rely on exact full-width values unless the tested live interface supplies a decimal or hexadecimal string. The example below keeps full-width values as `BigInt`, clamps the wei balance, and reduces it to a safely sized visual value before converting to `Number`.
+In the local template, URL overrides are strings while generated defaults are numbers; deployed contract generations can also differ. Inspect each value and its type in the artist portal test. A JavaScript `Number` above `Number.MAX_SAFE_INTEGER` may already have lost precision, and converting it to `BigInt` cannot recover the lost bits. Do not rely on exact full-width values unless the tested live interface supplies a decimal or hexadecimal string. The example below keeps full-width values as `BigInt`, clamps the wei balance, and reduces it to a safely sized visual value before converting to `Number`.
 
-#### Accessing Blockchain Parameters
+#### Accessing blockchain parameters
 
 Here's how you can access and utilize these parameters within your artwork code:
 
@@ -287,4 +287,4 @@ Test dynamic work with explicit URL parameters supported by the local template, 
 
 Remember that static marketplace previews show one captured state. Make the live behavior understandable and ensure the piece still has a useful preview. Explain important dynamic behavior in the artwork description so collectors know what can change.
 
-When the files are complete, continue with the [Artwork Details Form](/artist-documentation/artwork-details-form/).
+When the files are complete, continue with the [Artwork details form](/artist-documentation/artwork-details-form/).

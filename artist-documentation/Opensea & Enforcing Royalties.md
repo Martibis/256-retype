@@ -4,7 +4,7 @@ order: 70
 
 ---
 
-# OpenSea & Enforcing Royalties
+# OpenSea & enforcing royalties
 
 After a 256ART release is deployed, OpenSea may discover its tokens from the chain automatically. OpenSea's collection page and creator-earnings settings are marketplace configuration; they do not replace the on-chain artwork metadata or the 256ART mint page.
 
@@ -32,7 +32,7 @@ Publish the changes, then inspect the public collection page while signed out. C
 
 If token images or metadata are stale, first verify the 256ART live view and `tokenURI`. A marketplace cache problem is different from an on-chain metadata problem. Use OpenSea's refresh tools or support guidance rather than redeploying or changing the artwork without diagnosing the source.
 
-### Creator Earnings
+### Creator earnings
 
 Creator earnings are a percentage paid from a secondary sale when the marketplace and transfer path honor the setting. They are not the same as the primary mint split and are never guaranteed merely because a percentage appears on a marketplace page.
 
@@ -46,9 +46,9 @@ In OpenSea Studio:
 4. Verify the full recipient address. Depending on the release, it may be a Royalty Splitter contract rather than your personal wallet.
 5. Save the optional earnings settings.
 
-Only the collection owner can change OpenSea creator-earnings recipients and percentages. OpenSea currently caps creator earnings at **10%**. Keep the marketplace value aligned with the contract and [Artwork Details Form](/artist-documentation/artwork-details-form/#secondary-royalty-percentage). If you are unsure which recipient to use, confirm it in the deployment records or ask the 256ART team before publishing.
+Only the collection owner can change OpenSea creator-earnings recipients and percentages. OpenSea currently caps creator earnings at **10%**. Keep the marketplace value aligned with the contract and [Artwork details form](/artist-documentation/artwork-details-form/#secondary-royalty-percentage). If you are unsure which recipient to use, confirm it in the deployment records or ask the 256ART team before publishing.
 
-#### Enforceability of Creator Earnings
+#### Enforceability of creator earnings
 
 Current 256ART contracts can support optional [ERC721-C creator-earnings enforcement](https://docs.opensea.io/docs/creator-fee-enforcement). For a compatible custom contract, OpenSea shows an **Enforce earnings** action in the Creator Earnings settings. The owner must complete OpenSea's wallet-signature flow to configure it.
 
@@ -69,4 +69,4 @@ Without enforcement, OpenSea treats creator earnings as optional, and the seller
 
 Use OpenSea Studio to configure the marketplace presentation and creator earnings for the already deployed 256ART contract. Verify the contract, owner, royalty recipient, and percentage; understand the trading restrictions before enabling ERC721-C enforcement; and recheck the public collection after every update.
 
-For release-contract management outside OpenSea, return to [Releasing Your Artwork](/artist-documentation/releasing-your-artwork/#post-release).
+For release-contract management outside OpenSea, return to [Releasing your artwork](/artist-documentation/releasing-your-artwork/#post-release).
