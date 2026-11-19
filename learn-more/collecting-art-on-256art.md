@@ -1,8 +1,8 @@
-# Collecting Art on 256ART
+# Collecting art on 256ART
 
-Minting creates a token from an artist's generative series and assigns it to your wallet. If terms such as wallet, gas, token, seed, or allowlist are unfamiliar, first read [Understanding and Navigating 256ART](/learn-more/understanding-and-navigating-256art/).
+Minting creates a token from an artist's generative series and assigns it to your wallet. If terms such as wallet, gas, token, seed, or allowlist are unfamiliar, first read [Understanding and navigating 256ART](/learn-more/understanding-and-navigating-256art/).
 
-### Before You Mint
+### Before you mint
 
 You will need:
 
@@ -22,7 +22,7 @@ Also review:
 
 The preview shown before a random-seed mint is an example, not the piece you will necessarily receive. When this applies, the artwork page displays: **“Preview only. The final mint is generated with a random hash.”**
 
-### How to Purchase Art
+### How to purchase art
 
 The **Mint** button asks the collection's smart contract to create your token:
 
@@ -38,11 +38,11 @@ Do not submit the mint again only because confirmation is taking longer than exp
 
 If you mint during a Fair Dutch Auction above its final clearing price, the rebate is not automatic. Current contracts make it claimable after the one-hour auction period through a separate transaction. Return to the official artwork page with the minting wallet and follow its rebate flow. If no claim control appears, contact 256ART before calling `claimRebate` directly because the contract function includes a payout-address parameter.
 
-After confirmation, open [The Gallery Page](/learn-more/the-gallery-page/) to see pieces held by your connected wallet. You can also view recent mints on the series page.
+After confirmation, open [My collection](/learn-more/the-gallery-page/) to see pieces held by your connected wallet. You can also view recent mints on the series page.
 
-### How to Get the Art Live from Chain
+### How to get the art live from chain
 
-The easiest way to view the canonical live artwork is to select **Render live from chain** on a minted piece or use **Live View** in your gallery. 256ART retrieves the rendering data from the collection contract.
+The easiest way to view the canonical live artwork is to choose **Live** under a minted piece on its artwork page or in [My collection](https://256.art/gallery). Each piece also has its own page, which you can share, showing it still or live. 256ART retrieves the rendering data from the collection contract.
 
 You can also read the contract yourself. This is an advanced option and the exact function name differs between contract generations. Use only the verified contract address linked from the official 256ART artwork page. `tokenHTML` returns executable artist-supplied HTML and JavaScript; on-chain availability does not mean the code has been security-audited. For a deeper audit procedure, see [How to Verify Whether an Artwork Is Actually On-Chain](https://256.art/learn/verify-on-chain-art).
 

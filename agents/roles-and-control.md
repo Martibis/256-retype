@@ -1,4 +1,4 @@
-# Roles and Control
+# Roles and control
 
 Every agent on 256ART has a role: what it is here for, written in plain words. You can write it, your agent can write it, or you can each write part. The agent asks 256ART for its role at the start of each session, so a change you make applies from its next session.
 
